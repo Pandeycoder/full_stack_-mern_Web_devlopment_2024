@@ -1,0 +1,185 @@
+JavaScript            :-   14/02/2024
+==================================
+
+
+================================
+Using the Console :-
+==================================
+-> Uses REPL ( Read-Evalute-Print-Loop ).
+
+   ctrl+l for window (clean ) 
+
+
+
+==============================
+What is a variable :-
+==============================
+-> A variable is simply the named of a stroge location.
+
+-> a=10 
+   name="rahul"
+
+========================================
+Data types in JS :-
+========================================
+
+-> Primitives types :-
+
+   1) Number           4) Undefiend           Bigint
+   2) Boolean          5) Null                Symbol
+   3) String 
+
+------------------------------
+Number in Js
+--------------------------------
+->Positve (14) & Negative (-4).
+
+-> Integer (45, -50)
+
+-> Floting number with decimal (4.6 -8.9)
+
+---------------------------------------
+Operations in JS :-
+-------------------------------------
+-> a=    10         +          20    =30
+          |         |          |
+     operand     operator      operand
+
+---------------------------------------
+NaN in JS
+---------------------------------------
+-> The NaN global propertu=y is a value representing Not-A-Number.
+
+Ex:
+     0/0   naN-1    NaN*1    NaN*NaN   => NaN
+
+
+=================================
+Operator Precendance :-
+=================================
+
+-> This is general order of solving an expresssion.
+
+Example:-  percedance : ()  **  *,/,%   +,-
+
+
+-----------------------------
+Let keyword :-
+-----------------------------
+-> Syntax of declearing variables.
+
+Example:-
+ 
+     let age=23;        let cgpa
+
+    age = age + 1;       cgpa=8.9
+
+------------------------------------
+Const keyword
+-------------------------------------------
+-> values of const can't be changed with re-assignment & they can't be re decleared.
+-> Example :-
+
+   const year=2025;
+
+   year=2026          ///error
+
+   year=year+1        //error
+
+ 
+---------------------------------
+Assignment operator :-
+-------------------------------
+    Ex:-
+         age = age+1
+
+         age+=1
+
+         age*=1
+
+         age-=1
+
+
+=================================
+Unary Operator :-
+=================================
+
+      age = age+1
+ 
+      age+=1
+
+      age++;
+
+==========================
+Identifiers  Rules :-
+==========================
+-> All javaScript variables must be identified with uniques names .
+
+->name must be contain letters digits underscores and dollers.
+
+-> name must be begin with a letter 
+
+-> name must be also begion with $ .
+
+->  Name are case sensitive .
+
+-> Resereved wors (like javasript keywors ) cannot be used a names.
+
+Ex :-  let price, let price12 , let price$ ,let price_     valid.....
+
+---------------------------------------------------
+camel case :-
+-----------------------------------------------
+
+-> way of writing identifier.
+
+-> camelcase           let fulName; 
+
+-> snake_case          let full_name;
+
+-> pascalCase  :       let FullName;
+
+========================================
+Boolean in Js
+-=======================================
+-> boolean reprsent a truth value -> true or false /yes or no.
+
+-> let age=23;
+
+   let isAdult = true;
+
+
+=========================================
+What is TypeScript :-
+==========================================
+-> Static Tped , where js is dynamic typed.
+ 
+-> Designed by Microsoft.
+
+
+==============================
+String In Js :-
+================================
+-> Strings are text or sequence of character.
+
+-> let name="tony stark";
+
+    let role='ironam';
+
+    let num='23';
+
+    let empty="";
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+

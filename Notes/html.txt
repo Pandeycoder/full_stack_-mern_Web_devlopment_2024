@@ -1,0 +1,424 @@
+02/04/2024 =======>>
+
+What is HTML: 
+========================
+-> it stand's for HyperText Markup language.
+-> it can provide the structure & formatting.
+
+=========================
+HTML Element
+==========================
+-> Standard Element that browser recognizes.
+   paragraph    <p>
+   Heading      <h>
+
+===============
+HTML tags
+==============
+-> A container for some content or other tags.
+        <p> This is paragraph </p>
+         ||
+        opening tag
+
+-> The component used to design the structure of websites are called HTML tags.
+
+===================
+Paragraph Element 
+=================
+-> The <p> Html element represent as paragraph.
+
+==============
+Nested tag
+===============
+-> One tag inside another tag that is called nested tag.
+
+=========
+Heading Elements
+================
+ -> The <h1> to <h6> html element represent six levels of section headings <h1> is the heighest section level and <h6> is the lowest .
+ 
+==================
+Html Boilerplate 
+====================
+-> This is the standrad format or skeleton of writing Html code.
+
+<!DOCTYPE html>
+ <html>                     <------root tag
+   <head>                   <------Metadata
+      <title>My First Page</title>
+   </head>
+   <body>
+     <p>hello World</p>
+   </body>
+ </html>
+
+==================================
+03-02-2024
+==========================================
+
+List In Html :-
+====================
+-> . A
+   . B     ===> unordered list  <ul>
+   . c
+-> 1. Aman
+   2. Bob   ===> ordered list   <ol>
+
+=====================
+Html Attributes:-
+=======================
+-> Attribute are used to add more informaton to the tag.
+Ex: <html lang="en">
+                 ^
+                 ||
+                 attribute
+
+================
+Anchor Tag :-
+================
+-> Used to add links to your page.
+Ex: <a href="https://www.google.com/">Google</a>
+        ||
+        attribute
+
+-> relative link mean file link.
+-> absulute link mean any internet hosted link.
+================
+Image Element :-
+=================
+-> Used add image to your page.
+ex: <img src="image.png" alt="random Image">
+                ||         ||
+           relative url    alternative name
+
+=====================
+br Tag :=
+===================
+ -> Used to add next line (line breaK) to your page.
+Ex: <br>
+
+==================
+bold ,Italic & Undeerline Tags
+===============================
+-> uSED to heighlight in your page.
+Ex : <b> name </b>
+     <i> name </i>
+     <u> name </u>
+
+===========================
+Comments in Html  :=)
+============================
+-> This is part of code that should not be parsed.
+EXample: - <!--hello---> 
+
+============================
+Html is not Case Sensitive 
+============================
+EX:- <html>  == <HTML>
+     <p>   ===  <P>
+
+===============================================
+04/02/2024
+================================
+
+Inline v/s block
+==============================
+Block Element :-
+
+ -> Takes up the full-width available (whole block).
+-> Start from new line.
+
+Inline Element:-
+-> Takes up only necessary width.
+-> Don't start from new line.
+
+=========================
+Div Element :-
+===================
+-> Div is a container used to hold other html elements together.
+-> it is a block Element.
+
+========================
+span element :-
+========================
+-> span is also a generic container used to hold other html element or group element together.
+-> it is an inline element.
+
+=============================
+Hr tag
+==============================
+-> Horizontal rule element.
+Ex: <hr/>
+
+==============================
+ Sub & sup tag :-
+==============================
+-> a2 =b2+c2
+   H2O
+
+
+================================
+SEMANTIC Markup :-
+================================
+-> It is the markup that relates to the meaning of content.
+Ex:- <h1>,<p> ---------->semantic tag
+     <div> ,<span> -------->non semantic
+
+-> meaningful / structured clearly, redable.
+
+----> <header>    </header>
+      <main>      </main>
+      <footer>    </footer>
+      <nav>       </nav>
+      <article>     </article>
+      <section>    </section>
+       <aside>     </aside> 
+
+================================
+Html Entities :-
+================================
+-> An html entity is a pice of text (string) that begins with an ampersand ($) and ends with a semicolon(;).
+
+-> Used to display reserved character (which would otherwise be interperted as html code) , and invisible.
+
+-> Can also use in place of character that are difficult to type 
+
+Ex:- & --> &amp
+     < --> &lt
+     > --> &gt
+
+
+=======================
+Emmet :-
+=======================
+-> visit emmet.io .
+
+=========================
+Understanding Html 5
+=========================
+-> the term htm5 is essentially a buzzword that refer to a set of modern web technologies. This includes the Html Livingf Standard , along with javaScript Api to enhance storage , multimedia , and hardware access.
+
+how to work html:----
+
+->html standard is a doccumnet that tells to the browser how html should work.
+
+====================================
+05/02/2024
+Tables in html:-
+====================================
+-> Tables are used to represent real life table data.
+Ex:-
+
+<table>
+  <caption>Table manu</caption>
+  <tr>
+    <th>header 1 </th>
+    <th>header 2</th>
+  </tr>
+ <tr>
+   <td> data </td>
+   <td> data2 </td>
+ </td>
+</table>
+
+================================
+Table in html
+===================================
+-> <thead>  to wrap table header
+-> <tbody>  to wrap table body
+-> <tfoot> to wrap table footer
+
+==============================
+colspan & Rowspan in html:-
+===============================
+-> used to create cells which spans over multiple row or coloumns.
+
+
+=================================
+Forms in Html :-
+=================================
+-> Forms are used to collect data from the user.
+ex:-
+
+<form > 
+
+</form>
+===========================
+form action attribute :-
+===========================
+-> Action attribute is used todefine what action neeeds to be performed when a forms is submitted or whre the form data should be sent.
+
+Ex:- 
+<form action="/action.php">
+<form acton="/action">
+
+===========================
+form element
+===========================
+-> Input 
+  -> used to create multiple forms controls.
+
+  -> there are multiple types of inputs that can created type atttribute.
+
+<input type="text>
+<input type="date">
+<input type="password">
+<input type="number">
+<input type="color">
+
+
+
+-------------------
+place holder
+-------------------
+<input type="text" placeholder="enter name">
+
+--------------------------------------
+label forms (classical approach)
+--------------------------------------
+->  <label for ="usename"> User name  </label>
+     <input type="text" id="username" placeholder="username">
+
+--------------------------------
+button element
+-----------------------------------
+-> <button> submit</button>
+
+----------------------------
+Name attribute
+-------------------------------
+-> name of the form ccontrol submitted with the form as part of a name/value pair.
+
+Ex:- <input type="text" vlaues>
+
+-----------------------------
+Input Elemnent
+------------------------------
+-> checkbox
+  <input type="checkbox" name="age" id="age" checked/>
+ <label for="age">i am 18+ </label>
+
+----------------------------------
+radio buitton
+----------------------------------
+<input type="radio" name="gender" value="male">male
+<input type="radio" name="gender" value="fmale">fmale
+
+----------------------------
+Range input
+-----------------------------
+<input type="range" min="0" max="20" name="vol">
+
+-----------------------------
+Text Area
+------------------------------
+-> <textarea id="feedback"></textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================
+05/02/2024
+===========================================
+
+Flexbox :- it is provide responsive
+========================================
+:) Flexible Box Layout:-
+
+-> it is a one dimensional layout mehtod for arragening items in rows and coloumn.
+
+======================
+The Flex model
+=======================
+         |
+--------------------- main axis 
+         |
+         |
+        cross axis
+
+Example:- 
+
+===========================
+Flex Direction:-
+============================
+-> it sets how flex items are placed in the container, along which axis and direction.
+
+ . flex-direction : row ; main axis ,right to left
+  
+ . flexbox-direction : row-reverse; main axis right to left.
+ 
+ . flexbox-direction:column ; main axis top to button.
+
+ . flexbox-direction : column-reverse main axis botton to top.
+
+
+======================
+Justify Content:-
+======================
+-> Tells hoe to the browser distributes space b/w and around content items along the main axis .
+
+-> justify-content :flex-start
+-> justify-content :flex-end
+-> justify-content :center
+-> justify-content :space-even
+-> justify-content :space-around
+-> justify-content :space-between
+
+====================================
+Flex-wrap
+===================================
+ -> Sets wether flex items are forced onto one line or can wrap onto multiple lines .
+
+-> flex-wrap : nowrap;
+-> flex-wrap : wrap;
+-> flex-wrap : wrap-reverse;
+
+========================
+Align items
+==========================
+-> distribute our items along the cross axis
+
+-> justify-content: flex-start;
+-> justify-content: flex-end;
+-> justify-content: conter;
+-> justify-content: baseline;
+
+========================
+Align Content :
+==========================
+->
+
+ 
+
+
+
+
+ 
+
+
+
+
+

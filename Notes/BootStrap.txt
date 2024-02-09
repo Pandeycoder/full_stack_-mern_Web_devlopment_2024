@@ -1,0 +1,160 @@
+=================================
+12/02/2024    Bootstrap :-
+=================================
+
+-> Bootstrap is a powerful feature packed fronted toolkit build anything from protoype to production -in minutes.
+
+======================
+Using Bootstrap
+===========================
+css:-
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+javaScript:-
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+=========================
+What will we cover
+==========================
+ 
+Components                            Layouts
+
+->pre-built and reusable of          -> Overall structure and arrangement of the elements.
+  user interface(UI).                  ex: container grid.
+ex:button ,forms
+
+
+===========================
+Container Layout
+=============================
+
+-> Container are used to contain , pad ,and (sometimes) center the content within them.
+
+============================
+Components Button
+=============================
+->  primary -blue
+-> secndory -brown 
+->  success  -green 
+-> danger    -red
+-> Warning    yellow
+-> info      pink
+-> light     white
+
+
+        <button class="btn btn-primary btn-lg" disabled>Click me</button>
+        <button class="btn btn-success btn-sm">Click me</button>
+        <button class="btn btn-outline-warning">Click me</button>
+        <button class="btn btn-info">Click me</button>
+
+=====================================
+Badges shape diff notification
+===================================
+  -> it can show the lavels .
+it can use thorugh span.
+
+Ex:- <button class="btn btn-success">Followers
+        <span class="badge bg-danger rounded-pill" >100+</span>
+       </button>
+
+
+=========================
+Alert :-
+==========================
+->  <div class="alert alert-success alert-dismissible ">Conguralitions 
+        <button class="btn btn-close" data-bs-dismiss="alert"></button>
+       </div>
+
+===========================
+Button group :-
+===========================
+->   -----------------------
+     | left mid   right    |
+     -----------------------
+ <div class="container">
+    <div class="btn-group">
+        <button class="btn btn-success">one</button>
+        <button class="btn btn-primary">one</button>
+        <button class="btn btn-danger">one</button>
+    </div>
+    
+        <button class="btn btn-light">one</button>
+        <button class="btn btn-dark">one</button>
+        <button class="btn btn-warning">one</button>
+
+
+==============================
+nav-bar
+==============================
+->Navbar
+ Ex:- 
+
+     <nav class="navbar bg-dark fixed-top navbar-expand-md  " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a href="" class="navbar-brand">Brand Name</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                <div class="navbar-nav">
+                    <a class="nav-link" href="">home</a>
+                    <a class="nav-link" href="">Contact</a>
+                    <a class="nav-link" href="">About Us</a>
+                </div>
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="search"/>
+                <button class="btn btn-outline-light" type="submit">Search</button>
+
+            </form>
+
+        </div>
+    </nav>
+
+======================================
+card component
+======================================
+-> 
+       
+    <div class="container">
+        <h2>Bootstrap</h2>
+        <div class="card" style="width: 20rem; ">
+            <img src="self.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Photography</h5>
+                <p class="card-text"> fuigfiufhfyugoi 8fhfiufkfik iufhfiuohf iufhiuf</p>
+                <a href="" class="btn btn-primary">Know more</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
