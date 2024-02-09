@@ -1,0 +1,195 @@
+============================
+CSS  :-  05/02/2024
+============================
+
+-> Cascading Style sheets.
+ 
+->   human skalaton (html)       human body (css)
+
+-> it is languiage that is used to decribe the style of a document.
+
+===================================
+basic format of css
+=======================================
+ selector :-
+   
+h1{ 
+  color :   red;
+  }
+   |        |
+ property   value
+
+1) -> inline style
+ 
+2) -> Include Style
+
+3) -> External Stylesheet
+     
+      ex:
+          <head>
+              <link rel="stylesheet" href="style.css">
+          </head>    |                | 
+                  relation            file path
+
+========================
+color property
+=========================
+  -> Used to set the color of foreground.
+
+     color: purple
+      
+---------------------
+Backgounr color :-
+----------------------
+-> used to set the color of background.
+----------------------------------
+RGB color system
+-----------------------------------
+-> red green blue combination.
+
+
+==========================
+Hexadecimal or Hex color
+===========================
+color="#fffff"
+
+
+===========================
+Text Propertiea
+===========================
+ -> text-align
+    font-weight
+    text-decoration
+    line-hight
+    letter-spacing
+    font-size
+
+-------------------
+text-align
+----------------------
+text-align :left/start
+text-align :center
+text-align :right/end
+
+
+===================
+font-weight
+-----------------------
+font-weight:normal  //400
+font-weight: bold   //700
+font-weight: bolder
+font-weight: lighter
+
+
+-----------------------
+text-decoration :-
+-----------------------
+-> stes the appeareance of decoraltive lines on text like underline.
+
+text-decoration :underline
+text-decoration :none
+text-decoration :underline
+
+-------------------------
+line-height :-
+--------------------------
+
+-> controls the height of the line of text.
+
+line-height : normal
+
+line-height : 2.5
+
+----------------------------
+letter-spacing
+----------------------------
+-> controls the horizontal spacing behavoir b/w text characters.
+
+letter-spacing :normal 
+leter-spacing : 10px
+
+-----------------------------
+font-size units in css
+--------------------------------
+
+Absolute             relative 
+
+px                      %
+
+pt                      em
+
+pc                      rem
+
+cm                      ch
+
+mm                      vh
+
+in                      vw + many more
+
+px:-
+   -> most commeonly used absolute unit.
+           96px = 1 inch
+         -> not suitable for responsive websites.
+
+
+
+===========================
+font-family
+============================
+-> specifies a prioritized list of one or more font family names.
+
+Ex:- font-family :arial
+     font-family :avant grade , didot , sans-serif; 
+
+
+============================
+selectors in css :-
+===========================
+
+-> id selector 
+-> univesal selector 
+-> element selector
+-> class selector 
+
+===============================
+Adjacentr sibling Combinator :-
+=================================
+-> Eg - Heading 3 that comes immeditaley after any paragraph.
+   
+  p+h3{
+     property:value
+      }
+=========================
+child combinator 
+=========================
+-> select all button which are direct chioldern of spans 
+
+span>button
+{
+propewerty:value
+}
+
+=========================
+Attribute selector 
+=========================
+-> slects elements based on the presence or value of a given attribute
+
+input [attr="value]{
+	property:value
+		  }
+
+Note:------------------ id > class > element
+
+
+==========================
+pseudo class
+=================================
+-> A keyword added toi a selector that specifies a special state of the slected elements.
+
+:hover
+:active
+:checked
+:nth-of-type
+
+
+

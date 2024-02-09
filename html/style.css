@@ -1,0 +1,22 @@
+#container{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin :10px auto;
+    border: 2px solid black;
+    display: flex; 
+    flex-direction:row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+h1{
+    text-align: center;
+}
+#container div{
+    height: 100px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
