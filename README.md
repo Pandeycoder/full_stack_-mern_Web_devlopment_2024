@@ -9,7 +9,7 @@
     <header>
     <h1>Rahul Kumar pandey</h1>
     <p>Life is..... all about learning :)</p>
-    <img src="self.jpg" alt="rahul" height="100px"/>
+    <img src="html/self.jpg/" alt="rahul" height="100px"/>
     <hr/></header>
     <section>
     <h2>Education</h2>
