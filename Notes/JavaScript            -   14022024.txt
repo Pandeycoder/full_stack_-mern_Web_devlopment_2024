@@ -255,6 +255,44 @@ Ex:- let msg=" Hello  ";
 
 
 
+-------------------------------------------
+Array 
+------------------------------------------
+-> LInear collection of things.
+
+  Ex:- let s=["aman " ,"rahulIT"];
+
+note:-
+--------
+      -> array is mutable mean we can chnage.
+
+
+-------------------------------------
+Array method:-
+---------------------------
+push : addd to end
+ 
+unshift : add to start
+
+pop :delete from end & retunr it.
+
+shift : delete from start & return it.
+
+-----------------------------------
+Array method :-
+-------------------------------
+
+indexOf :- return index of something .  (if value is not available than print -1)
+
+-> Includes : search for a value.(true or flase value)
+
+--------------------------------
+Array method :-
+-------------------------------
+
+-> concat :- merge 2 arrays .
+
+-> reverse : reverse an array
 
 
  

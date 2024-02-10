@@ -35,6 +35,43 @@ console.log(first);*/
 //let a="  hello  so   me     ";
 //a.trim();
 
-let ps=prompt("set your password");
-let newps=ps.trim();
-console.log(newps);
+//let ps=prompt("set your password");
+//let newps=ps.trim();
+//console.log(newps);
+
+let student=["suman","rahul","punam","neha"];
+console.log(student);
+
+let number=[2,3,4,5,6,8];
+console.log(number[2]);
+console.log(typeof(number));
+
+let cars=["audi","maruti","xuv"];
+cars.push("toyota");
+
+console.log(cars);
+
+cars.pop();
+console.log(cars);
+
+
+cars.unshift("toyota");
+
+console.log(cars);
+
+cars.shift();
+console.log(cars);
+
+
+
+
+let follower=["a","b","c","d"];
+let block=follower.shift();
+
+console.log(follower);
+
+console.log(block);
+
+
+
+
