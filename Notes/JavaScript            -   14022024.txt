@@ -171,10 +171,87 @@ String In Js :-
     let empty="";
 
 
+=======================================
+Template Literals  :    15/02/2024
+=======================================
+-> They are used ot add embeded expression in a string.
+
+Ex: -let a=5;
+     console.log("value :- " ,a);
 
 
+==============================
+Operator in JS :-
+==============================
+
+-> Arithemetic (+,-,*,/,%)
+
+-> Uniary (++,--)
+
+-> Assignment operator (+= ,-=,*= etc.)
+
+-> compersion (<=,>=,>,<,==,!= ,  ===  ,etc.)
+
+          ===(compare type and value),  == compare value ,not type
+
+-> Logical (&&,||,^)
+
+Note:-
+-------   uni-code of  (A =40     ,a=60)
+
+
+==================================
+truthy & falsy :-
+=====================================
+
+-> Everything in JS is true or false (in boolean context).
+
+ -> The doesn't mean their value itself is flase or true. it taken in boolean context.
+
+Example:-
+
+    falsy values :
+
+      false, 0, -0, On(bright value) , ""(empty string) ,null ,undefiend. ,NaN
+
+    Truthy values :-
+
+     Everthing else
+
+
+
+=====================================
+ 11.     Alert  & Prompt  :-
+======================================
+
+-> Alert displays an alert message on the page.
+
+  Ex: alert(:something is wrong!");
+
+-> Prompt displays a dialog box that asks user for some input .
+
+ Ex: - prompt("please enter your roll no.")
+ 
  
 
+=================================================
+String Method :-                16/02/2024
+=================================================
+
+-> Method - action that can be performed on objects.
+
+   Format :-
+             StringName.method()
+
+-----------------------------------------
+String trim method :-
+---------------------------------------
+
+Ex:- let msg=" Hello  ";
+    
+    str.trim();
+  
+     -> Trims whitespaces form both ends of String & return a new one.
 
 
 
