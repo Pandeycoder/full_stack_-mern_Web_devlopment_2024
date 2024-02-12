@@ -295,6 +295,233 @@ Array method :-
 -> reverse : reverse an array
 
 
+ ----------------------------------
+Splice Array method :-
+------------------------------------
+-> removes /replace/add element in place.
+
+-> splice (start ,deleteCount, item0....itemn)
+
+Exmaple : let cars=["xuv", "toyato" ,"maruti"]
+         
+          cars.splice(1,0,"bmw");  //xuv bmw,toyato..
+          cars.splice(1,1);   // xuv, toyato... 
+          
+
+-------------------------------------
+sort mthod 
+------------------------------------------
+sort:- sort an arrays .
+
+ let x=[5,3,7,8,2,1];
+ x.sort();
+
+--------------------------
+Arrays reference :-
+---------------------------
+->   "name"== "name"
+
+    "name"=== "name"
+
+---------------------------------
+const arrays :-
+--------------------------------
+const arr=[1,2,3,4];
+
+
+----------------------------
+Nested Arrays :-
+------------------------------------
+-> Multi dimensional
+
+-=> it is collecitons of arrays  of arrays.
+
+let nums=[ [1,2],[3,4],[4,5] ];
+
+console.log(nums);   //Arrays(2) ,arrays(2)..
+
+
+
+=======================================
+for loop
+=====================================
+
+ for(let i=1;i<=5;i++)
+ {
+   console.log(i);
+ }
+
+
+=============================================
+ Functions In Js               19/02/2024.....
+==============================================
+
+->  Example :   console.log() , arr.push(); ,arr.pop()
+
+function functionName(){ do something}
+
+Function Calling(Using the function)
+
+
+--------------------------------
+Function with argument:-
+--------------------------------
+-> Values we pass to the function.
+
+  Ex:  function functionName(arg1,agr2,arg2..)
+
+
+-------------------------------------
+Return :
+---------------------------------
+-> retunr keyword is used to return some value from the fuunction .
+
+input  ------- function --------output
+
+
+
+================================
+Scope   :-
+================================
+
+-> Scope determines the accessibility of variables , object  and function from different parts of the code.
+
+-> Fucntion 
+
+-> Block
+
+-> Lexical
+
+-> Global Scope
+
+
+-------------------------------
+Block scope
+-----------------------------------
+
+-> variables decleared  inside a {} block cannot be accessed from outside.
+
+-------------------------------------
+Lexical Scope :-
+-----------------------------------------
+-> a variable define out side a function caan be accessed inside another function defined after the variable declearation.
+
+The opposite is not true.
+
+/laxical Funci=tion
+
+function OutFun()
+{
+
+    function innerFun()
+    {
+        console.log(x+y);
+    }
+    
+    let x=10;
+    let y=30;
+
+
+    innerFun()
+}
+
+OutFun();
+
+
+---------------------------
+High order function 
+------------------------------
+-> a function that does one or both.
+
+-> takes one or multi fun as argum.
+
+-> retunr a function.
+
+
+-------------------------------------
+Methods :-
+------------------------------------
+
+-> Action that can be performed on an object.
  
+
+
+
+============================================
+This Keywords :-          20/02/2024
+============================================
+
+-> "This" keywords refer to an object that is executing the current piece of code.
+
+
+====================================
+Try catch  :-
+=======================================
+
+-> The try statement  allows you to define a block of code to be tested for error while it is exceptions.
+
+-> The catch statement allows you to dfefine a block of code to be executed if an error occurs in the try block.
+
+
+====================================
+Miscellaneous Topics :-
+=====================================
+
+--------------------------
+Arrow fiucntion :-
+-----------------------------
+
+-> const func=(arge1, arg2...)=> {function definition}
+
+Example :-
+ 
+   const sum=(a,b)=>{
+      console.log(a+b);
+    }
+
+
+---------------------------------
+Arrow impilicit return :-
+----------------------------------
+
+const func=(arg1,arg2...) => {value}
+
+const mul = (a,b) => (
+  a*b
+);
+
+
+------------------------------
+Set Timeout :-
+-------------------------------
+-> setTimeout( function ,timeout)
+
+Ex: console.log("ji there");
+
+settimeout ( ()=> {
+ console.log("Rahul IT");
+},4000);
+
+console.log("welocme to");
+
+--------------------------------------------
+set interval:-
+------------------------------------------
+
+setInterval( function ,timeout)
+
+setInterval ( ()=> {
+ console.log("Rahul IT");
+},2000);
+
+
+--------------------------------------
+this with arrow function 
+---------------------------------------
+
+-> 
+
+
+
 
 

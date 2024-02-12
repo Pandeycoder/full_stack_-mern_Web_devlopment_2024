@@ -29,6 +29,7 @@ console.trace("this is simple trace message");
 
 
 let first=prompt("enter your name");
+
 console.log(first);*/
 
 
@@ -39,7 +40,7 @@ console.log(first);*/
 //let newps=ps.trim();
 //console.log(newps);
 
-let student=["suman","rahul","punam","neha"];
+/*let student=["suman","rahul","punam","neha"];
 console.log(student);
 
 let number=[2,3,4,5,6,8];
@@ -70,8 +71,197 @@ let block=follower.shift();
 
 console.log(follower);
 
-console.log(block);
+console.log(block);  */
+
+
+//--------------------------Loop
+
+for(let i=1;i<=15;i++)
+{
+    if(i%2==0)
+    console.log(i);
+}
+
+function hello()
+{
+    console.log("hello");
+}
+
+hello();
+
+let rand=Math.floor(Math.random()*6)+1;
+
+console.log(rand);
+
+function sum(a,b)
+{
+    return a+b ;
+}
+sum(sum(1,2),4);
+console.log(sum(sum(1,2),4));
+
+
+
+   //laxical Funci=tion
+
+function OutFun()
+{
+
+    function innerFun()
+    {
+        console.log(x+y);
+    }
+    
+    let x=10;
+    let y=30;
+
+
+    innerFun()
+}
+
+OutFun();
+
+
+function multi(fun ,count)
+{
+    for(let i=1;i<=count;i++)
+    {
+        fun();
+
+    }
+
+}
+let greet=function(){
+    console.log("hello");
+}
+multi(greet ,2);
 
 
 
 
+
+function oddEvenFactory(request)
+{
+    if(request=="odd")
+    {
+        let odd = function(n){
+
+            console.log(!(n%2==0));
+        }
+        return odd;
+        
+    }
+    else if(request=="even")
+    {
+        let even = function(n){
+
+            console.log((n%2==0));
+        }
+        return even;
+
+    }
+    else{
+
+    }
+}
+
+let request ="odd"; //odd
+let func1=oddEvenFactory(request);
+console.log(func1.odd);
+
+
+//////////////////////calculator ...................
+
+
+const calculator={
+
+  
+
+    add(a,b)
+    {
+        return a+b;
+    },
+    sub(a,b)
+    {
+        return a-b;
+    },
+    multi(a,b)
+    {
+        return a*b;
+    }
+}
+
+console.log(calculator);
+
+console.log(calculator.num);
+
+console.log(calculator.add(5,6));
+
+console.log(calculator.sub(5,6));
+
+console.log(calculator.multi(5,6));
+
+
+
+const student={
+    name:"Rahul IT",
+    age:23,
+    eng:93,
+    math:87,
+    phy:97,
+    getAvg()
+    {
+        let avg=(this.eng+this.math+this.phy)/3;
+        console.log(`${this.name} got avg mark ${avg}`);
+    }
+
+}
+console.log(student);
+console.log(student.getAvg());
+
+
+try{
+    console.log("hello")
+    console.log(a);
+}
+catch
+{
+    console.log("not defiend");
+}
+
+
+//Arrow function .......................
+
+
+const sum1=(a,b) => {
+    console.log(a+b);
+  };
+sum1(4,5);
+
+const mul1 = (a,b) =>( 
+    a*b
+  );
+
+  let x1=mul1(5,4);
+console.log(x1);
+
+
+/////////////time out session 
+
+
+console.log("jiii welcome ...");
+
+setTimeout ( ()=> {
+    console.log("Rahul IT");
+   },4000);
+   
+console.log("welocme to");
+   
+
+let id=setInterval ( ()=> {
+ console.log("Rahul IT.........interval");
+},2000);
+
+console.log(id);
+
+clearInterval(id);
