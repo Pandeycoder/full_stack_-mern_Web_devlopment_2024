@@ -1,0 +1,154 @@
+==========================================
+DOM (Document Object Model) : 22/02/2024
+==========================================
+
+-> The Dom represent a document with a logic tree.
+
+-> it allow us to manipulate webpage content (html element).
+
+
+==============================================
+Download Strater Code :-
+==============================================
+
+ 1) Select (Img)
+
+ 2) changes /manipulation 
+
+==============================
+Selecting Elements :-
+=================================
+-> getElementById
+
+-> return the element as an object or null (if not found)
+
+--------------------------------------
+selecting element :-
+------------------------------------
+getElementByClasssName
+
+-> return the element as an html collection or empty collection.
+
+------------------------------
+selecting element :-
+----------------------------------
+getElementByTagName
+
+-> return the element as an html collection or empty collecyion .
+
+
+---------------------------------
+Query selector :-
+-----------------------------------
+
+-> Allows us to use any css selector.
+
+document.querySelector('p');
+
+document.querySelector('#myId');
+
+document.querySelector('.myclass');
+
+
+
+==========================================
+Using properties & method :-
+==========================================
+
+-> inner text :
+
+   shows the visible text contained in a node.
+
+text content :-
+  shows all the full text 
+
+inner html:-
+  shows the full markup.
+
+
+==========================================
+Maipluting attrribute
+========================================
+
+obj.getAttributes(attr)
+
+ob.setAttribute(attr,val)
+
+-----------------------------------
+Manupluting Attributes :-
+-----------------------------------
+
+obj.getAttribute(attr);
+
+obj.setAttribute(attr,val);
+
+
+style Property :
+---------------------
+
+
+------------------------------
+Manipluting Style :-
+--------------------------------
+
+using classlist 
+
+obj.classList
+
+classList.add() to add new classes 
+
+classList.add() to remove classes
+
+classList.contains() to check if classs exists
+
+classList.toggle() to toggle b/w and remove.
+
+
+
+undefined
+heading.classList.add("yellow");
+undefined
+heading.classList
+DOMTokenList ['yellow', value: 'yellow']
+heading.style.color='yellow';
+'yellow'
+
+
+-----------------------------
+Navigation 
+-------------------------------------------------
+
+-> parentElement
+
+-> chlidren 
+
+-> prevoiusElementSibling /nextElementSibling
+
+
+
+----------------------------
+Adding element:-
+----------------------------------
+
+document.createElement("p);
+
+-> apppendChild(element)
+
+-> append(element)
+
+-> prepend(element)
+
+-> insertAdjacent(where ,element)
+
+
+
+
+
+
+
+
+
+
+
+
+

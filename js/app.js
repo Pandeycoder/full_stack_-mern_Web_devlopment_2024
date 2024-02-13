@@ -76,7 +76,8 @@ console.log(block);  */
 
 //--------------------------Loop
 
-for(let i=1;i<=15;i++)
+
+/*for(let i=1;i<=15;i++)
 {
     if(i%2==0)
     console.log(i);
@@ -265,3 +266,81 @@ let id=setInterval ( ()=> {
 console.log(id);
 
 clearInterval(id);
+
+
+
+
+let num=[1,2,3,4]
+ 
+let double=num.map ( (el)=>{
+return el*2;
+});*/
+
+
+/*unction sum (a,b=2){
+    return a+b;
+    }
+let ans=sum(2);
+console.log(ans); 
+
+
+ ///            spread ......................
+
+console.log(..."Rahul IT");
+
+
+
+let arr=[2,3,4,5,6,6,7,89,8,0];
+
+console.log(Math.min(...arr));
+
+let odd=[1,2,3,5,7,9];
+let even =[4,6,8,120];
+let newArr=[...odd,...even];
+console.log(newArr);
+
+
+
+
+
+let data={
+    email: "pandeycoder8474@gmail.com",
+    password: "abcd",
+    };
+    
+let dataCopy={...data, id:123};
+
+console.log(dataCopy.email);
+    
+const student1={
+    name:"rahul",
+    age:29,
+    class:9,
+    subject:["hindi","english","math","science"],
+    username:"pandeycoder",
+    password:"abcd"
+};
+
+ let username1=student1.username;
+ console.log(username1);
+ let password1=student1.password;
+console.log(password1);
+
+
+let {username:user,password:sceret}=student1;
+console.log(user);*/
+
+
+
+
+//-----------------------DOM--------------------
+
+
+console.dir(document.querySelector("h1"));
+
+console.dir(document.querySelector(".name"));
+
+console.dir(document.querySelectorAll("div"));
+
+let img=document.querySelector('img');
+console.log(img);
