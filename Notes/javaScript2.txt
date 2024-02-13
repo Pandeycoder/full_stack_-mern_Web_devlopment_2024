@@ -126,19 +126,190 @@ Navigation
 
 
 
-----------------------------
+----------------------------------------------
 Adding element:-
-----------------------------------
+--------------------------------------------
 
 document.createElement("p);
 
 -> apppendChild(element)
 
--> append(element)
+-> append(element)       end adding anything
 
--> prepend(element)
+-> prepend(element)      statring add anything
 
--> insertAdjacent(where ,element)
+-> insertAdjacentElmeent(where ,element)  any place we can add.
+
+------------------------------------------------
+-> removeChild(element)
+
+->remove(element)
+
+
+
+
+
+==================================================
+DOM Events :                            23/02/2024
+==================================================
+
+-> Events are singnals that  something  has occured (user inputs /action).
+
+------------------------------------------
+-> onclick (when an element is clicked)
+------------------------------------------
+
+Example:-
+
+ let btn=document.querySelector("button");
+console.dir(btn);   
+
+btn.onclick=function(){
+    console.log("button was clicked");
+    alert("hiii ...sorry");
+};
+
+
+
+
+-> onmouseenter(when mouse enters an elements )
+
+
+========================================
+Event Listener
+===========================================
+ addEventListener 
+
+Ex: element.addElementListener(event ,callback)
+
+
+-------------------------------
+this in event Listeners
+---------------------------
+
+-> when this is used in a callback of event handler of soething it refers to that something.
+
+==================================================
+Keywords events :-
+==================================================
+ 
+-> 
+
+
+===========================
+form event
+==============================
+
+let form=document.querySelector("form");
+
+/*form.addEventListener("submit",function(){
+
+    console.log("submitted form");
+    alert("summitted");
+});*/
+
+form.addEventListener("submit",function(event){
+    
+    event.preventDefault();
+
+    console.log("submitted form");
+    alert("summitted");
+});
+
+
+
+================================
+Extracting form Data :-
+==================================================
+
+->   form.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    let user=document.querySelector("#user");
+    let pass=document.querySelector("#pass");
+
+    console.log("username : ",user.value);
+    console.log("password : ",pass.value);
+  
+
+
+    alert("summitted");
+});
+
+
+================================
+More Events :-
+==============================================
+ 
+change event :-
+---------------------------
+
+-> the change event occurs when the value of an element has been changed (only works on) <input>, <textarea> and <select> elements).
+
+
+input event :-
+----------------
+
+-> the input event fires when the value of an <input> and <select> elements has been changed.
+
+
+// ..............Text Editor .....................................
+
+let inp=document.querySelector("#user");
+let p=document.querySelector("p");
+
+inp.addEventListener("input",function(){
+    console.log(inp.value);
+
+    p.innerText=inp.value;
+
+
+});
+
+
+
+=====================================
+Event Bubbling :-
+==================================================
+
+-> Ex : let div =document.querySelector("div");
+
+        let ul =document.querySelector("ul");
+
+        let li =document.querySelectorAll("li");
+
+div.addEventLsterner("click",function(event ){
+
+  event.stopPropagation();
+
+  console.log("div was clicked");
+
+});
+
+ul.addEventLsterner("click",function(event){
+   
+   event.stopPropagation();
+
+  console.log("ul was clicked");
+
+});
+
+for(li of lis)
+{
+
+li.addEventLsterner("click",function(){
+
+  console.log("li was clicked");
+
+});
+}
+
+
+
+
+
+
 
 
 
