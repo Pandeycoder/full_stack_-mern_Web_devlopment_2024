@@ -20,7 +20,6 @@ for (btn of btns) {
 
     btn.addEventListener("dblclick", function(){
         console.log("double clicked");
-
     });
 
 

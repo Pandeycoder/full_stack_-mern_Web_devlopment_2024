@@ -269,8 +269,8 @@ inp.addEventListener("input",function(){
 
 
 
-=====================================
-Event Bubbling :-
+=================================================
+Event Bubbling :-     24/02/2024.......
 ==================================================
 
 -> Ex : let div =document.querySelector("div");
@@ -304,6 +304,137 @@ li.addEventLsterner("click",function(){
 
 });
 }
+
+==============================================
+Activity :-
+===============================================
+
+-> 
+let btn=document.querySelector("button");
+let ul=document.querySelector("ul");
+let inp=document.querySelector("input");
+
+btn.addEventListener("click",function(){
+
+    let item=document.createElement("li");
+    item.innerText=inp.value;
+
+    let delBtn=document.createElement("button"); 
+    delBtn.innerText="delete";
+
+    delBtn.classList.add("delete");
+
+
+    
+    item.appendChild(delBtn);
+    ul.appendChild(item);
+
+    console.log(inp.value);
+});
+
+
+ul.addEventListener("click",function(event){
+
+    if(event.target.nodeName=="BUTTON")
+    {
+        let listItem=event.target.parentElement;
+        listItem.remove();
+    }
+});
+
+
+
+==================================================
+Call Stack :- 25/02/2024
+==============================================
+
+-> LIFO
+  function one()
+  {
+ return 1;  //1
+ }
+
+ function two()
+ {
+ return one()+one(); //2
+ }
+
+ function three()
+ { 
+ let ans=two()+one(); //3
+ console.log(ans);
+ }
+
+three();
+
+
+===============================================
+Break points :-
+===============================================
+
+-> 
+
+
+==========================================
+JS is single threaded :-
+=========================================
+
+let a=25;
+console.log(a);
+
+let b=10;
+console.log(b);
+
+console.log(a+b);
+
+
+setTimeout(()=>{
+    alert("Rahul IT");
+},2000);
+
+setInterval(()=> {
+    alert("coder")
+},3000);
+
+
+===============================
+Call hell :-
+===============================
+
+ h1=document.querySelector("h1");
+
+function changeColor(color,delay ,nextColorChange){
+    setTimeout(() => {
+        h1.style.color=color;
+        
+        if(nextColorChange)
+        nextColorChange();
+    
+    }, delay);
+}
+
+
+changeColor("red",1000,()=>{
+    changeColor("green",1000,()=>{
+        changeColor("orange",1000,()=>{
+            changeColor("yellow",1000,()=>{
+                changeColor("pink",1000);
+
+            });
+
+        });
+    });
+})
+
+// callback hell ...........
+
+
+==================================
+Promises:-
+=================================
+
+-> The Promises obect represent the evebtual completion (or failure ) of an asynchronous operation and its resulting value.
+
 
 
 

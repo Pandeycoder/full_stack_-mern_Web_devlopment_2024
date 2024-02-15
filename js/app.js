@@ -348,7 +348,7 @@ console.log(img);
 let link=document.querySelectorAll("")*/
 
 
-let para1=document.createElement("p");
+/*let para1=document.createElement("p");
 
 para1.innerText="Hey i am red ! ";
 
@@ -381,6 +381,71 @@ div.append(para2);
 div.classList.add("box");
 
 document.querySelector("body").append(div);
+
+*/
+
+
+/*setTimeout(()=>{
+    alert("Rahul IT");
+},2000);
+
+setInterval(()=> {
+    alert("coder")
+},3000);*/
+
+
+/*h1=document.querySelector("h1");
+
+function changeColor(color,delay ,nextColorChange){
+    setTimeout(() => {
+        h1.style.color=color;
+        
+        if(nextColorChange)
+        nextColorChange();
+    
+    }, delay);
+}
+
+
+changeColor("red",1000,()=>{
+    changeColor("green",1000,()=>{
+        changeColor("orange",1000,()=>{
+            changeColor("yellow",1000,()=>{
+                changeColor("pink",1000);
+
+            });
+
+        });
+    });
+})
+*/
+// callback hell 
+
+function savetoDb(data){
+
+    let internetSpeed=Math.floor(Math.random()*10)+1;
+
+    if(internetSpeed>4)
+    console.log("your data was savead :",data);
+
+    else
+    console.log("weak connection data not saved");
+
+
+ 
+    console.log("your data was saved");
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
