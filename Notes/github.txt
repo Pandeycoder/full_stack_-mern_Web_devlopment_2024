@@ -70,14 +70,83 @@ Basic commands :-
 	EX:- git init 
 
 
-7) git reomte add origin <link fil github loca >
+7) git reomte add origin :-
+
+
+git reomte add origin<link fil github local >
+
+
+Ex: git remote -v (to verify remote )
+
+
+8) git branch :-
+ 
+
+ 	git branch
+
+	git branch -M main
+
+ 	git checkout <branch name>
+
+git checkout -b <new branch name>  ( to create)
+
+git branch -d <branch name> (delete branch)
+
+
+----------------
+Merging code :-
+
+->   git diff <branch name> (to compare commits branches , files & more )
+
+
+     git merge <branch name> to mearge 2 branches.
+
+
+Pull request :-
+---------------
+-> it lets you tell others about changes you have pushed to a branch in a repository on github.
+
+-> used to fetch and download content from a remote  repo and immediately update the local repo to match that content.
+
+
+-----------------
+Merge conflits :-
+
+
+-> An event that take place when git is unable to automically resolve differences in code between two commits.
+
+Ex :- git merge feature branch
+
+=====================================
+Fixing mistakes:-
+==============================================
+
+case1 :-  staged changes mean (add commmand)
+
+	git reset <file name>
+
+	git rest
+
+case2:- commited changes (for one commits)
+
+	git reset HEAD~1
+
+case3:- commited changes (for many commits )
+
+	git reset <commit hash>
+
+	git reset --hard <commit hash>
+
+
+	git log  (show the push file)
 
 
 
+===========================================
+what is forking :-
+==========================================
 
+A fork is a new repository that shares code and visibility settings with the original "upstream" repository.
 
-
-
-
-
+->    fork is rough copy.
 
