@@ -15,7 +15,7 @@ console.log(output1);*/
 
 
 
-            //Print console alert prompt
+//Print console alert prompt
 
 /*alert("this is simple alert");
 
@@ -421,7 +421,7 @@ changeColor("red",1000,()=>{
 */
 // callback hell 
 
-function savetoDb(data){
+/*function savetoDb(data){
 
     let internetSpeed=Math.floor(Math.random()*10)+1;
 
@@ -434,6 +434,184 @@ function savetoDb(data){
 
  
     console.log("your data was saved");
+}*/
+
+// async function greet() {
+//    // throw "some random error";
+//     return "hello world"; //return a promise
+// }
+// let hello = async () => { };
+
+
+// greet()
+// .then(()=>{
+//     console.log("promise was resolved");
+//     console.log("result was :",result);
+
+// })
+
+// .catch((err)=>
+// {
+//     console.log("promise was rejected with err :",err);
+// });
+
+
+
+// function getNum()
+// {
+//     return new Promise((resolve ,reject )=>
+//     {
+//         setTimeout(()=>{
+//             let num=Math.floor(Math.random()*10)+1;
+        
+//             console.log(num);
+//             resolve();
+//         } ,1000);
+//     });
+
+// }
+// async function demo()
+// {
+//     await getNum();
+//     await getNum();
+//     await getNum();
+// }
+
+
+//................................................................json.........................................................
+
+
+
+// let jsonRes='{"fact":"A sexually-active feral hii mrs","length":145}';
+
+// let valiRes=JSON.parse(jsonRes);
+// console.log(valiRes);
+// console.log(valiRes.fact);
+
+
+// let student={
+//     "name":"rahul",
+//     "course":"mca",
+    
+// }
+
+
+// fetch(url)                      //request  1
+// .then((Response)=>{
+//     console.log(Response);
+//     return  Response.json();
+// })
+
+// .then((data)=>{
+//    console.log(data.fact);
+
+//    return fetch(url);            //request 2
+// })
+
+// .then((res)=>{
+//     return res.json();                    
+// })
+
+// .then((data1)=>{
+//     console.log(data1.fact);
+// })
+
+// .catch((err)=>{
+//     console.log(err);
+// });
+
+
+// async function getFacts()
+// {
+//     try{
+//         let res=await fetch(url);
+//     let data=await res.json();
+//     console.log(data);
+
+//     }catch(err)
+//     {
+//         console.log(err);
+
+//     }
+    
+// }
+
+//---------------------------------------------- axios api using ........................................................................
+
+
+// let btn=document.querySelector(".para");
+
+// btn.addEventListener("click",async () => {
+//     console.log("button was clicked");
+    
+//     let fact=await getFacts();  //call 
+//     console.log(fact);
+
+//     let p=document.querySelector("p");
+//     p.innerText=fact;
+
+
+// })
+
+// let url="https://catfact.ninja/fact";
+// async function getFacts()
+//  {
+//      try{
+//          let res=await axios.get(url);
+//          return res.data.fact;
+
+//      }catch(err)
+//      {
+//          //console.log(err);
+//          return "not fact found !"
+//      }
+// }
+
+
+// let btn1=document.querySelector(".img1");
+// let url2="https://dog.ceo/api/breeds/image/random";
+
+
+
+// btn1.addEventListener("click",async()=>{
+
+//     let data1=await getFacts1();
+
+//     let img=document.querySelector("#result");
+//     img.setAttribute("src",data1);
+    
+// });
+
+
+// async function getFacts1(){
+//     try{
+//         let res1=await axios.get(url2);
+//         return res1.data.message;
+
+//     }catch(e)
+//     {
+//         return "not available fact image api";
+//     }
+// }
+
+
+
+const url="https://icanhazdadjoke.com/"
+
+async function getJokes(){
+    try{
+        const config={headers:{Accept:"application/json"}};
+
+        let rs=await axios.get(url,config);
+
+        console.log(rs.data);
+
+    }catch(e)
+    {
+        console.log(e);
+
+    }
+    
 }
 
 
@@ -445,11 +623,5 @@ function savetoDb(data){
 
 
 
-
-
-
-
-
- 
 
 

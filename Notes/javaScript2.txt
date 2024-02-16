@@ -435,10 +435,179 @@ Promises:-
 
 -> The Promises obect represent the evebtual completion (or failure ) of an asynchronous operation and its resulting value.
 
+-> resolve & reject 
+
+-> method :- then();  , catch();
 
 
 
+========================
+promises chaning 
+==========================
 
+-> improved versions
+
+
+=============================================
+Async Functions :-   25/02/2024
+=============================================
+
+-> async & await keywords
+ 
+-------------------------
+Async keeywords :-
+-----------------------------
+-> creates an async function .
+
+Ex:- async function geet(){
+return "hello world"; //return a promise
+	}
+	let hello=async() => {};
+
+
+----------------------------------
+Await keywords :-
+-------------------------------------------
+
+-> pause the execution of its surrounding async function until the promise is settled (resolved or rejected)
+
+Ex:-
+
+	async function show()
+	{
+	await colorChange("voilet",1000);
+	await colorChange("green",1000);
+	await colorChange("blue",1000);
+	await colorChange("pink",1000);
+	await colorChange("orange",1000);
+
+	return "done";
+	}
+
+-----------------------------------------
+Await keywords 
+-----------------------------------------
+
+-> Handling rejections with await.
+
+
+
+==========================================
+What is API
+=================================================
+
+-> Application Programming Interface.
+
+
+=======================================
+API some Random APIs :-
+========================================
+
+-> http://catfact.ninja/fact 
+
+https://www.boredapi.com/api/activity
+
+ 
+-----------------------------------
+Testing API requests
+-------------------------------------------------
+
+Tools:-
+             Hoppscoth
+ 
+             Postman
+
+--------------------------------
+Http Verbs :-
+------------------------------------------------
+-> Example :
+     
+GET: it is used to collect the data than we can use for get request.
+
+POST :  it is used to send the data than we can use for post request.
+
+
+DELETE:  it is used to delete dataf from api.
+  
+
+===============================
+JSON 
+============================================
+
+-> javaScript object notation . 
+
+   www.json.org
+
+-> it has key and value pair and all key are string in json.
+
+
+
+Ex:
+	 {
+ 	"string" :"hii",
+	"number" : 2.5,
+	"boolean":true,
+	"null":null,
+	object: {"name": "kyle","age":24},
+	}
+
+------------------------------
+Accessing data from json 
+---------------------------------------------
+-> json.parse(data) method
+
+    to parse a string data into a js object.
+
+-> json.stringify(json) method 
+
+ To parse a js object into json.
+
+
+Example:- 
+ 
+let jsonRes='{"fact":"A sexually-active feral hii mrs","length":145}';
+
+let valiRes=JSON.parse(jsonRes);
+console.log(valiRes);
+console.log(valiRes.fact);
+
+
+let student={
+    "name":"rahul",
+    "course":"mca",
+    
+}
+
+
+
+======================================
+           AJax :-
+================================================
+
+-> Asynchronous javaScript and XML.
+
+
+
+=============================
+	Satus code
+============================================
+ 
+200-0k  it is ok 
+
+404 - not found 
+
+400- bad request 
+
+500- intenal server error
+
+
+======================================
+          Addd Information in urls :-
+================================================
+
+-> Query Strings
+
+https://www.google.com/search?q=harry+porter
 
 
 

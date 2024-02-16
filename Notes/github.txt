@@ -1,0 +1,83 @@
+================================================
+             GIT-HUB        28/02/2024
+=================================================
+
+
+=================================================
+What is git :-
+=================================================
+
+-> Free & open soruce version control system.
+                          |
+                          ^
+         tools that help to track changes in code.
+
+
+	1) Track history 
+
+	2) help to collaborate
+
+--------------------------------------------
+what si Github  :-
+----------------------------------------------
+ 
+-> website where we host repositories online.
+
+
+----------------------------------------
+Configuring Git :-
+-------------------------------------------
+
+git config --global user.name "My name"
+
+git config --global user.email "something your"
+
+
+
+==========================================
+Basic commands :-
+==============================================
+
+ 1) clone :-cloning a repository on our local machine.
+
+	Ex:- git clone "https://www.google.com";
+
+
+2) status:- displays the state of the code.
+   
+	ex:- git status
+
+
+3) add :- adds new or changed files in your working directory to the git staging area.
+
+	Ex:- git add <file name>
+       
+          git add --a (multiple file add at a time)
+
+
+4) Commit :- it is the record of change.
+
+	Ex:- git commit -m "something add"
+
+
+5) push :- upload local repo content to remote repo.
+
+	Ex: git push main
+ 
+
+6) init :- used to create a new git repo.
+
+	EX:- git init 
+
+
+7) git reomte add origin <link fil github loca >
+
+
+
+
+
+
+
+
+
+
