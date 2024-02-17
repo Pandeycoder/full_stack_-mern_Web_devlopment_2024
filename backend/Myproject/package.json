@@ -1,0 +1,15 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": " this is my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul pandey",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.7.0",
+    "give-me-a-joke": "^0.5.1"
+  }
+}

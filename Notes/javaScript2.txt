@@ -449,7 +449,7 @@ promises chaning
 
 
 =============================================
-Async Functions :-   25/02/2024
+Async Functions :-          25/02/2024
 =============================================
 
 -> async & await keywords
@@ -610,9 +610,85 @@ let student={
 https://www.google.com/search?q=harry+porter
 
 
+==================================
+      Htttp headers :-
+==================================================
+ 
+-> header ,value
+
+-> it is provide additional information for request and response.
+
+-> it can send meta data for use http header.
 
 
+------------------------------------
+         Our First Request 
+--------------------------------------------
+using fetch  
 
+ex:- fetch(url)
+
+
+let url="https://catfact.ninja/fact";
+
+fetch(url)                      //request  1
+.then((Response)=>{
+    console.log(Response);
+    return  Response.json();
+})
+
+.then((data)=>{
+   console.log(data.fact);
+
+   return fetch(url);            //request 2
+})
+
+.then((res)=>{
+    return res.json();                    
+})
+
+.then((data1)=>{
+    console.log(data1.fact);
+})
+
+.catch((err)=>{
+    console.log(err);
+}); 
+
+
+output:  Response {type: 'cors', url: 'https://catfact.ninja/fact', redirected: false, status: 200, ok: true, …}
+app.js:505 A cats field of vision is about 185 degrees.
+app.js:515 Cats' hearing is much more sensitive than humans and dogs.
+
+
+===============================================
+      Axios     27/02/2024
+===============================================
+
+-> it is make http request.
+
+Example :-  
+
+let url="https://catfact.ninja/fact";
+
+
+async function getFacts()
+ {
+     try{
+         let res=await axios.get(url);
+         console.log(res.data.fact);
+
+     }catch(err)
+     {
+         console.log(err);
+
+     }
+}
+
+---------------------------------------
+Axios  
+---------------------------------------
+sending headers :-
 
 
 
