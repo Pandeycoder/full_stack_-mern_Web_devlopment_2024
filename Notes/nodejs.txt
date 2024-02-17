@@ -1,0 +1,143 @@
+=================================================
+              Node.JS            30/02/2024
+=====================================================
+
+-> javaScript  runtime enviroment.
+
+-> it is used for server side programming .
+
+-> Node.js is not language or famework.
+
+
+====================================================
+           Node REPL :-
+============================================
+-> help give us commands
+
+
+----------------------------------------------------
+ Nodes Files :-
+----------------------------------------------------
+	node filename.js
+
+
+========================================
+Process  :-
+==========================================
+
+-> THe object provides information about and control over the current node.js process .
+
+Ex:- 
+> process.version
+
+proceess.argv :-
+
+return an array containing the command-ling arguments passed when the node.js proess was launched.
+
+
+Ex:- let args=process.argv;
+
+for(let i=0;i<args.length;i++)
+{
+    console.log("hello & welcome",args[i]);
+
+}
+
+==========================================
+Module.exports :-
+=============================================
+
+-> requring files
+
+require() :- a bulilt to include external modules that exist in seprate files.
+
+-> module.export() :- a special object.
+
+---------------
+requring direcotries:-
+-----------
+
+
+const math=require("./math");  // import another file
+
+console.log(math.sum(4,7));
+console.log(math.pi);
+
+const fruits = require("./Fruits");
+console.log(fruits[0].name);
+
+
+=============================================
+     NPM (Node Package manager) :-
+============================================
+
+-> npm is the standard  package manager for Node.js.
+
+	1) library of packages.
+
+	2) command line tool.
+
+---------------------
+Install packages :-
+--------------------------------
+
+-> npm install <package name>
+
+
+node_modules :-
+
+ The node_modules folder contains every installed dependency for your project.
+
+
+package-lock.json :- 
+
+it records the exact versin of every inslalled dependency , including its sub-dependencies and their version.
+
+
+
+---------------------------------------------
+Package.json  :-
+--------------------------------------------
+
+-> the package.json file contains descriptive and functional meta data about a project , such name ,version and dependencies.
+
+npm-init
+
+================================================
+         Local Vs Global  :-
+================================================
+
+npm install -g  <package name>
+
+npm link <pacakge name>
+
+
+
+=================================================
+           require  vs   import
+==================================================
+
+-> import {sum} from "./math.js";
+
+-> we cannot selectively load only the pieces we need with require but with import ,we can selectively load only the pieces which can save memory.
+
+-> Loading is sychronous for 'require' but can be asynchronous for 'import'.
+
+
+"type": "module" add in my package 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
