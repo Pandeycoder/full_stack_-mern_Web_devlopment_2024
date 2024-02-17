@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roll dice</title>
-</head>
+<%- include("includes/head.ejs") %>
 <body>
     <h2> Welcome to our page....</h2>
     <h1>
         roll dice equal to  :
         <%= num %>
     </h1>
-    
+    <% if(num==6) {  %>
+
+        <h2>Nice ! Roll dice again</h2>
+        <% } %>
+
+        <%- include("includes/footer.ejs") %>
 </body>
 </html>
+
+
