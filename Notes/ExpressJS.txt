@@ -234,6 +234,158 @@ Instragram EJS :-
 /ig/:username
 
 
+--------------------------------
+Conditional Statement in EJS:-
+--------------------------------
+
+->  Adding condtion inside ejs
+EX:- 
+
+<h1>
+        roll dice equal to  :
+        <%= num %>
+    </h1>
+    <% if(num==6) {  %>
+
+        <h2>Nice ! Roll dice again</h2>
+        <% } %>
+
+--------------------------------------------
+ loop Statement in EJS:-
+---------------------------------------------
+
+<h3>Account that follow you : </h3>
+    <ul>
+        <% for(let name of follower)  { %>     
+          <li><%= name %></li>
+            <% }  %>
+             
+    </ul>
+
+
+
+======================================
+Includes
+=======================================
+
+<%- include("includes/head.ejs"); %>
+
+
+
+=================================================
+ Get &  Post request     32(c)/02/2024
+=================================================
+
+Get :-
+
+   -> used to get some response.
+
+  ->  Data sent in query strings 
+(limited ,string data & VISIBLE IN URL)
+
+
+
+POST :-
+
+ -> Used to post something (for create /write /update)
+
+-> Data sent via request body (any type of data)
+
+
+
+//backend.......................................
+
+
+step 1 :- initlize json package 
+
+	/> npm init -y 
+
+
+step 2:- install express 
+    
+        /> npm i express
+
+step 3: create index.js file |
+
+
+	const express=require("express");
+	const app=express();
+
+	const port=8083;
+
+	app.listen(port,()=>{
+
+   	 console.log(port);
+
+	});
+
+step 4:- server start....
+
+	/> nodemon index.js
+
+
+
+
+	Ex:-   const express=require("express");
+	const app=express();
+
+	const port=8083;
+
+
+
+	app.get("/register",(req,res)=>{
+
+   	 let {user,password}=req.query;
+
+    	console.log("get accepted");
+    	res.send(`standard get respnose : Welcome  ${user}`);
+
+	})
+
+	app.post("/register",(req,res)=>{
+   	 console.log("post accepted");
+   	 res.send("standard Post respnose");
+	})
+
+
+
+===========================================
+              Revisiting JS.............
+=================================================
+
+-> To structure our code
+
+	1) protypes
+	2) New operator
+	3) constructor
+	4) classes
+	5) keywords (extends ,super)
+
+
+
+------------------
+protype :-
+-------------------------
+
+-> protype are the machanism by eehich javascript objects inherit feature from one another.
+
+
+-> it is like a single template object that all inherit methods and properties from without having their own copy.
+
+
+arr._proto_(refernce)
+
+Array.prototype(actual object)
+
+String.protoype
+
+
+------------------------------------------
+Factory Functions
+-------------------------------------------------
+
+
+
 
 
 

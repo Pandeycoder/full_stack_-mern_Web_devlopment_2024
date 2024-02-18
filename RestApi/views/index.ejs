@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quera Posts</h1>
+    <% for(post of posts) { %>
+        <div class="post">
+            <h3 class="user">@<%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+
+            <a href="http://localhost:8084/posts/<%= post.id %>">See in details</a>
+        </div>
+
+        <% } %>
+
+        <br><br>
+
+        <a href="http://localhost:8084/posts/new">create new post</a>
+
+    </body>
+</html>
+
+
+
+
