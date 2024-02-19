@@ -12,3 +12,15 @@ h1{
 .user{
     font-style:italic;
 }
+a{
+    text-decoration: none;
+}
+.see_details{
+
+    color: #fff;
+    background-color: red;
+}
+.edit{
+    color: #fff;
+    background-color: rgb(23, 23, 220);
+}
