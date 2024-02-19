@@ -1,0 +1,246 @@
+==============================================
+        REST FULL API  :-
+==============================================
+
+-> its stands for Representational State Transfer.
+
+-> Rest is an architerctural style that defines a set of  contains to be used for creating web services.
+
+it can perform CRUD operation
+ c-create
+ r-read 
+ u-update 
+ d-delete
+
+===============================================
+         CRUD Operations..................
+=================================================
+
+-> Get retrives resources .
+
+
+-> POST submit new data to the server.
+
+
+-> PUT submits new data to the server.
+
+
+-> Patch update existing data partially 
+
+
+-> delete reomove data.
+
+
+-------------------------------------------
+Implement :get /posts
+------------------------------------------
+
+-> Index Route 
+
+Get       /posts        to get data from all posts
+
+
+let posts=[
+    {
+        username:"Rahul IT",
+        content : "I Love coding"
+    },
+    {
+        username:"Shubham Rathour",
+        content : "Life is all about learning"
+    },
+    {
+        username:"Rupesh Kumar",
+        content : "Harwork is only sucess of key "
+    },];
+
+
+app.get("/posts",(req, res)=>{
+    console.log("request accepted");
+    
+    res.render("index.ejs",{posts});
+})
+
+
+--------------------------------------------
+implement : post /posts
+------------------------------------------------
+
+-> create Route 
+
+
+post    /posts        to add a new post
+
+
+
+
+
+2 routes :-
+------------------
+
+-> Serve the form       Get /posts/new
+
+-> Add the new post      post /posts
+
+
+
+app.get("/posts/new",(req, res)=>{
+    //let {username,content}=
+
+    res.render("new.ejs");
+})
+
+
+// it can show the data
+
+app.post("/posts",(req, res)=>{
+
+    let {username,content}=req.body;
+
+    posts.push({username,content});
+
+
+    console.log(req.body);
+
+    res.send("<h3>Congrulation successfully post ! </h3>");
+
+})
+
+=====================================
+   Redirect :-
+================================================
+
+-> res.redirect(url)
+
+
+app.post("/posts",(req, res)=>{
+
+    let {username,content}=req.body;
+
+    posts.push({username,content});
+
+
+    console.log(req.body);
+
+    res.redirect("/posts");
+
+})
+
+
+======================================
+Implement : Get /posts/:id
+==================================================
+
+Show route 
+
+get  /posts/:id     to get one post (using id)
+
+
+app.get("/posts/:id",(req, res)=>{
+    let {id} =req.params;
+
+    let post=posts.find((p) => id==p.id );
+
+    console.log(post);
+
+    res.render("show.ejs",{post});
+})
+
+
+
+=====================================
+Create id for Posts :-
+=============================================
+
+-> UUID package 
+
+	Universally unique identifier
+
+-> npm install uuid
+
+
+
+-------------------------------
+implement : patch /posts/:id
+--------------------------------------------------
+
+Update route 
+
+patch  /posts/:id     to update specific post.
+
+
+
+app.patch("/posts/:id",(req,res)=>{
+
+    let {id}=req.params;
+    console.log(id);
+
+    let  newContent=req.body.content;
+
+    let post=posts.find((p) => id == p.id );
+
+    
+    console.log(post);
+    
+    post.content=newContent;
+
+
+    res.redirect("/posts");
+
+});
+
+
+app.get("/posts/:id/edit",(req,res)=>{
+
+    
+    let {id}=req.params;
+    let post=posts.find((p) => id == p.id );
+    
+
+    res.render("edit.ejs",{post});
+});
+
+
+
+-----------------------------------
+Implement : /posts /:id
+--------------------------------------------
+
+Destroy Route 
+
+Delete    /posts/:id     to delete specefic post
+
+app.delete("/posts/:id",(req,res)=>{
+
+    let {id}=req.params;
+     posts=posts.filter((p) => id !== p.id );
+
+    res.redirect("/posts");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

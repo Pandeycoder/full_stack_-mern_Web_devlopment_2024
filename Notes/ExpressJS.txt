@@ -1,0 +1,393 @@
+=================================================
+                   Express :- 31/02/2024
+==================================================
+
+=====================================
+Library  vs  Framework  :-
+===========================================
+
+------------
+Library :-
+-----------
+
+ A library is collectiomn of pre-written code that can be used to perform specific tasks.
+
+Ex: axois
+
+------------
+Framework :-
+----------- 
+
+A framework is a set of  pre-written code that provides  a stracture for developing software application.
+
+Ex: express 
+
+
+=========================================
+   Express  :-
+========================================
+
+-> A Node.js web application framework that helps us to make web applications.
+
+-> it is used for server side programmig. 
+
+-------------
+used :-
+-------------
+
+-> listen for incomming request 
+
+-> parse the rquest 
+
+-> to match respnose with routes.
+
+-> response send 
+
+
+--------------------------------------------
+Geeting Started with Express :-
+-----------------------------------------------
+
+port :- 
+
+it is used the logical endpoints of a network connection that is used to exchange information b/w  a web server and  a web client.
+
+
+-------------------------------------
+Sending a response
+-----------------------------------------------
+
+1) request 
+
+      Ex :- // reequest send to server
+
+
+ app.use((req,res)=>{
+
+    console.log("request receive");
+ })
+
+
+
+
+
+2) response
+
+
+ app.use((req,res)=>{
+
+    console.log("request receive");
+
+    let cod="<html><body><h1>hello most welcome</h1></body></html>";
+
+    res.send(cod);
+ })
+
+
+=================================
+Routing :-
+================================================
+
+-> it is process of selecting a path for traffic in a network or b/w or across multiple network.
+
+
+app.get("/mango",(req,res)=>{
+
+        res.send({
+        name:"mango",
+        color:"red",
+        });
+        });
+
+
+        app.get("*",(req,res)=>{
+            res.send("this path doesnot exisit");
+        })
+
+
+        app.post("/",(req,res)=>{
+
+            res.send({
+            name:"pineapple",
+            color:"red",
+            });
+            });
+
+
+
+==================================================
+          Nodemon
+==================================================
+
+-> To automtically restart server with code changes.
+
+	npm install -g nodemon
+ 
+
+==============================
+Path paramter :-
+===============================================
+
+	req.params
+
+app.get("/ig/:username",(req,res) => {
+
+let {username}=req.params;
+res.send(`this account belong to @${username}`);
+
+});
+
+
+===============================================
+          Query String
+==============================================
+
+app.get("/search",(req.res)=>{
+	console.log(req.query);
+
+	res.send("no result");
+	});
+
+
+
+
+================================================
+                    EJS :- 32(lect no.) /02/2024
+================================================
+
+
+==================================================
+What is Templating :-
+==================================================
+
+-> Ejs (Embeded JavaScript template)
+
+-> Ejs is a simple templating language that lets you generate html markup with plain javascript.
+
+
+PS D:\Web_development_2024\EJSDir> npm init
+
+PS D:\Web_development_2024\EJSDir> npm i express 
+
+PS D:\Web_development_2024\EJSDir> npm i ejs  
+ 
+
+
+---------------------------------------
+       Using EJS
+=======================================
+
+app.set("view engine","ejs");
+
+app.get("/",(req,res)=>{
+
+	res.render("home.ejs");
+});
+
+
+
+-----------------------------------
+Views Directrory :-
+---------------------------------
+
+-> it can use for when we will going to another folder than there start the server so it can hendle path .
+
+
+const path=require("path");
+app.set("views",path.join(__dirname,"/views"));
+
+
+===============================================
+ Interpolation Syntax
+===============================================
+
+-> Interpolation refers to embeding expression into marked up text.
+
+
+==============================================
+Passing data to EJS :-
+===============================================
+
+-> if we will receive backend database how to parse data.
+
+Ex:- app.get("/",(req,res)=>{
+
+	res.render("home.ejs");
+});
+
+
+app.get("/rolldice",(req,res)=>{
+
+    let diceVal=Math.floor(Math.random()*6)+1;
+
+	res.render("rolldice.ejs",{num:diceVal});
+});
+
+
+
+========================================
+Instragram EJS :-
+==================================================
+
+-> Create a basic template for instragram page based on following route.
+
+/ig/:username
+
+
+--------------------------------
+Conditional Statement in EJS:-
+--------------------------------
+
+->  Adding condtion inside ejs
+EX:- 
+
+<h1>
+        roll dice equal to  :
+        <%= num %>
+    </h1>
+    <% if(num==6) {  %>
+
+        <h2>Nice ! Roll dice again</h2>
+        <% } %>
+
+--------------------------------------------
+ loop Statement in EJS:-
+---------------------------------------------
+
+<h3>Account that follow you : </h3>
+    <ul>
+        <% for(let name of follower)  { %>     
+          <li><%= name %></li>
+            <% }  %>
+             
+    </ul>
+
+
+
+======================================
+Includes
+=======================================
+
+<%- include("includes/head.ejs"); %>
+
+
+
+=================================================
+ Get &  Post request     32(c)/02/2024
+=================================================
+
+Get :-
+
+   -> used to get some response.
+
+  ->  Data sent in query strings 
+(limited ,string data & VISIBLE IN URL)
+
+
+
+POST :-
+
+ -> Used to post something (for create /write /update)
+
+-> Data sent via request body (any type of data)
+
+
+
+//backend.......................................
+
+
+step 1 :- initlize json package 
+
+	/> npm init -y 
+
+
+step 2:- install express 
+    
+        /> npm i express
+
+step 3: create index.js file |
+
+
+	const express=require("express");
+	const app=express();
+
+	const port=8083;
+
+	app.listen(port,()=>{
+
+   	 console.log(port);
+
+	});
+
+step 4:- server start....
+
+	/> nodemon index.js
+
+
+
+
+	Ex:-   const express=require("express");
+	const app=express();
+
+	const port=8083;
+
+
+
+	app.get("/register",(req,res)=>{
+
+   	 let {user,password}=req.query;
+
+    	console.log("get accepted");
+    	res.send(`standard get respnose : Welcome  ${user}`);
+
+	})
+
+	app.post("/register",(req,res)=>{
+   	 console.log("post accepted");
+   	 res.send("standard Post respnose");
+	})
+
+
+
+===========================================
+              Revisiting JS.............
+=================================================
+
+-> To structure our code
+
+	1) protypes
+	2) New operator
+	3) constructor
+	4) classes
+	5) keywords (extends ,super)
+
+
+
+------------------
+protype :-
+-------------------------
+
+-> protype are the machanism by eehich javascript objects inherit feature from one another.
+
+
+-> it is like a single template object that all inherit methods and properties from without having their own copy.
+
+
+arr._proto_(refernce)
+
+Array.prototype(actual object)
+
+String.protoype
+
+
+------------------------------------------
+Factory Functions
+-------------------------------------------------
+
+
+
+
+
+
+
+

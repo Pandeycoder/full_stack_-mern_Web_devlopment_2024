@@ -253,45 +253,37 @@ Ex:- let msg=" Hello  ";
   
      -> Trims whitespaces form both ends of String & return a new one.
 
--------------------------------------------------
-Method Chaining
-------------------------------------------------
--> Using one method after another , order of execution will be left to right.
-
-Ex: -
-      dtr.toUpperCase().trim();
-
---------------------------------------
-slice method:-
----------------------------------------
--> Return a part of the original string as a new string.
-
-Ex:- let str="loveCoding";
-      
-       str.slice(5)     //coding
-       
-      str.slice(1,4);   //love
-
-      str.slice(-num) = str.slice(length-num)
-
-
+-----------------------------------
+String are Imuutable in js :-
 -------------------------------------
-replace 
---------------------------------------
--> Searches a value in the string & return a new string with the value replaced .
+-> No changes can be made ro string .
 
--> let str="Ilovecoding";
+-> Whenever we do try to make a change a new string is created and old one remains same.
 
-   let str1    =   str.relpace("love","do");
+-------------------------------------------
+String Methods :-
+-------------------------------------------
+-> let str ="random string"
 
---------------------------------
-repeat 
---------------------------------
--> Retunr a string with the number of copies of a string.
+str.toUpperCase() ;   RANDOM
 
-let str="Ilove"
- str.repeat(2);
+str.toLowerCase();   random
 
+---------------------------
+String method with argument:-
+-----------------------
+-> Argument is a some value that we pass to the method
+
+format :-
+
+
+indexOf:- return the first index of occurance of some value in string .
+
+    stringName.method(arg)
+
+  let str = "IloveCoding";
+
+    str,indexOf("love") //1
 
 
  
