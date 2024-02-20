@@ -5,7 +5,25 @@ const path=require("path");
 
 const {v4:uuidv4}=require('uuid'); //it create unique id 
 
-const methodOverride=require("method-override")
+const methodOverride=require("method-override");
+
+//---------------------------------------------->
+
+const multer=require("multer");
+const storage=multer.diskStorage({
+    destination:(req,res,cb)=>{
+        cb(null,"Images");
+    },
+    filename:(req,file,cb)=>{
+        console.log(file);
+        cb(null,Date.now()+path.extname(file.originalname))
+    }
+})
+
+
+const upload=multer({storage:storage});
+
+//----------------------------------------------------->image upload.....................
 
 
 app.use(express.urlencoded({extended:true}));
@@ -120,6 +138,20 @@ app.delete("/posts/:id",(req,res)=>{
     res.redirect("/posts");
 })
 
+
+//-------------------------------------------------upload----------------------
+
+app.get("/upload",(req,res)=>{
+    
+    res.render("upload.ejs");
+});
+
+app.post("/upload",upload.single("image"),(req,res)=>{
+
+    res.send("Image successfully upload");
+});
+
+//--------------------------------------------------------uploaded
 
 
 

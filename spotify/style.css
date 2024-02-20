@@ -152,7 +152,7 @@ a{
     }
 
 }
-.card{
+.card1{
     background-color: #232323;
     width: 150px;
     border-radius: 0.5rem;
@@ -160,19 +160,19 @@ a{
     margin-left: 1.5rem;
     margin-top: 1.5rem;
 }
-.card-container{
+.card-container1{
     display: flex;
     flex-wrap: wrap;
 
 }
-.card-img{
+.card1-img{
     width: 100%;
     border-radius: 0.5rem;
 }
-.card-title{
+.card1-title{
     font-weight: 600;
 }
-.card-info{
+.card1-info{
     font-size: 0.85rem;
     opacity: 0.8rem;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog details</title>
+</head>
+<body>
+
+    <div classs="cards">
+        <h2>Recenlty blog 2 minutes</h2>
+        <div class="card-container">
+
+            
+            <div class="card">
+                <div class="card-content">
+                   
+                    <h2><%= blog && blog.content ? blog.content : '' %></h2>
+
+                </div>
+                <img src="<%= blog.image %>" alt="image"  class="card-img" name="image">
+                <p class="card-title"><%= blog.title %></p>
+                <p class="card-info"><%= blog.info %></p>
+            </div>
+        
+
+        </div>
+    </div>
+    
+</body>
+</html>

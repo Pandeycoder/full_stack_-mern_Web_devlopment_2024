@@ -1,0 +1,33 @@
+.card{
+    background-color: #fff;
+   width: 350px;
+    border-radius: 0.5rem;
+    /* padding: 1rem; */
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10rem;
+
+}
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.card-title{
+    font-weight: 600;
+}
+.card-info{
+    font-size: 0.85rem;
+    opacity: 0.8rem;
+}
+.card-content{
+    color: rgb(73, 67, 67);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight:normal;
+    font-style: italic;
+    opacity: 0.75;
+}

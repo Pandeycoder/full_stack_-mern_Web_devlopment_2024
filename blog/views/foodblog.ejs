@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+        <div classs="cards">
+            <h2>Recenlty blog 2 minutes</h2>
+            <div class="card-container">
+
+                <% for(blog of blogs) { %>
+                <div class="card">
+                    <div class="card-content">
+                        <h2><%= blog.content %></h2>
+                    </div>
+                    <img src="<%= blog.image %>" alt="image"  class="card-img" name="image">
+                    <p class="card-title"><%= blog.title %></p>
+                    <p class="card-info"><%= blog.info %></p>
+
+                    <a href="http://localhost:8086/blogs/<%= blog.id %>">See more</a>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+        <br>
+        <a href="http://localhost:8086/blogs/new">Create new blog</a>
+        
+    
+</body>
+
+</html>

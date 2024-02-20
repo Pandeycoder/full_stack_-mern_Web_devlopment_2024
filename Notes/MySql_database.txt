@@ -1,0 +1,216 @@
+================================================
+          MySql (Database)  35(c)/02/2024
+==============================================
+
+
+MySql (DB)  <---------- SQL (language)
+-----------
+
+
+=================================================
+       what is a Database 
+===============================================
+
+-> it is collection of data in a format that can be easily accessed.
+
+---------------------
+why databases :-
+---------------------
+
+-> can store large data.
+
+-> feature like security ,scalability etc.
+
+-> Easier to insert , update or delete data.
+
+
+-----------------------
+sql vs Nosql
+--------------------------------------------------
+
+sql:-    relational database (data store in tables)
+-------
+	Ex:- Mysql ,oracle,postgreSql
+
+
+NoSql :-  Non relatoional database (data stores in doccument /key -vallgraph etc..
+--------
+	Ex:- mongoDb ,Cassandra etc.
+
+
+
+=====================
+Sql
+===========================
+
+-> sql is a programming language used to interact with relational databases.
+
+
+
+create Dtabase &  Table....................
+
+Ex:- 
+
+create database college;
+
+create database xyz_company;
+
+drop database xyz_company;
+
+show databases;
+
+use college;
+create table student(
+rollno int,
+name varchar(30),
+age int(5));
+
+insert into student values(101,'pandey',25),
+(102,'mahadev',23),(103,'pragati' ,25),(104,'bijeta',22);
+
+select * from student;
+
+
+--------------------------------------------------
+Database Queries..................
+-------------------------------------------------
+
+step 1:- create database db_name
+
+	create database if not exists db_name
+
+step 2:- Drop database db_name
+
+	 drop database if exists db_name
+
+step 3:- show database
+	
+	 show tables
+
+
+------------------------------
+table queries 
+--------------------------------
+
+-> create table (schema/colomns)
+
+Ex:-	create table student(
+	rollno int,
+	name varchar(30),
+	age int(5));
+
+
+===============================================
+Constraints :-=
+==============================================
+-> Rules fro data in table .
+
+
+NOT NULL : coloumn cannot have a null value
+
+UNIQUE  :  all value in column are diff
+
+DEFAULT : sets the default value of column
+
+CHECK : it can limit the values allowed in a cloumn. 
+
+
+Ex:-
+
+ create table user (
+
+ id int  primary key,
+
+ name varchar(30) NOT NULL,
+
+ age int,
+
+ email varchar(34) UNIQUE,
+
+ follower int default 0,
+
+ following int ,
+
+ constraint check (age>=18));
+
+
+
+1) Primary key :- makes a column unique & not but used only for one.
+
+	create table emp(
+
+	id int not null,
+
+	primary key(id));
+
+
+
+
+
+2) foregin key : prevent action that would destroy links between tables.
+
+
+creat table temp(
+
+	cust_id int,
+	foregin key (cust_id) references customer(id)
+	);
+
+
+
+-------------------------------------------
+Where Clause :-
+------------------------------------------------
+
+-> Arithematic operator : +(addition ), -(sub) etc.
+
+-> Comparision operator :- =(equal to), !=(not equal to)
+
+-> logical operator AND OR IN  BETWEEN etc..
+
+
+-------------------------------------
+Limit Clause :-
+----------------------------------------------
+
+-> Sets an upper limit on number of(tuples) rows to be returned.
+
+Ex:	 select col1,col2 from table_name
+	 LIMIT number;
+
+
+---------------------------------------------------
+Order by clause 
+---------------------------------------------------
+
+-> to sort in accending order desc. ;
+
+-> select col1,col2 from table_name ;
+
+	select col1, col2 from table_name 
+	ORDER BY col_name(s) ASC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
