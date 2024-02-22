@@ -1,0 +1,23 @@
+.main{
+    height:200px;
+    width: 70px;
+    border: 2px solid rgb(10, 191, 236);
+   margin-left: 50px;
+}
+.inner{
+    height: 50px;
+    width: 50px;
+    border:2px solid black;
+    margin: 10px;
+    border-radius: 50%;
+}
+#red{
+    background-color: red;
+
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}

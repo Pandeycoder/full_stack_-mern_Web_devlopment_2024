@@ -192,18 +192,312 @@ Order by clause
 
 
 
+================================================
+Aggregate Function :-
+==================================================
+
+-> Aggeregate function perform a calculation on a set of values , and returb a single value.
+
+	count()
+	MAX()
+	MIN()
+	SUM()
+	AVG()
+
+
+========================================
+Group by Clause :-
+=================================================
+
+-> Groups rows that have the same values into summary rows.
+
+-> it collects from multiple records and groups the result by one or more column.
+
+	select col1,col2
+	from table_name
+	GROUP BY col_name(S);
+
+
+	select age ,max(folllowers)
+	from user GROUP BY age;
+
+
+-> Generally we use group by with some aggregation function.
+
+
+=========================================
+Having Clause
+=================================================
+
+-> Similar to where i.e applies some condition on rows .but it is used when want to appply any condtion after grouping.
+
+
+	select age ,max(followers)
+	from user
+	group by age,
+	having max(followers)>200;
+ 
+
+
+
+-> where is for the table Having is for a group .
+
+-> Grouping is necessary for having.
+
+
+===============================================
+General Order :-
+==================================================
+
+-> SELECT column (s)
+
+-> FROM table_name
+
+-> WHERE condtion 
+
+-> GROUP BY (columns)
+
+-> HAVING (condition)
+
+-> ORDER BY cloumn(s) ASC;
+
+
+
+===================================================
+Table Queries :-
+===================================================
+
+-> Update (to update exiting rows).
+
+Ex:-
+
+	UPDATE table_name
+        set follower=600
+        where age=16;
+
+      set sql_safe_update=0; 
+
+-> (if update time error than write command)
+
+
+-------------
+Delete
+-------------
+
+	delete from user 
+	where age=17;
+
+
+-----------------------------------------
+	Alter command
+---------------------------------------------
+
+-> Alter (to change the schema)
+
+
+ Add column 
+----------
+	Alter table table_name 
+	Add column column_name datatype constraint;
+
+Drop column
+-----------
+	alter table table_name
+	drop column column_name;
+
+---------
+rename
+---------
+	
+	Alter table table_name
+	rename to new_table_name;
+
+
+--------------------------------------
+Truncate (to delete tables data )
+---------------------------------------------------
+
+-> Truncate Table table_name;
+
+
+
+====================================================
+     	FAKER   :-     (37(c) /02/2024) 
+====================================================
+
+-> To generate fake data.  (npm i @faker-js/faker)
+
+ 
+	userId       username     email   password
+
+Ex:- const {faker}= require('@faker-js/faker');
+
+
+let  createRandomUser= () =>  {
+    return {
+      userId: faker.string.uuid(),
+      username: faker.internet.userName(),
+      email: faker.internet.email(),
+      avatar: faker.image.avatar(),
+      password: faker.internet.password(),
+      birthdate: faker.date.birthdate(),
+      registeredAt: faker.date.past(),
+    };
+  }
+
+  console.log(createRandomUser());
+
+
+	
+====================================================
+	MYSQL@ package:------------
+====================================================
+
+-> To connect Node with MySQL.
+
+ 	connection.end();  //to close connection
+
+
+
+client ----------> server(API)  -------->DB(database)
+(front)            (back)
+
+
+
+-/> npm i mysql2    (install)
+
+
+-------------------------------------------
+	USing SQL from CLI
+--------------------------------------------
+
+/usr/local/mysql -u root -p
+
+create schema.sql
+
+source.sql  //in CLI
+
+
+
+const mysql=require("mysql2");
+
+
+const connection=mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    database:'future_app',
+    password:'coder',
+});
+
+try{
+
+
+    connection.query("show tables",(err,result)=>{
+    
+        if(err) throw err;
+        console.log(result);
+    
+    });
+}
+catch(err)
+{
+    console.log(err);
+}
+connection.end();
+
+------------------------------------------------
+1) Using work banch
+
+2) using mysql package
+
+3) /usr/local/mysql/bin/mysql -u root -p
+
+4)
+
+
+
+let q="insert into user (id ,username,email,password) values ?";
+
+let user=[
+    ["12","123_mes2","pandeycoder@gamail.com","abc2"],
+    ["1234","123_msc","pandeycoder@gail.comc","abc3"] 
+];
+try{
+
+
+    connection.query(q,[user],(err,result)=>{
+    
+        if(err) throw err;
+        console.log(result);
+        console.log(result[0]);
+        console.log(result[1]);
+    
+    });
+}
+catch(err)
+{
+    console.log(err);
+}
+connection.end();
+
+
+
+------------------------------
+	Batch command 
+--------------------------------------
+
+
+
+let  createRandomUser= () =>  {
+    return [ 
+      faker.string.uuid(),
+      faker.internet.userName(),
+      faker.internet.email(),
+      faker.internet.password(),
+    ];
+    };
+
+
+
+let q="insert into user (id ,name,password,email) values ?";
+
+
+
+-> let data=[];
+for(let i=1;i<=100;i++)
+{
+    //console.log(createRandomUser());
+
+
+    data.push(createRandomUser());
+}
 
 
 
 
+==============================================
+	++++++++ Routing  +++++++++++++++
+==============================================
 
 
+->  Get / show no. of database;
+
+-> Get /user show users( email ,id ,username)
+
+-> patch  /user/:id  ------> username edit
+
+-> Add  (post request)
+
+-> Delete
 
 
+-------------------------
+Setting up express App
+--------------------------
 
+-> Get/ fetch & show total number of users on our app.
 
-
-
+-> mysql> select count(*) from user;
 
 
 

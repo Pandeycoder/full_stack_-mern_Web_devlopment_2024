@@ -1,0 +1,19 @@
+div{
+    background-color: yellow;
+}
+form{
+    /* background-color: red; */
+    
+}
+input{
+    /* background-color: aqua; */
+    background-color: inherit;
+}
+button{
+    /* background-color: blue; */
+    background-color: inherit;
+}
+h2{
+    color: red;
+    background-color: black;
+}

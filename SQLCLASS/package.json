@@ -1,0 +1,20 @@
+{
+  "name": "sqlclass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul pandey",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "i": "^0.3.7",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.9.1",
+    "uuid": "^9.0.1"
+  }
+}
