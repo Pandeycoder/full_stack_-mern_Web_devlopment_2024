@@ -1,0 +1,484 @@
+=================================================
+Mongo DB  (MERN STACK) Mongo express 38(c)/02/24
+=================================================
+
+-------------------
+	THE shell  
+------------------------------------------
+
+-> mongosh //to start
+
+-> use college 
+
+  //to create & use a new database called college
+
+start shell:- ://> mongosh
+
+		  > show dbs
+
+		  > use future(databse)
+
+	> db (it is use to show current database)
+
+
+-----------------------------------------
+   BSON data   (json and Bson)
+------------------------------------------
+
+--------
+-> Json ( it is text based format)
+-------  
+	data parsing very defacult.
+
+       -> space inefficient
+
+
+---------------
+-> Binary JSON 
+---------------
+
+-> it is javascript object based 
+
+
+===========================================
+	Collections  :-
+==============================================
+
+-> Document :-
+---------------
+-> Mongo stores data in form of documents (BSON docs)
+
+---------
+collection
+----------
+
+-> MongoDB stores documnets in collections.
+
+
+============================
+	Insert in DB
+=================================================
+
+-> insertOne 
+
+-> show collections
+
+      db.collection.insertOne({name:"adm",mark:79})
+
+	db.collection.insertMany()
+
+
+show data:   -> db.table_name.find()
+      db.student.insertMany([{name:"coder",mark:65,city:"delhi"},{name:"mahadev", mark:90,city :"mumbai"}])
+
+
+=============================
+Find in DB
+==============================================
+
+-> db.collection.find()
+
+for specific queries
+-----------------------
+
+	db.collection.find({key:value})
+
+ 	db.collection.findOne({key:value})
+
+
+
+findOne:- it return actual doccument return .
+
+
+find: it return actual  values.
+
+
+=============================
+Query operator
+=======================================
+
+Q. find student where mark >75
+
+	db.student.find({mark: {$gt:75}} )
+
+  
+
+Q. find students who live in delhi or mumbai
+
+	db.student.find( {city : {$in: ["delhi", "mumbai"]}})
+
+
+
+Q.  find students who scored> 75 or live in delhi
+
+ 	db.student.find({$or : [{marks: {gt:75}},{city:"delhi"}]} )
+
+
+
+================================================
+	Update methods:-
+================================================
+
+ 	db.collections.updateOne();
+
+	db.collection.updateMany();
+
+	db.collections.replaceOne();
+
+
+Ex:-
+
+ db.student.updateOne({name:"pandey"}, {$set: {mark:99}})
+
+
+
+==================================
+	Nesting 
+====================================
+
+{
+
+ _id :ObjectId("64fdeueueiueiei"),
+ name:"coder"
+performance:{mark:88,grade:'A'}
+
+}
+
+
+to find  :-----------
+-----------
+	db.student.findOne({"performance":88})
+
+
+==============================
+	Delete
+==================================
+
+-> deleteOne
+
+ db.collection.deleteOne(<filter>,<options>)
+
+-> deleteMany
+
+ db.collection.deleteMany(<filter>,<options>)
+
+
+db.dropDatabase()
+
+
+
+================================================
+
+	Mongoose          39(c)/02/2024
+
+================================================
+
+-> A libray that creates a connection between MongoDB & Node.Js javaScript Runtime Enviroment.
+
+
+-> it is n ODM (Object Data Modeling) Library.
+
+
+
+======================
+Installation:-
+========================================
+
+	c://> npm i mongoose
+
+connect:-
+----------------------------
+
+	const mongoose=require("mongoose");
+       //mongoose.connect("mongodb://127.0.0.1.27017/future");
+
+    main()
+    .then((res)=>{
+        console.log("connection success");
+
+    })
+    .catch((err)=>console.log("it is not connect"));
+
+
+    async function main()
+    {
+        await mongoose.connect("mongodb://localhost:27017/future");
+    }
+
+
+
+===============================================
+   		 Schema :-
+===============================================
+
+-> Schema defines the shape of the documents within that collection.
+
+
+		const userSchema= new mongoose.Schema({
+		name:String,
+		email:String,
+		age:number,
+		});
+
+
+====================================================
+		Models
+====================================================
+
+-> Models in mongoose is a class with we construct documents.
+
+     const User=mongoose.model("user",userSchema);
+
+        User ----> users
+
+        Product----->products
+
+        Employee-------> employees
+
+
+======================================
+ 		 INSERT
+=============================================
+
+-> Inserting One
+
+	const User1=new User({name:"Adam",
+   	email:"pandeycoder8474@gmail.com",
+	age:49,
+	});
+
+	const User2=new User({name:"coder",
+   	email:"pandey8474@gmail.com",
+	age:42,
+	});
+
+
+	
+	user1.save();
+	user2.save();
+
+
+Inserting Multiple :-
+
+	User.insertMany([
+    { name:"tony", email: "tony@gmail.com", age:24},
+    { name:"Rupseh", email: "rupesh@gmail.com", age:22},
+    { name:"Roman", email: "roman@gmail.com", age:21},
+    { name:"john", email: "john@gmail.com", age:20},
+]);
+.then((res)=>{
+    console.log(res);
+})
+.catch((err)=>{
+    console.log(err);
+});
+
+
+
+--------------------------------------------
+  Note  ++++++++++++++++++++++
+======================================
+
+-> Mongoose users Operation Buffering
+
+-> Mongoose lets you start using your models immediately , without wating for mongoose to establish to MongoDB.
+
+
+===================================================
+	 find method :-
+===================================================
+
+-> Model.find() //return a query object (thenable)
+
+*** mongoose Queries are not promises.But are not promise.But they have a .then()
+
+
+	User.find({age: {$gt: 40}}).then((res)=>{
+  	  console.log(res);
+	})
+	.catch((err)=>{
+  	  console.log(err);
+	});
+
+
+-> Model.findOne()     //return single result 
+
+
+	User.findOne({age: {$gt: 40}}).then((res)=>{
+  	  console.log(res);
+	})
+	.catch((err)=>{
+  	  console.log(err);
+	})
+
+
+-> Model.findById()
+
+
+
+	User.findById({_id: 	"65d7b24fb64f135a63ab663d"}).then((res)=>{
+    	console.log(res);
+	})
+	.catch((err)=>{
+    	console.log(err);
+	})
+
+=============================================
+		Update
+=============================================
+
+-> Model.updateOne()
+
+
+
+	User.updateOne({name:"coder"}, {age:101})
+	.then((res)=>{
+    	console.log(res);
+	})
+	.catch((err)=>
+	{
+    	console.log(err);
+	});
+
+
+
+-> Model.updateMany();
+
+	User.updateMany({age: {$age:45}, {age:101})
+	.then((res)=>{
+    	console.log(res);
+	})
+	.catch((err)=>
+	{
+    	console.log(err);
+	});
+
+
+-> model.findOneAndUpdate()
+
+
+	User.findOneAndUpdate({name:"coder"},
+	{age:45}, {new :true})
+
+	.then((res)=>{
+    	console.log(res);
+	})
+	.catch((err)=>
+	{
+    	console.log(err);
+	});
+
+
+-> Model.findByIdAndUpdate();
+
+
+===================================================
+		Delete       
+===================================================
+
+-> Model.delete()    // return count
+
+	User.deleteOne({name:"coder"})
+	.then((res)=>{
+	console.log(res)})
+	.catch((err)=>{
+	console.log(err);
+	});
+
+-> Model.deleteMany()
+
+	User.deleteMany({age:{$gt:55}})
+	.then((res)=>{
+	console.log(res)})
+	.catch((err)=>{
+	console.log(err);
+	});
+
+-> Model.findByIdAndDelete()
+
+	User.findByIdAndDelete({_id:"65d7b3c1a601ada390552281"})
+	.then((res)=>{
+	console.log(res)})
+	.catch((err)=>{
+	console.log(err);
+	});
+
+
+
+-> Model.findOneAndDelete()
+
+
+
+=============================================
+	Schema Validations  :-
+=============================================
+
+-> Basically Rules for schema 
+
+	const bookSchema=monogoose.Schema({
+	title:{
+	tyep:String,
+	required:true,
+	},
+
+	author:{
+	type:String,
+	},
+	price: {
+	type:Number,
+	},
+	});
+
+
+=========================================
+	chat application
+=========================================
+
+chat variable: from , to message ,date
+
+
+---------------
+Schema (module)
+----------------
+->      const mongoose = require("mongoose");
+
+         const chatSchema=new mongoose.Schema({
+
+    from:{
+        type:String,
+        required:true
+    },
+    to:{
+        type:String,
+        required:true
+    },
+    msg:{
+        type:String,
+        maxLength:50,
+        minLength:2
+
+    },
+
+    created_at:{
+        type:Date,
+        required:true
+    	},
+
+	});
+
+
+const Chat=mongoose.model("Chat",chatSchema);
+
+	module.exports=Chat;
+
+
+-------------------------------------
+Initialize Database
+-------------------------------------
+
+init.js
+___________
+
+
+
+
