@@ -325,6 +325,394 @@ app.delete("/listing/:id", async (req,res)=>{
 
 	const ejsMate=require("ejs-mate");
 
+	app.engine("ejs",ejsMate);
+
+
+
+
+===============================================
+	Middleware  43(c)/02/2024
+===============================================
+
+-> It is an intermediary.
+
+
+      request ------> Middleware-------> Response
+
+
+-> In Express middleware are function that come into play after the server receives the request and before the response is sent to the client. 
+
+
+-------------------------------------------------
+	middleware 
+---------------------------------------------------
+
+-> common middleware functions 
+
+	methodOverride
+
+	bodyParser
+
+	express.static 
+
+	express.urlencoded
+
+app.use(express.urlencoded({extended:true});
+
+app.use(express.static(path.join(_dirname,"/public")
+
+
+---------------------
+What do middleware do?
+-------------------------------
+
+->Middleware functions can perform the following task:
+
+
+	-> Execute any code
+
+->       Make changes to the request and the response object 
+
+	-> End the request response cycle
+
+
+-> Call the next middleware function in the stack
+
+
+--------------------
+Out 1st Middleware
+----------------------
+
+app.use(middleware)
+
+	app.use(()=>{
+	console.log("hi , I am a middleware");
+	}
+
+
+	app.use((req,res)=>{
+	console.log("hi iam a middleware");
+	res.send("bye");
+	}
+
+
+======================================
+	Using next
+====================================
+
+-> the next middleware function is commonly denoted by a variable named next.
+
+
+	app.use(req,res ,next) =>{
+
+	console.log('Time:',Date.now());
+	next()
+	})
+
+
+
+if the cuurent middleware function does not end the request response cycle, it must call next() to pass control to the nextt middleware funnction.
+
+
+
+------------------------------------------
+Creating Utility Middleware
+--------------------------------------------
+
+Logger -> execution code check through logger
+
+
+	
+	app.use((req,res,next)=>{
+
+   	 req.time= new Date(Date.now()).toString();
+    console.log(req.method,req.hostname,req.path,req.time);
+  	  next();
+	})
+
+
+
+//---------404 errors------
+app.use((req,res)=>{
+    res.status(404).send("Page not found !");
+})
+
+
+----------------------------------------------
+	API Token as Query String
+-----------------------------------------------
+
+-> Let's create a middle-ware for an api that checks ifd the access token was passed in the query string or not.
+
+	/api---> res(data)
+
+	/api/?token=given access
+
+	?token=giveaccess
+
+
+	
+app.use("/api",(req,res,next)=>{
+    let {token}=req.query;
+
+    if(token==="giveaccess")
+    {
+        next();
+    }
+    res.send("Access Denied");
+})
+
+app.get("/api",(req,res)=>{
+    res.send("data");
+});
+
+
+--------------------
+multiple middleware
+---------------------
+
+
+
+
+-------------------
+Error Handling
+------------------------
+
+-> Express default Error Handler.
+
+
+	development time
+
+	production time
+
+
+
+=================================================
+	 Error Handlers 	44(C)/02/2024
+====================================================
+
+-> Custom 
+
+-> Error handling Middleware
+
+
+	app.get("/err",(req,res,next)=>{
+
+    abcd=hbfff
+
+});
+app.use((err ,req,res,next)=>{
+    console.log("--------Error----------");
+    next(err);
+})
+
+
+
+
+=====================================
+	Error Class 
+=============================================
+
+-> Create an admin route & send ana error with a 403 status code.
+
+
+/admin ----> EE(404)
+
+
+
+
+=====================================
+	Using wrapAsync
+=====================================
+
+
+-> normal error
+
+-> async ----> Epress error
+
+-> try   -    catch
+
+
+
+
+	function wrapasync(){
+
+	return function(req,res,next){
+      
+
+	}
+
+	}
+-> asyncWrap ----> wrap the callback
+
+
+
+=======================================
+mongoose error
+=========================================
+
+-> validation error 
+
+-> cast error
+
+
+
+===================================================
+
+	Form validations  45(c)/02/2-24
+
+=================================================
+
+
+-> Wehn we enter data in the form the browser andlor the web server will check to see that the data is in the the correct format and within the constaints set by the application .
+
+
+
+	client validation 
+
+
+	server side validation 
+
+
+---------------------------------------
+Success and failure text
+--------------------------------------
+
+->
+
+
+-------------------------------------
+custom error
+---------------------------------------
+
+app.use((err, req, res, next) => {
+    res.send("something went wrong !");
+})
+
+module.exports=(fn)=>
+{
+    return  (req,res,next)=> 
+    {
+        fn(req,res,next).catch(next);
+    }
+}
+
+------------------------------
+custom error create
+--------------------------------------
+
+
+
+
+
+=========================================
+	Error EJS
+=============================================
+
+
+
+app.use((err, req, res, next) => {
+
+    let {statusCode=500 ,message="somwthing went wrong"}=err;
+
+    // res.status(statusCode).send(message);
+    res.status(statusCode).render("error.ejs",{message});
+});
+
+
+
+<%  layout("/layouts/bolierplate") %>
+
+<div class="row">
+    <div class="alert alert-danger col-6 offset-3"  role="alert">
+   <!-- <svg class="bi flex-shrink-0 me-2"role="img" aria-label="Danger:">
+    <use xlink:href="#"></use>
+   </svg> -->
+   
+        <h4 class="alert-heading"><%=message %></h4>
+        <!-- <p>err.stack </p> -->
+    </div>
+</div>
+
+
+================================================
+	Validation for schema
+================================================
+
+install joi
+---------------------
+	-> :/> npm i joi
+
+schema ------>. joi -------> validate
+                 |
+          
+        server side validation
+
+
+
+
+	app.post("/listing", wrapAsync(async (req, res,next) => {
+    // let {title,description ,image ,price,country,location}=req.body;
+
+       let result= listingSchema.validate(req.body);
+       console.log(result);
+
+        let listing = req.body.listing;
+
+        const newListing = new Listing(listing);
+        if(result.error)
+        {
+            throw new ExpressError(400,result.error);
+        }
+
+        // if(!newListing.title)
+        // {
+        //     throw new ExpressError(400,"title is messing");
+        // }
+        // if(!newListing.description)
+        // {
+        //     throw new ExpressError(400,"decsription is messing");
+        // }
+        // if(!newListing.location)
+        // {
+        //     throw new ExpressError(400,"location is messing");
+        // }
+        await newListing.save();
+        res.redirect("/listing");
+
+        console.log(listing);
+  
+}));
+
+
+
+
+========================================
+	Validation for schema  3217 
+
+==============================================
+
+node_models/mogoose/lib/doc.js
+
+-> middleware 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
