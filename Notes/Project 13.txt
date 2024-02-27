@@ -1,0 +1,721 @@
+================================================
+	Major Project :- 41(c)/02/2024
+=================================================
+     	 ---------------------
+	    explorejurney.in
+      	 ---------------------
+
+===================================================
+		Phase : 1   
+===================================================
+
+
+
+step 1 : /> npm init  (create json package)
+
+	 /> npm i express  (create automate server) 
+
+	 /> npm i ejs  (create template)
+
+	 /> npm i mongoose (create database)
+
+
+
+-> Database set Up :-
+
+	const mongoose = require("mongoose");
+
+
+	const MONGO_URL = 	"mongodb://localhost:27017/explorejurney";
+	main()
+   	 .then((res) => {
+        	console.log(res);
+    	}).catch((err) => {
+        console.log(err.errors.app.properties);
+
+    	});
+	async function main() {
+   	 mongoose.connect(MONGO_URL);
+	}
+
+
+-> Rest APIs for CRUD operation .
+
+
+
+---------------------------------------------
+	Model  : Listing
+--------------------------------------------
+
+	-> title               String type
+
+	-> description         String type
+
+	-> image   
+
+	-> price   	       Number
+
+	-> location            String
+
+	-> country             String
+
+----------------
+define schema :- 1
+-----------------
+
+			const mongoose= 	require("mongoose");
+	const Schema=mongoose.Schema;
+
+	const listingSchema=new Schema({
+
+    	title   : {
+            type: String,
+            required :true,
+
+    	},
+    	description :{
+        type:String,
+
+   	 },
+    	image   : {
+        	type:String,
+       
+        //image undefiend or null or not available
+        	default:"https://images.unsplash.com/photo-1	625505826533-5c80aca7d157?ixlib=rb-4.0.3	&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbn	wwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=	800&q=60",
+        
+        //image is there but link is not avaliable
+        set: (v) => v == ""
+         ? 	"https://images.unsplash.com/photo-162550582	6533-5c80aca7d157?ixlib=rb-4.0.3	&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbn	wwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=	800&q=60"
+        :v,
+    	},
+
+    	price   :        Number,
+   	 location :       String,
+    	country  :       String,
+		});
+
+const Listing=mongoose.model("Listing",listingSchema);
+
+	module.exports=Listing;
+
+-----------------
+app.js   2
+--------------
+		const express = require("express");
+	const app = express();
+	const mongoose = require("mongoose");
+	const 	Listing=require("./models/listing.js");
+
+
+	const MONGO_URL = 	"mongodb://localhost:27017/explorejurney";
+	main()
+    	.then((res) => {
+        	console.log("connect db");
+    	}).catch((err) => {
+       	 console.log(err.errors.app.properties);
+
+   	 });
+	async function main() {
+    	mongoose.connect(MONGO_URL);
+	}
+	//----------------root index 	page ------------------------
+	app.get("/", (req, res) => {
+
+    	res.send("welcome our website");
+	});
+
+
+	app.get("/testListing",async (req,res)=>{
+
+  	  let sampleListing = new Listing({
+        title: "My New Villa",
+        description: "By the beach",
+        price: 1200,
+        loaction: "Calangute , Goa",
+        country: "India",
+    	});
+
+    	await sampleListing.save();
+    	console.log("sample was saved");
+    	res.send("success :testing");
+	});
+
+	app.listen("8081", () => {
+   	 console.log("server is listening 	to :8081");
+	});
+
+
+
+
+------------------------
+Initialize database  3
+-------------------------
+
+const mongoose=require("mongoose");
+const initData=require("./data.js");   //link index js file with data.js
+const Listing=require("../models/listing.js");
+ 
+
+const MONGO_URL = "mongodb://localhost:27017/explorejurney";
+main()
+    .then((res) => {
+        console.log("connect db");
+    }).catch((err) => {
+        console.log(err);
+
+    });
+async function main() {
+    mongoose.connect(MONGO_URL);
+}
+
+
+
+
+const initDB= async () => {
+
+    await Listing.deleteMany({});
+
+    await Listing.insertMany(initData.data);
+    console.log("data was initilize");
+};
+
+initDB();
+
+
+---------------------------
+index route
+===================================================
+
+
+get : /listing/:id   (show ) -> specific listing do
+
+
+/-------------index route----------------
+
+app.get("/listing", async (req, res) => {
+
+const allListings= await Listing.find({});
+res.render("index.ejs",{allListings});
+});
+
+
+--------------------------
+	Read: show route
+----------------------------
+
+-> /listing/:id ---------> all data
+
+
+num.toLocaleString("en-IN");
+
+
+//------------show route--------------
+app.get("/listing/:id",async(req,res)=>{
+
+    let {id}=req.params;
+   
+    const listing= await Listing.findById(id);
+
+    res.render("show.ejs",{listing});
+});
+
+----------------------------------------
+Create : New & Create Route
+---------------------------------
+
+
+Get : /listing/new ----> form  --> submit --->Listing----->post
+
+//--------------New route --------
+
+app.get("/listing/new",async(req,res)=>{
+
+    
+    res.render("new.ejs");
+});
+
+
+
+
+//-----------Create Route----------
+
+app.post("/listing", async (req,res)=>{
+    // let {title,description ,image ,price,country,location}=req.body;
+
+
+    let listing=req.body.listing;
+
+    const newListing=new Listing(listing);
+
+    await newListing.save();
+
+
+    res.redirect("/listing");
+    
+    console.log(listing);
+});
+
+
+-----------------------------------
+Update : Edit &  Update Route
+------------------------------------
+
+get /listing/:id/edit ---> edit form---->submit
+                                          |
+                                          |
+	         Put	<----listing/:id
+
+
+
+	/> npm i method-override
+
+
+
+
+	
+//-----------Edit route --------------------
+
+app.get("/listing/:id/edit", async (req,res)=>{
+
+    let {id}=req.params;
+    const listing= await Listing.findById(id);
+
+   res.render("listings/edit.ejs",{listing});
+});
+
+
+//-----------Update Route-------------
+
+app.put("/listing/:id" , async(req,res)=>{
+
+    let {id} =req.params;
+
+    await Listing.findByIdAndUpdate(id,{...req.body.listing});
+
+    res.redirect("/listing");
+
+});
+
+-------------------------------------
+	Delete : Delete Route
+-----------------------------------
+
+delete : /listing /:id
+
+
+// ----------Delete route ------------------
+
+app.delete("/listing/:id", async (req,res)=>{
+    let {id} =req.params;
+
+    const deletedListing= await Listing.findByIdAndDelete(id);
+    
+    console.log(deletedListing);
+
+    res.redirect("/listing"); 
+
+});
+
+==================================================
+	What is Ejs mate  :-
+=================================================
+
+-> install ejs mate   /> npm i ejs-mate
+
+
+	const ejsMate=require("ejs-mate");
+
+	app.engine("ejs",ejsMate);
+
+
+
+
+===============================================
+	Middleware  43(c)/02/2024
+===============================================
+
+-> It is an intermediary.
+
+
+      request ------> Middleware-------> Response
+
+
+-> In Express middleware are function that come into play after the server receives the request and before the response is sent to the client. 
+
+
+-------------------------------------------------
+	middleware 
+---------------------------------------------------
+
+-> common middleware functions 
+
+	methodOverride
+
+	bodyParser
+
+	express.static 
+
+	express.urlencoded
+
+app.use(express.urlencoded({extended:true});
+
+app.use(express.static(path.join(_dirname,"/public")
+
+
+---------------------
+What do middleware do?
+-------------------------------
+
+->Middleware functions can perform the following task:
+
+
+	-> Execute any code
+
+->       Make changes to the request and the response object 
+
+	-> End the request response cycle
+
+
+-> Call the next middleware function in the stack
+
+
+--------------------
+Out 1st Middleware
+----------------------
+
+app.use(middleware)
+
+	app.use(()=>{
+	console.log("hi , I am a middleware");
+	}
+
+
+	app.use((req,res)=>{
+	console.log("hi iam a middleware");
+	res.send("bye");
+	}
+
+
+======================================
+	Using next
+====================================
+
+-> the next middleware function is commonly denoted by a variable named next.
+
+
+	app.use(req,res ,next) =>{
+
+	console.log('Time:',Date.now());
+	next()
+	})
+
+
+
+if the cuurent middleware function does not end the request response cycle, it must call next() to pass control to the nextt middleware funnction.
+
+
+
+------------------------------------------
+Creating Utility Middleware
+--------------------------------------------
+
+Logger -> execution code check through logger
+
+
+	
+	app.use((req,res,next)=>{
+
+   	 req.time= new Date(Date.now()).toString();
+    console.log(req.method,req.hostname,req.path,req.time);
+  	  next();
+	})
+
+
+
+//---------404 errors------
+app.use((req,res)=>{
+    res.status(404).send("Page not found !");
+})
+
+
+----------------------------------------------
+	API Token as Query String
+-----------------------------------------------
+
+-> Let's create a middle-ware for an api that checks ifd the access token was passed in the query string or not.
+
+	/api---> res(data)
+
+	/api/?token=given access
+
+	?token=giveaccess
+
+
+	
+app.use("/api",(req,res,next)=>{
+    let {token}=req.query;
+
+    if(token==="giveaccess")
+    {
+        next();
+    }
+    res.send("Access Denied");
+})
+
+app.get("/api",(req,res)=>{
+    res.send("data");
+});
+
+
+--------------------
+multiple middleware
+---------------------
+
+
+
+
+-------------------
+Error Handling
+------------------------
+
+-> Express default Error Handler.
+
+
+	development time
+
+	production time
+
+
+
+=================================================
+	 Error Handlers 	44(C)/02/2024
+====================================================
+
+-> Custom 
+
+-> Error handling Middleware
+
+
+	app.get("/err",(req,res,next)=>{
+
+    abcd=hbfff
+
+});
+app.use((err ,req,res,next)=>{
+    console.log("--------Error----------");
+    next(err);
+})
+
+
+
+
+=====================================
+	Error Class 
+=============================================
+
+-> Create an admin route & send ana error with a 403 status code.
+
+
+/admin ----> EE(404)
+
+
+
+
+=====================================
+	Using wrapAsync
+=====================================
+
+
+-> normal error
+
+-> async ----> Epress error
+
+-> try   -    catch
+
+
+
+
+	function wrapasync(){
+
+	return function(req,res,next){
+      
+
+	}
+
+	}
+-> asyncWrap ----> wrap the callback
+
+
+
+=======================================
+mongoose error
+=========================================
+
+-> validation error 
+
+-> cast error
+
+
+
+===================================================
+
+	Form validations  45(c)/02/2-24
+
+=================================================
+
+
+-> Wehn we enter data in the form the browser andlor the web server will check to see that the data is in the the correct format and within the constaints set by the application .
+
+
+
+	client validation 
+
+
+	server side validation 
+
+
+---------------------------------------
+Success and failure text
+--------------------------------------
+
+->
+
+
+-------------------------------------
+custom error
+---------------------------------------
+
+app.use((err, req, res, next) => {
+    res.send("something went wrong !");
+})
+
+module.exports=(fn)=>
+{
+    return  (req,res,next)=> 
+    {
+        fn(req,res,next).catch(next);
+    }
+}
+
+------------------------------
+custom error create
+--------------------------------------
+
+
+
+
+
+=========================================
+	Error EJS
+=============================================
+
+
+
+app.use((err, req, res, next) => {
+
+    let {statusCode=500 ,message="somwthing went wrong"}=err;
+
+    // res.status(statusCode).send(message);
+    res.status(statusCode).render("error.ejs",{message});
+});
+
+
+
+<%  layout("/layouts/bolierplate") %>
+
+<div class="row">
+    <div class="alert alert-danger col-6 offset-3"  role="alert">
+   <!-- <svg class="bi flex-shrink-0 me-2"role="img" aria-label="Danger:">
+    <use xlink:href="#"></use>
+   </svg> -->
+   
+        <h4 class="alert-heading"><%=message %></h4>
+        <!-- <p>err.stack </p> -->
+    </div>
+</div>
+
+
+================================================
+	Validation for schema
+================================================
+
+install joi
+---------------------
+	-> :/> npm i joi
+
+schema ------>. joi -------> validate
+                 |
+          
+        server side validation
+
+
+
+
+	app.post("/listing", wrapAsync(async (req, res,next) => {
+    // let {title,description ,image ,price,country,location}=req.body;
+
+       let result= listingSchema.validate(req.body);
+       console.log(result);
+
+        let listing = req.body.listing;
+
+        const newListing = new Listing(listing);
+        if(result.error)
+        {
+            throw new ExpressError(400,result.error);
+        }
+
+        // if(!newListing.title)
+        // {
+        //     throw new ExpressError(400,"title is messing");
+        // }
+        // if(!newListing.description)
+        // {
+        //     throw new ExpressError(400,"decsription is messing");
+        // }
+        // if(!newListing.location)
+        // {
+        //     throw new ExpressError(400,"location is messing");
+        // }
+        await newListing.save();
+        res.redirect("/listing");
+
+        console.log(listing);
+  
+}));
+
+
+
+
+========================================
+	Validation for schema  3217 
+
+==============================================
+
+node_models/mogoose/lib/doc.js
+
+-> middleware 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

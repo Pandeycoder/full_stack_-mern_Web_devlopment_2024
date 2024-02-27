@@ -700,6 +700,168 @@ node_models/mogoose/lib/doc.js
 
 
 
+================================================
+    48(c)/02/2024   New Model : Reviews
+================================================
+
+-> comment  ------    String
+
+-> rating(1 to 5)  ---> Number
+
+-> createAt   -------> date & time
+
+
+
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const reviewSchema=new Schema({
+
+    comment:String,
+
+    rating:{
+        type:Number,
+        min:1,
+        max:5
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now(),
+    },
+
+});
+
+module.exports=mongoose.model("Review",reviewSchema);
+
+
+
+-------------------------------
+	Create Reviews
+------------------------------------------
+
+-> 1) Setting up the Reviews form
+
+
+
+-> 2) submitting the form
+
+
+	pos /listing/:id/reviews
+
+
+//----------------Reviews  create  route post---------
+
+app.post("/listing/:id/reviews",async (req,res)=>{
+   
+   let listing=await Listing.findById(req.params.id);
+
+   let newReview=new Review(req.body.review);
+
+   listing.review.push(newReview);
+
+   await newReview.save();
+
+   await listing.save();
+
+   res.redirect(`/listing/${listing._id}`);
+
+});
+
+-----------------------------------
+	validation for reviews
+-------------------------------------
+
+
+module.exports.reviewSchema=joi.object({
+
+    review:joi.object({
+        rating: joi.number().required().min(1).max(5),
+        comment:joi.string().required(),
+    }).required()
+});
+
+//---------review validation----------------
+
+const validateReivew=(req,res,next)=>{
+    let {error} = reviewSchema.validate(req.body);
+        
+    if( error)
+    {
+        let errMsg=error.details.map((el)=>el.message).join(",");
+
+        throw new ExpressError(400, error);
+    }
+    else{
+        next();
+    } 
+};
+
+-------------------------------------
+Render Reviews
+------------------------------------------------
+
+
+
+
+
+--------------------------
+Deleting Reviews 
+---------------------------
+
+-> Mongo $pull operator
+
+-> $pull   the $pull operator removes from an existing array all instances of a value or values that match a specified condation .
+
+-> /listing/:id/review/:review_id
+
+
+
+//------------------ Delete review route------
+
+app.delete("/listing/:id/reviews/:reviewId",wrapAsync(async(req,res)=>{
+
+    let {id,reviewId}=req.params;
+
+    await Listing.findByIdAndUpdate(id, {$pull: {review:reviewId}});
+
+
+    await Review.findByIdAndUpdate(reviewId);
+
+
+    res.redirect(`/listing/${id}`);
+  
+}))
+
+
+---------------------------------------
+Deleting Listing
+----------------------------------------
+
+->
+
+
+
+
+
+
+=================================================
+	Express Router  48(C)/02/2024
+==================================================
+
+-> Re4structing Listings
+
+	app.use("/listing",listing);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,8 @@
+=======================================
+	Express Router  :-
+==========================================
+
+-> Express Router are a way tto organize your Express applications such that our primary  app.js file does not become bloted.
+
+
+const router=express.Router();  //create new router obeject

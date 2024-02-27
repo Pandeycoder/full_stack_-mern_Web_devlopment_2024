@@ -1,0 +1,344 @@
+=============================================
+	Mongo Relationships 46(c)/02/2024
+==============================================
+
+
+=========================
+Relationships
+========================
+
+-> Sql (via Foregin Keys)
+
+-> One to One 		 1*1
+
+-> One to many 		 1*n
+
+-> many to many  	 n*n
+
+-> many to one		 n*1
+
+
+
+customer
+-------------------
+|id   name       |
+|101  rk 	 |		
+|102  neha	 |
+-----------------|
+
+
+
+ order
+----------------------------
+|id   content  user_id     |
+|1a    -- 	 101 	   |		
+|2b     --	 102   	   |
+---------------------------|
+
+===========================================
+	Mongo Relationships
+==================================================
+
+-> One to many i approach 1 (one to few)
+
+-> Store the child document inside parent.
+
+{
+_id: object("jhb32333"),
+username: 'coder'
+addresses: [
+    	{ location : '221B barker' city:(London},
+	{ location : '221 barker' city:(US}],
+
+ _ _V:1
+},
+
+-----------------------------------------
+-> one to many relationship
+-------------------------------------------
+
+----------------> Approach 1------------
+
+
+const userSchema=new Schema({
+
+    username:String,
+    addresses: [
+        {
+            _id:false,
+            location:String,
+            city:String,
+        },
+
+    ],
+
+});
+
+const User=mongoose.model("User",userSchema);
+
+const addUsers= async()=>{
+    let user1=new User({
+        username: "Sonu pandey",
+
+        addresses: [{
+           
+            location: "22B Near jwala mukhi mandir",
+            city: "Darbhanga",
+        }]
+
+    })
+    user1.addresses.push({ location:"p32 waliStreet",city:"darbhanga"});
+
+   let result= await user1.save();
+   console.log(result);
+};
+
+
+---------------> Approch 2 ---------------
+
+
+
+const ordeSchema=new Schema({
+
+    items:String,
+    price:Number,
+
+});
+
+const customerSchema=new Schema({
+
+    name:String,
+    orders:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Order",
+        }
+    ]
+});
+
+const Order=mongoose.model("Order",ordeSchema);
+
+const Customer=mongoose.model("Customer", customerSchema);
+
+const addCustomer= async ()=>{
+
+    let cust1=new Customer({
+        name: "rahul pandey",
+    });
+
+    let order1= await Order.findOne({items: "Pizza"});
+    let order2= await Order.findOne({items: "Burger"});
+
+    cust1.orders.push(order1);
+    cust1.orders.push(order2);
+
+
+ let res=  await cust1.save();
+
+ console.log(res);
+};
+
+addCustomer();
+
+// const addOrder= async ()=>{
+
+//     let res=await Order.insertMany([
+//       {
+//           items:"Pizza" , price:100},
+
+//         {  items:"Burger" , price:40},
+
+//         {  items:"paneerwrap" , price:100},
+//       ]);
+
+//     console.log(res);
+// }
+
+// addOrder();
+
+
+
+===========================================
+	Populate One to Many
+============================================
+
+const findCustomer= async ()=>{
+
+        
+     let result=  await Customer.find({}).populate("orders");    
+     console.log(result[1]);
+    };
+
+findCustomer();
+
+
+
+---------------> Approach  3 --------------->
+
+One to many /one to squillions
+
+Store a reference to the parent document inside child.
+
+
+
+	const postSchema=new Schema({
+
+    content:String,
+    likes:Number,
+
+    User: {
+        type: Schema.Types.ObjectId,
+        ref:"User",
+    }
+});
+
+
+const User=mongoose.model("User",userSchema);
+const Post=mongoose.model("Post",postSchema);
+
+const addData = async () =>{
+ 
+    // let user1=new User({
+
+    //     username:"pandeycoder",
+
+    //     email:"pandeycoder8474@gmail.com",
+
+
+    // });
+
+    let user=await User.findOne({username:"pandeycoder"});
+
+
+    let post2=new Post({
+        content: "if you don't mind can i get your number",
+        likes:20,
+    });
+
+    post2.User=user;
+
+
+==================================================
+	Handling Deletion    48(c)/02/2024
+===================================================
+
+
+-> Using Mongoose Middleware.
+ 
+-> We can use 2 middleware :
+
+	Pre-run before the query is executed.
+
+	Post-run after the query is executed.
+
+
+
+
+const ordeSchema=new Schema({
+
+    items:String,
+    price:Number,
+
+});
+
+const customerSchema=new Schema({
+
+    name:String,
+    orders:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Order",
+        }
+    ]
+});
+
+
+// customerSchema.pre("findOneAndDelete",async()=>{
+//     console.log("Pre middleware");
+// });
+
+customerSchema.post("findOneAndDelete", async(customer)=>{
+    
+    if(customer.orders.length)
+    {
+        let result=await Order.deleteMany({_id :{ $in : customer.orders}});
+       
+        console.log(result);
+    }
+
+});
+
+
+const Order=mongoose.model("Order",ordeSchema);
+
+const Customer=mongoose.model("Customer", customerSchema);
+
+
+//function 
+
+const findCustomer= async ()=>{
+
+        
+     let result=  await Customer.find({}).populate("orders");    
+     console.log(result[1]);
+    };
+
+
+
+
+
+
+const addCustomer= async ()=>{
+
+    let newCust=new Customer({
+        name: "pragati priya",
+    });
+
+    let newOrder=new Order({
+
+        items:"burger",
+        price:40,
+    });
+
+    newCust.orders.push(newOrder);
+
+    await newOrder.save();
+    await newCust.save();
+
+    console.log("new add customer");
+
+};
+
+const delCust=async () =>{
+
+    let data=await Customer.findByIdAndDelete("65dccec984fa3932f85c8c61");
+
+    console.log(data);
+};
+
+//addCustomer();
+
+delCust();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
