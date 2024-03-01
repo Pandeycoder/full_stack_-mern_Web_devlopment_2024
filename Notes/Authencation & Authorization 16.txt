@@ -1,0 +1,364 @@
+    		50(c)/02/2024
+==================================================
+	Authentication & Authorization
+==================================================
+
+Let's understand
+-----------------
+
+1) Authentication:- 
+----------------------
+
+   -> it is the process of verifing who someone is.
+
+
+
+2) Authorization :-
+--------------
+
+-> it is the process of verifing what specific appplications ,files , and data a user has access to.
+
+
+
+===================================================
+	    Storing Passwords 
+===================================================
+
+-> We Never store the passwords as it is.
+
+-> We store their hashed form.
+ 
+
+               -------------
+  password     | hashing   |  how it is stored
+               |           |
+"helloworld"   | function  |  "936adfdfdhdddh"
+               -------------
+
+
+=================================================
+		Hashing 
+================================================
+
+-> For every , there is a fixed output.
+
+-> They are one-way functions, we can't get input from output.
+
+-> For a diiferent input , there is a different output but of same length.
+
+-> Small changes  in input bring large change in output.
+
+
+===================================================
+		Salting
+==================================================
+
+-> Password salting is a technique to protect passwords stored in database by adding a string of 32 or more characters and then hashing them.
+
+
+abc ---->salting--->abc%?@---->convert-->hashed form
+
+
+
+==================================================
+		Passport
+=================================================
+
+-> npm i passport
+
+-> npm i passport-local
+
+-> npm i passport-local-mongoose
+
+
+
+================================================
+		User Model
+================================================
+
+-> user: username ,password ,email
+
+
+-> you're free to define your User how youlike , passport-local mongoose will add a username, hash and salt field to store the username , the hashed password and the salt.
+
+-> Additionally Passport-local mongoose and some methods to yours Schema see the API.
+
+	const mongoose = require("mongoose");
+	const Schema = mongoose.Schema;
+	const 	passportLocalMongoose=require("passport-	local-mongoose");
+
+	const userSchema=new Schema({
+
+    	email:{
+        	type:String,
+        	required: true,
+    	}
+	});
+
+	User.plugin(passportLocalMongoose);
+
+	module.exports=mongoose.model("User",userSchema);
+
+
+
+==================================================
+  	Configuring Strategy
+================================================
+
+-> passport.initilize()
+
+	-> A middleware that initialize passport.
+
+
+-> passport.session()
+ 
+ -> A web application needs the ability to identify users as they browse from page to page.. This series of request and responses, each associated with the same user is known as a session.
+
+
+passport.use(new localStrategy(User.authentication())
+
+
+	
+//------------Demo User Created---------------------------
+
+
+	app.get("/demouser",async(req,res)=>{
+
+  	  let faekUser=new User({
+      	  email:"pandeycoder8474@gmail.com",
+        	username:"pandeycoder",
+    	});
+  	let newUser= await User.register(faekUser,"coder");
+
+  	res.send(newUser);
+	}); 
+
+
+
+
+================================================
+
+		Signup User
+==================================================
+
+-> Get /signup
+
+
+	POST  /Signup
+
+
+
+----------------------------------------
+	Login User
+---------------------------------------
+
+-> get /login
+
+-> Post /login
+
+
+module.exports.isLoggedIn= (req,res,next)=>{
+    
+    if(!req.isAuthenticated())
+    {
+        req.flash("error"," you must be logged in to create listing !");
+        res.redirect("/login");
+    }
+    next();
+}
+
+
+==========================================
+	Logout User
+==========================================
+
+-> Get /logout
+
+
+	
+        <div class="navbar-nav ms-auto">
+          <% if(!currentUser) { %>
+          <a class="nav-link " href="/signup">Sign Up</a>
+          <a class="nav-link" href="/login">Log in</a>
+          <% } %>
+          <% if(currentUser) { %>
+          <a class="nav-link" href="/logout">Log out</a>
+          <% } %>
+        </div>
+      </div>
+
+
+=======================================
+	login after SignUp
+=================================================
+
+-> Passport's login method automatically establishes a login sesssion.
+
+-> We can invoke login to automatically login user.
+
+
+	req.login(registerUser,(err)=>{
+		
+		if(err)
+		  next(err);
+		}
+
+	req.flash("success", "welcome to explorejurney !");
+
+	res.redirect("/listing");
+
+
+
+==============================================
+	Pos-LogIn page
+==============================================
+
+-> path--------->login -------> redirect path
+
+
+	 
+    if(!req.isAuthenticated())
+    {
+        // redirect url saved -----------
+
+        req.session.redirectUrl=req.originalUrl;
+
+
+
+        req.flash("error"," you must be logged in to create listing !");
+        res.redirect("/login");
+    }
+    next();
+}
+
+
+
+	  async (req, res) => {
+
+        req.flash("success","Welcome back to explorejurney !")
+
+        let redirectUrl= res.locals.redirectUrl || "/listing";
+        res.redirect(redirectUrl);
+    });
+
+===================================================
+ 		Listing Owner
+==================================================
+
+-> listing ----->  Owner
+
+
+	   let listing = req.body.listing;
+        const newListing = new Listing(listing);
+
+        newListing.owner=req.user._id;
+
+
+        await newListing.save();
+
+        req.flash("success", "New listing created successfully !");
+
+        res.redirect("/listing");
+      
+  
+}));
+
+  ////---------------show
+
+      <p class="card-text">Owned By <i><b><%= listing.owner.username %></b></i></p>
+
+
+
+
+===============================================
+	Starting with Authorization
+=================================================
+
+		<% if(currentUser && currentUser._id.equals(listing.owner._id)) { %>
+    
+    	<div class="btns mb-3">
+      	  <a href="/listing/<%= listing.id %>/edit" class="btn btn-dark col-1  offset-3 edit-btn">Edit</a>
+       	 <form method="post" action="/listing/<%= listing._id %>?_method=DELETE">
+           	 <button class="btn btn-dark offset-5 ">Delete</button>
+    	    </form>
+   	 </div>
+	<% } %>
+
+
+	
+    let listing=await Listing.findById(id);
+
+    if(!listing.owner._id.equals(res.locals.currentUser._id))  //------------Autherization
+    {
+        req.flash("error","You don,t have permission to edit");
+       return res.redirect(`/listing/${id}`);
+    }
+
+    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+
+    req.flash("success", "listing updated successfully !");
+    
+    res.redirect(`/listing/${id}`);
+
+	}));
+
+
+
+------------------------------------
+	Review Authorization
+--------------------------------------------------
+
+-> for Reviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

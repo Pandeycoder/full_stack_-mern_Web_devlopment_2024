@@ -1,0 +1,240 @@
+=======================================
+	Express Router  :-
+==========================================
+
+-> Express Router are a way tto organize your Express applications such that our primary  app.js file does not become bloted.
+
+
+const router=express.Router();  //create new router obeject
+
+
+
+===================================================
+	Cookies  :-
+===================================================
+ Web cookies:-
+
+
+-> http cookies are small blocks of data created by a web server while a user is browser.
+
+
+
+----------------------------------------------------
+	How to Send Cookies  :-
+-----------------------------------------------------
+
+-> In express
+
+
+
+	app.get("/getcookies",(req,res)=>{
+
+  	  res.cookie("Great","hello");
+  	  res.send("you some cookies");
+	})
+
+
+
+
+====================================
+	Cookie Parser
+===============================================
+
+-> cookies-parser package
+
+
+install /:>	npm i cookie-parser
+
+
+
+app.use(cookieParser());
+
+app.get("/getcookies",(req,res)=>{
+
+    res.cookie("Great","hello");
+    res.send("you some cookies");
+});
+
+//------------------index root
+app.get("/",(req,res)=>{
+    console.dir(req.cookies);
+    res.send("hiii i am root user !");
+});
+
+
+
+-------------------------------------------
+	Signed Cookies
+-------------------------------------------
+
+->  Send signed Cookie.
+
+	app.use(cookieParser("secretCode"));
+
+	app.get("/getSignedCookie",(req,res)=>{
+
+   	 res.cookie("made-in","india",{signed:true});
+
+   	 res.send("signed cookie send");
+	});
+
+
+-> Verify signed Cookies
+
+
+	app.get("/verify",(req,res)=>{
+
+   	 console.log(req.signedCookies);
+   	 res.send("verified");
+	})
+
+
+
+
+===============================================
+  	What is state  48(C)/02/2024
+=================================================
+
+Stateful Protocol :-
+-------------------------
+
+-> Stateful protocol server to save the status and session information.
+
+ 		Ex: ftp
+
+
+------------------------------
+Stateless Protocol :-
+------------------------------
+
+-> Stateless Protocol does not require the server to retain the server information or 
+
+	ex: http
+
+
+-------------------------
+	Express Sessions :
+----------------------------------------------------
+
+-> An atempt  to make our session stateful.
+
+
+install :-    d/:>  npm i express-session
+
+
+
+	
+app.use(session({secret: "mysupersecretstring",resave:false,saveUninitialized:true}));
+
+
+app.get("/requcount",(req,res)=>{
+
+    if(req.session.count)
+    {
+
+        req.session.count++;
+    }
+    else{
+
+        req.session.count=1;
+    }
+   
+    res.send(`you sent a message ${req.session.count} time`);
+
+});
+
+-----------------------
+Express sessions :-
+-----------------------------------
+
+-> Storing & Using Info.
+	
+const sessionOptions = {
+    secret: "mysupersecretstring",
+    resave: false,
+    saveUninitialized: true,
+};
+
+app.use(session(sessionOptions));
+
+app.get("/register", (req, res) => {
+
+    let{name = "anonymous"}=req.query;
+    req.session.name=name;
+
+    console.log(req.session.name);
+    res.redirect("/hello");
+});
+
+app.get("/hello",(req,res)=>{
+
+    res.send(`hello  ${ req.session.name}`);
+
+})
+
+=================================================
+ 		Connect Flash
+=================================================
+
+-> The flash is special area of the session used for storing message are written to the flash and cleared after being displayed to the user.
+
+
+	install : c:/> npm i connect-flash
+
+const sessionOptions = {
+    secret: "mysupersecretstring",
+    resave: false,
+    saveUninitialized: true,
+};
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+
+app.use((req,res,next)=>{
+    
+    res.locals.success=req.flash("success");
+    res.locals.error=req.flash("error");
+    next();
+})
+
+
+--------------------
+Using Sessions
+------------------------------------------
+
+-> Adding cookie Options.
+
+
+	
+const ssessionOptions={
+    secret: "mysupersecretstring",
+    resave: false,
+    saveUninitialized: true,
+    cookie:{
+        expires:Date.now()+7*24*60*60*1000,
+        maxAge:7*24*60*60*1000,
+        httpOnly:true,
+    },
+};
+app.use(session(ssessionOptions));
+
+
+-------------------------------
+connect-flash
+--------------------------
+
+-> install --------> npm i connect-flash
+
+
+
+
+
+
+
+
+
+
+
+
+
