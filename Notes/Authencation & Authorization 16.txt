@@ -310,33 +310,308 @@ module.exports.isLoggedIn= (req,res,next)=>{
 
 -> for Reviews
 
+	
+    author:{
+        type:Schema.Types.ObjectId,
+        ref: "User",
+
+    },
 
 
 
 
 
+===============================================
+MVC :(Model , View , Controller) 52(C)/03/2024
+===============================================
+
+
+-> Implement Design Pattern for Listings.
+
+
+-> model floder -----> database related file
+
+-> views folder------> rander front in UI
+
+	const listingController=require("../controllers/listing.js");
+//-------------index route----------------
+
+router.get("/",wrapAsync(listingController.index)
+
+);
 
 
 
 
+	const Listing=require("../models/listing");
+
+module.exports.index=async (req, res) => {
+
+        const allListings = await Listing.find({});
+        res.render("listings/index.ejs", { allListings });
+    };
 
 
 
 
+===================================================
+		Image Upload 
+==================================================
 
 
+mongoDb--------------> BSON (size problem)
 
 
+-> 1) Sent files X
 
-
-
-
-
-
-
-
+-> 2) size Limit
 
  
+===================================
+	Manipulating Form
+========================================
+
+-> enctype ="multiplatform-data"
+
+
+------------------------------------------
+	Multer  Libraries
+-----------------------------------
+
+-> npm i multer
+
+
+
+
+
+================================================
+	Cloud Setup 
+=================================================
+
+-> cloudinary & .env file.
+
+it can use cloud setup--------------use
+
+
+   c:>	npm install dotenv
+
+
+
+------------------------------
+	Store FILES :-
+---------------------------------
+
+-> Multer Store Clodinary.
+
+/> npm i cloudinary multer-storage-cloudinary.
+
+/> npm i cloudinary
+
+
+
+
+const multer=require("multer")   ;
+const {storage}=require("../cloudConfig.js");
+const upload=multer({storage});
+
+
+
+----------------------------------
+	Save Link in Mongo
+---------------------------------------
+
+-> Modify Image in Schema.
+
+
+	let url=req.file.path;
+        let filename=req.file.filename;
+        console.log(url,"..",filename);
+
+        newListing.image={url,filename}
+
+
+
+
+============================================
+	Edit Listing Image
+============================================
+->
+controller update     
+    
+       if(typeof req.file !=="undefined")
+       {
+
+        let url=req.file.path;
+        let filename=req.file.filename;
+        listing.image={url , filename};
+        await listing.save();
+       }
+      
+
+
+----------------------------
+Image preview & Edit page
+============================================
+
+
+
+	//change image size and quality
+
+        // let originalImage=listing.image.url;
+
+        // originalImage=originalImage.replace("/upload","/upload/h_200,w_250");
+
+
+
+==============================================
+	Getting Started With Maps
+==============================================
+
+-> We'll use MapBox
+
+
+<script>
+    let mapToken="<%=process.env.MAP_TOKEN %>";
+    console.log(mapToken);
+	mapboxgl.accessToken = mapToken
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+    style:"mapbox://styles/mapbox/streets-v12",//style url
+        center: [77.2090, 28.6139], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+</script>
+
+
+
+
+
+-------------------------------
+	Display a Map
+---------------------------------------------
+
+Mapbox GL JS
+
+
+ejs-----------> script(env)------>js scr---public folderdoesnot access
+
+
+
+
+---------------------------------------
+	Geocoding
+---------------------------------------
+
+-> Geocoding is the process of converting address (like a street address) into geographic coordinates (like latitude and longitude), which you can use to place markers on a map , or poaition the map.
+
+
+-> Latitude and Longititude
+
+
+
+/----------Listing controller---------------
+
+
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
+const mapToken=process.env.MAP_TOKEN;
+const geocodingClient=mbxGeocoding({accessToken:mapToken});
+
+
+
+	
+
+        let response= await geocodingClient.forwardGeocode({
+            query: req.body.listing.location,
+            limit: 1,
+          })
+            .send();
+
+            console.log(response.body.features[0].geometry);
+            res.send("done");
+
+
+
+
+----------------------------------------
+	Storing Coordinates
+---------------------------------------
+
+GeoJSON
+
+->The most simple structure in GeoJSON a point Below is an example point representing the approximate location of 
+
+	newListing.geometry=   response.body.features[0].geometry;
+
+
+
+--------------------------------------
+	Map Marker
+--------------------------------------
+
+->      zoom: 10 // starting zoom
+        console.log(coordinates);
+	const marker=new 	mapboxgl.Marker({color:'red'})
+	.setLngLat(coordinates)
+	.addTo(map);
+
+
+
+--------------------------------------
+	Marker Popup
+---------------------------------------
+
+
+
+--------------------
+Adding Filters
+----------------------
+
+
+
+
+
+
+========================================
+  Hosting 55(c)/03/24
+===========================================
+
+Mongo Altas
+====================
+
+-> Cloud Database Service
+
+Database.Deploy a mluti-cloud database.
+
+
+
+pandeycoder8474
+
+Rn76dPE9Rd2DAVBK
+
+
+
+link database : mongodb+srv://pandeycoder8474:<password>@cluster0.geqlmqh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+ mongodb+srv://pandeycoder8474:Rn76dPE9Rd2DAVBK@cluster0.geqlmqh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+	/> npm i connect-mongo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

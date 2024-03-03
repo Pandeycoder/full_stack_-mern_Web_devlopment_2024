@@ -18,7 +18,7 @@
                     <h2><%= blog && blog.content ? blog.content : '' %></h2>
 
                 </div>
-                <img src="<%= blog.image %>" alt="image"  class="card-img" name="image">
+                <img src="<%= blog.image %>" alt="image"  class="card-img" name="image" enctype="multipart">
                 <p class="card-title"><%= blog.title %></p>
                 <p class="card-info"><%= blog.info %></p>
             </div>
