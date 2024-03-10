@@ -1,0 +1,205 @@
+
+@media only screen and (max-width: 1024px)
+{
+.inclusions-wrapper__bg {
+    padding: 60px 24px;
+    margin: 0 60px;
+}
+}
+@media only screen and (max-width: 1200px)
+{
+.inclusions-wrapper__bg {
+    margin: 0 60px;
+}
+}
+
+
+.inclusions-wrapper__bg {
+    box-sizing: border-box;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.bg-grey {
+    background: white;
+}
+
+.inclusions-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.inclusions-wrapper .inclusions-container.enableBorders {
+    border-top: 1px solid #866D4B;
+    border-bottom: 1px solid #866D4B;
+}
+@media only screen and (max-width: 768px)
+{
+.inclusions-wrapper .inclusions-container {
+    padding: 52px 0;
+}
+}
+
+
+.inclusions-wrapper .inclusions-container {
+    padding: 60px 0;
+}
+.inclusions-wrapper__bg * {
+    box-sizing: border-box;
+}
+div {
+    display: block;
+}
+.inclusions-wrapper .inclusions-content {
+    display: block;
+}
+@media only screen and (max-width: 768px)
+{
+.inclusions-wrapper .inclusions__title {
+    margin-bottom: 52px;
+}
+}
+.inclusions-wrapper .inclusions__title {
+    font-size: 34px;
+    line-height: 47px;
+    font-family: 'Sangbleu', Times, serif;
+    color: #866D4B;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 768px)
+{
+.inclusions-wrapper .inclusions-content__grid {
+    gap: 48px 60px;
+    margin-bottom: 52px;
+}
+}
+@media only screen and (max-width: 1024px)
+{
+.inclusions-wrapper .inclusions-content__grid {
+    gap: 48px;
+}
+}
+.inclusions-wrapper .inclusions-content__grid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    gap: 50px 56px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px)
+{
+.inclusions-wrapper .inclusions-content__grid-item {
+    width: calc((100% / 3) - 40px);
+}
+}
+@media only screen and (max-width: 1024px)
+{
+.inclusions-wrapper .inclusions-content__grid-item {
+    width: calc((100% / 4) - 36px);
+}
+}
+.inclusions-wrapper .inclusions-content__grid-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: calc((100% / 5) - 45px);
+}
+inclusions-wrapper .inclusions-content__grid-item--icon * {
+    font: inherit;
+    color: inherit;
+}
+
+
+@media only screen and (max-width: 428px)
+{
+.inclusions-wrapper .inclusions-content__grid-item {
+    width: calc((100% / 2) - 20px);
+}
+}
+@media only screen and (max-width: 768px)
+{
+.inclusions-wrapper .inclusions-content__grid-item {
+    width: calc((100% / 2) - 40px);
+}
+}
+@media only screen and (max-width: 1024px)
+{
+.inclusions-wrapper .inclusions-content__grid-item {
+    width: calc((100% / 4) - 36px);
+}
+}
+.inclusions-wrapper .inclusions-content__grid-item--icon {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    color: #0C2340;
+}
+
+
+
+.inclusions-wrapper .inclusions-content__grid-item--icon * {
+    font: inherit;
+    color: inherit;
+}
+
+.inclusions-wrapper .inclusions-content__grid-item--text {
+    font-family: 'Sangbleu', Times, serif;
+    font-size: 15px;
+    line-height: 22px;
+    color: #222;
+    text-align: center;
+}
+
+
+.inclusions-wrapper .inclusions-content__grid-item--text * {
+    font: inherit;
+    color: inherit;
+}
+
+p {
+    font-family: 'Shapiro', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: #222222;
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+    -webkit-margin-after: 5px;
+    margin-block-end: 5px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+

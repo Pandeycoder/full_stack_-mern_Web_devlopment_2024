@@ -1,0 +1,48 @@
+section{
+    margin-top: 50px;
+}
+div{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 10px auto;
+    margin-top: 10px;
+ 
+    
+    transition-duration: 2s;
+
+}
+div:nth-of-type(2n)
+{
+    background-color: #f7db6a;
+}
+div:nth-of-type(3n)
+{
+    background-color: aquamarine;
+}
+
+/*     transform      */
+
+#one:hover{
+    transform: rotate(45deg);
+    background-color: blue;
+    border-radius: 50%;
+}
+
+#two:hover{
+    transform: scale(0.65,2);
+}
+
+#three:hover{
+
+  transform: translate(-100px , -100px);
+}
+#four:hover{
+    transform: skew(45deg);
+}
+#five:hover{
+    border-radius: 50%;
+    transform: rotate(30deg) translateX(150px);
+}

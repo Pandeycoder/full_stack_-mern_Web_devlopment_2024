@@ -1,0 +1,38 @@
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 6.5px;
+    box-shadow: 2px 2px 100px rgb(0, 255, 234); 
+    border: 1px solid rgb(0, 255, 234); 
+}
+body{
+    background-color: rgb(15, 15, 16);
+}
+.main{
+    margin-left: 400px;
+}
+
+#one{
+    width: 315px;
+    height: 315px;
+    text-align: center;
+    background-color: aqua;
+   
+    margin: 10px auto;
+    margin-top: 70px;
+
+    /* margin-left: 700px; */
+    box-shadow: 2px 2px 100px rgb(0, 255, 234); 
+    border-radius: 50%;
+    border: 4px solid white; 
+}
+
+.blur{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: 5px auto;
+    box-shadow: 2px 2px 100px rgb(196, 7, 133);
+    border-radius: 50%;
+}

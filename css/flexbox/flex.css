@@ -1,0 +1,22 @@
+
+h1{
+    text-align: center;
+}
+#container{
+    border: 2px solid black;
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: azure;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-direction: column;
+}
+#container div{
+    height: 100px;
+    width: 300px;
+    color:white;
+    text-align: center;
+    margin: 0.5rem;
+}

@@ -1,0 +1,14 @@
+
+div{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    background-color: rgb(0, 255, 140);
+    margin: 10px auto;
+    margin-top: 60px;
+
+    background-image: url(image.png);
+    background-size: cover;
+    box-shadow: 2px 2px 8px black; 
+
+}

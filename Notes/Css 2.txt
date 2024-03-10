@@ -418,6 +418,363 @@ Em
 
 
 
+==============================================
+	CSS Next Steps  8(c)/03/2024
+===============================================
+
+-> Apha Channel 
+
+-> Sets the opacity for a color.
+
+	range from 0 to 1
+
+	rgba(255,255,255,,0.3)
+
+
+
+Example
+
+	 div{
+    	height: 200px;
+    	width: 200px;
+    	background-color: rgba(76, 255, 0, 0.612);
+	}
+
+
+-------------------------
+	Opacity 
+------------------------
+
+-> Sets the opacity for the element .
+
+	Range 0 to 1
+
+
+	#opacity{
+   	 background-color: #ffa51f;
+    	opacity: 0.5;
+	}
+
+
+
+
+======================================
+	Css Transitions
+======================================
+
+-> Transitions enable you to define the transition between two states of an element.
+
+
+ 		  Transition state
+	square --------------------> circular
+
+
+
+--------------------------
+Transition Shorthand
+-------------------------
+
+->	 property name | duration | timing-function | delay
+
+
+transition : margin-top ws ease-in-out 0.2s;
+
+
+Ex:-	div{
+    	height: 200px;
+    	width: 200px;
+    	background-color: rgba(76, 255, 0, 0.812);
+    	transition-duration: 2s ;
+    	margin: 0 auto;
+    	margin-top: 20px;
+
+	}
+
+	div:hover{
+    	background-color:gold;
+    	border-radius: 50%;
+    	margin-top: 400px;
+
+	}
+
+
+
+-------------------------
+	Transform
+----------------------------
+
+-> This property lets you rotate , scale , skew or translate an element.
+
+	1) Rotate 
+
+		transform : rotate(45deg)
+
+
+
+
+	2) scale 
+		transform : scale(05);
+
+		transform : scale(1.5)
+
+	#two:hover{
+    transform: scale(0.65,2);
+}
+
+	3) Translate :-
+
+	#three:hover{
+
+  	transform: translate(-100px , -100px);
+		}
+
+	4) sckew 
+		#four:hover{
+ 	   transform: skew(45deg);
+		}
+
+
+============================================
+		Box Shadow..................
+=============================================
+
+-> It adds shadow effects around an elment's frame. 
+
+                      x   y   z(blur)
+
+	box-shadow : 2px 2px 10px green
+
+
+
+======================================
+	Background color
+=======================================
+
+-> Let's you set an image as a background.
+
+
+	background-mage:url("../somepath/..img.jpg);
+
+background-size:contain/cover/auto;
+
+
+
+==========================================
+	Position 
+==========================================
+
+-> The position css property sets how an element is positioned in a document .
+
+-> The top , right  , buttom and left properties determines the final locations of positioined element.
+
+	1) static :- 
+
+	relative
+
+	absolute
+
+	fixed
+
+1) static :-
+ 
+-> The top , right , bottom , left and x-index properties have no effect .
+
+	this is the default value.
+
+
+2) 
+
+
+	
+
+==============================================
+	----Flex-Box------    9(C)/03/2024
+===============================================
+
+-> Flexible box layout.
+
+-> It is a one dimensional layout method for arranging items in rows or columns.
+
+
+Ex:-  	#container{
+   	 border: 2px solid black;
+   	 width: 700px;
+    	 height: 400px;
+   	 margin: 0 auto;
+   	 background-color: azure;
+   	 display: flex;
+   	 padding-left: 1rem;
+   	 padding-right: 1rem;
+   	 flex-direction: column;
+	}
+
+
+
+
+
+
+
+================================================
+   	Grid Layout   10(c)/03/2024
+================================================
+
+-> Setting a container's display to grid will make all children grid items.
+
+
+	.container{
+    width: 600px;
+    height: 300px;
+    background-color: rgb(21, 153, 153);
+   display: grid;
+}
+.item{
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+
+-----------------
+Grid model
+------------------
+
+-> grid lines
+
+-> grid cell
+
+-> grid track
+
+
+----------------
+Grid template
+-----------------
+
+-> They define the lines & track sizing
+
+
+->   grid-template-rows
+
+->   grid-template-columns
+
+
+
+
+
+
+
+
+====================================
+	CSS Animations 
+=======================================
+
+-> To animate css elements.
+
+
+
+	@keyframe myName{
+
+		from{ font-size:20px}
+
+		to{font-size:40px}
+
+		} 
+	
+		
+-> animation-name
+
+-> animation-delay
+
+-> animation-timing-functions
+
+-> animation-duration
+
+-> animation-iterations-count
+
+-> animation-direction
+
+	.box{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+    background-color: rgb(155, 1, 1);
+   
+    /* animation-name: colorAnimate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in ;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal; */
+
+    animation:colorAnimate 3s ease-in 0s infinite normal;
+}
+
+@keyframes colorAnimate{
+
+    from{
+        background-color: aqua;
+        font-size: 20px;
+    }
+
+    to{
+        background-color: blue;
+        font-size: 40px;
+    }
+
+}
+
+
+
+
+
+
+
+
+============================================
+	Media Queries  :-
+===========================================
+
+-> help create a responsive website.
+
+-> media features-width (of view port)
+
+
+	 @media(width:400px)
+		{
+		div{
+		background-color:red;
+		}
+		}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
