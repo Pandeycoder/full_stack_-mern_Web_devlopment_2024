@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .topic{
+            border: 2px solid black;
+            padding: 20px;
+            background-color: gray;
+            color: white;
+            margin-bottom: 20px;
+            
+        }
+        .topic:target
+        {
+            background-color: yellow;
+            color: red;
+        }
+        
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        li{
+            margin-right: 30px;
+            font-size: 20px;
+        }
+         a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        a:link{
+            color:green;
+        }
+        a:visited
+        {
+            color:gray;
+
+        }
+        a:active{
+            color:red;
+
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div>
+
+        <ul>
+            <li><a href="#html">Html</a></li>
+            <li><a href="#css">Css</a></li>
+            <li><a href="#js">Javascript</a></li>
+            <li><a href="#mens">men's clothing</a></li>
+        </ul>
+    </div>
+
+
+    <div class="topic" id="html">
+    
+        <h2>Html</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor quo reiciendis expedita aspernatur sequi soluta iste? Quasi commodi nesciunt, delectus cupiditate sed ipsam dolore quaerat, distinctio modi quam eveniet numquam!</p>
+    </div>
+
+    <div class="topic" id="css">
+    
+        <h2>Css</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor quo reiciendis expedita aspernatur sequi soluta iste? Quasi commodi nesciunt, delectus cupiditate sed ipsam dolore quaerat, distinctio modi quam eveniet numquam!</p>
+    </div>
+
+    <div class="topic" id="js">
+    
+        <h2>Javascript</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor quo reiciendis expedita aspernatur sequi soluta iste? Quasi commodi nesciunt, delectus cupiditate sed ipsam dolore quaerat, distinctio modi quam eveniet numquam!</p>
+    </div>
+</body>
+</html>

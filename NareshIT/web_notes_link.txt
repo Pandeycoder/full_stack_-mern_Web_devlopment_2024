@@ -1,0 +1,486 @@
+============================================
+	Web-development Naresh it
+============================================
+
+
+==================================
+	Meta View Port
+==================================
+
+-> it makes the page responsive.
+
+-> it is one of the options for making page responsive.
+
+-> responsive means page will fit content according to device width.
+
+
+
+
+=======================================
+What is max width of page 
+========================================
+
+->  1200 px      
+
+-> 500 px (mobile)
+
+ -> leftmargin rightmargin , bottommargin 
+
+Ex <body leftmargin="350" rightmargin"350" topmargin="50">
+
+
+----->	alink : set color for active link
+
+------>	vlink : sets color for visited link
+
+
+	<body alink="red" vlink="gray">
+
+
+
+=========================
+	folder
+=========================
+
+ <!-- one level back -->
+    <link rel="stylesheet" href="./assets/css/styel.css">
+
+
+    <!-- two level back -->
+    <link rel="stylesheet" href="../../style.css">
+
+
+    <!-- three level back -->
+    <link rel="stylesheet" href="../../../css/boxmodel.html">
+
+
+
+---------------
+install icons
+---------------
+
+	 npm install bootstrap-icons --save
+
+
+
+********
+Note
+********
+-> to remove nubmering or bullet symbol for list item.
+
+	ul, ol{
+		list-style:none;
+
+		}
+
+
+
+===============================================
+    15(c)/03/2024  
+===============================================
+
+=====================
+Text Effects in Html
+=======================
+
+-> font :
+            face , size , color
+
+
+     face:- Arial . time new roman 
+
+
+-> font styles :
+		  bold italic  
+
+-> font effects:
+
+    underline , strikeout , script , superscript
+
+
+
+==============================================
+	 Image in html
+===============================================
+
+1. What are the image Types supported for Web Design:-
+
+
+ APNG - Animated Protable Network Graphics .apng
+
+ PNG - portable Network Graphics       .png
+
+ JPG - Joint Photo Graphics Expert Group .jpg , .jpeg .jfif
+
+ GIF - Graphic Interchange Format     .gif
+
+ BMP - Bitmap 			      .bmp
+
+ SVG - Scalar Vector Graphics         .svg
+
+ ICON - Microsoft ICON                .ico
+
+ Webp - Web Picture                   .webp
+
+
+2. What is difference between various types of image formats?
+
+
+  PNG  APNG -  HD ,HR , More pixel depth ,more space
+
+    -----> it is use download any file
+
+
+  JPG -    HD , HR , Compressed Image , less space
+
+    -----> it is use onscreen display to better use
+
+
+  16GB
+     	.jpg 17GB - .zip   same size not change
+
+ 	.
+
+
+  GIF -   Low Res , 256 colors , same as png 
+	  
+		can have animation
+		buttons , logo , bullets	
+
+ 
+  SVG -   Vector Graphics (Xml based Image)
+
+	   xml can flow fire wall
+
+	   Virus can't effect
+
+   	   Ex: vector based -- Google Maps
+
+
+ Webp -   Web Picture Format 
+	  will save entire web page
+	  embeded into web page
+
+
+
+
+==========================================
+  16(c)/03/2024
+==========================================
+
+---------------------------------
+	Image Types :
+--------------------------------
+
+-> Embeded Images into webpage
+
+ 	-> The tag <Img> is used to embeded images.
+
+        -> it is an void element. 
+
+Image Attributes :-
+
+ 1) alt  : alternative text to display when images fails to load.
+
+ 2) src  : it defines the image path and name. 
+
+ 3) width/height : specifies width and height of image in px or %
+     
+	         -> % makes images responsive and fluid .
+
+
+
+FAQ :- What fluid images ?
+  	-> Image that can adjust size according to browser .
+
+        -> You can define by using % as units.
+
+
+ 4) title : it is used to display screen tips.  
+
+
+ 5) border : it defines border in pixels
+
+
+ 6) align : Image can be aligned left or right.
+
+ 	    Align is used to wrap text around image.
+ 
+
+ 7) Vspace & hspace : padding horizontal and vertical
+ 
+
+----------------------
+Advanced Attribute
+----------------------
+
+ 8) crossorigin : it is defiend with  "anonymous & use-credentials".
+		 --> it allows or restricts image from cross-origin.
+ 		
+		crossorigin: "anonymous"
+
+ 9) decoding : it is defined with "sync , async and auto".
+	
+	
+	sync : synchronous-blocking technique
+
+	async : asynchronous-unblocking
+
+	auto  : according to enviroment 
+
+
+ 10) Importance : it is defiend with low , high and auto.
+
+		  it loads images as per the prority defiend.
+
+
+
+
+
+
+
+Card layout using Images with responsive design :-
+==================================================
+
+
+
+  
+
+=======================================================
+ 	Link In html               17(c)/03/2024
+========================================================
+
+-> Link is clickable text , picture or graphic that navigates the user to any location when clicked.
+
+
+-> Links on web are known as "HyperLink".
+
+-> hyper Link are classified inbto 2 types.
+   
+	1) Intra document links
+
+	2) Inter document links
+
+---------------------
+Intra document Links
+--------------------
+
+-> A hyper that navigates from one loactions to another within the same page.
+
+-> hypoerlink is created by usiing "anchor" element that ues <a> tag.
+
+-> Link uses "href" attribute that sets the target URL.
+
+
+
+========================
+	Site Map
+========================
+
+-> step 1 : define "id" for any element in page
+
+	<h2 id="footwear">
+	<ol id="offers">
+	<figcaption id="shirt">
+
+-> step 2 : you can refer "id" by using anchor element <a>
+
+		<a href="#footwear">footwear</a>
+		<a href="#offers">offers</a>
+
+FAQ : How to target any refernce within the page with style?
+
+Ans:  By using : "target selector"
+
+	Syntax: 
+
+
+	.tipic{//initial effects ;}
+
+	.topic:target{//efffect to apply when it is a target for hyperlink;}
+
+
+
+===================================
+  18(c) /03/2024
+====================================
+
+********
+Note : 
+********
+The target linkeed document can open in browser only when relative plugin's are supported in browser.
+
+
+
+--> plugin mean a special software additional requried to handled certain type of document.  
+
+
+---> if plugins are not supported then the target document will download.
+
+
+
+
+  ----
+  FAQ :- How to link a document which will download always ?
+  ----
+
+  Ans: By using "downlaod" attribute in anchor element.
+
+  syntax: 
+   <a href="assets/shoe.jpg" download="NikeCasuals">Shoe</a>
+
+
+
+   ---
+   FAQ : How to open linked document in a new Tab?
+   ---
+   Ans:- By using attribute 
+				"target"=_blank"
+					=_self
+					=_search
+
+
+  ----
+  FAQ  : How to open linked document in new window ?
+  ----
+   Ans : By using javaScript  "window.open()"
+   
+
+  <li><a href="javascript:window.open('intra.html', 'Nike' ,'width=400 height=400')">NavBar Example</a> </li>
+
+
+  -----
+   FAQ  : How to open linked document in the same page embeded at specific location
+  -----
+   Ans:- By using "<iframe>"
+    
+
+  ------ 
+  FAQ  : How to create a link for email , skype and phone call?
+  ------
+   Ans:- Link href uses   
+			
+		"mailto"      for email
+ 
+	        "tel"         for phone call
+
+		"skype"       for executing js function
+
+ 		"javascript"  for executing js(window.open)
+			
+
+Ex:-  <li><a href="mailto:pandeycoder8474@gmail.com">
+        pandeycoder8474@gmail.com</a></li>
+       <li><a href="tel:6203964461">6203964461</a></li>
+       <li><a href="skype:pandey@outlook.com">Skype Us</a></li>
+
+
+ ------
+ FAQ :  How to link embeded videos or presentations?
+ ------
+ Ans:   By using "<iframe>"
+
+	https://www.youtube.com/watch?v=RHF89v5KIjI video link
+
+         https://www.youtube.com/embed/RHF89v5KIjI
+
+
+
+
+=============================================
+	 Frame in Html
+=============================================
+
+-> frame splits the window into horizontal and vertical panes.
+
+-> Every frame can display a document embeded into window.
+
+-> It is not embeded into page , it is embeded into browser window.
+
+	syntax : - <frameset rows/cols= "15% 70% 15%">
+
+		<frame src=""></frame>
+		<frame src=""></frame>
+		<frame src=""></frame>
+
+		</frameset>
+
+
+-> when you desiging frameset ,html page can't have body section. <body>
+
+--> <frameset> is defined after <head> section
+
+
+
+
+********************************************************
+Center your Content on Page horizontally and vertically 
+=======================================================
+
+
+1)create a container - parent
+
+2) create a container 
+
+3) Keep your content in chlid container
+
+ 	<div class="parent">
+	  <div class="child">
+		your content
+	  </div>
+	</div>
+
+4) Set following effects to parent
+
+   	.parent{
+ 
+		display:flex;
+		justify-content:center;
+		align-items:center ;
+		height:400px;
+	    }
+
+Background Image for body section :
+ 	
+	<body>
+	 <div class="container">
+
+	</div>
+	</body>
+
+ Style:
+---------
+  body{
+     background-image:url("assets/netflixback.jpg");
+     background-size:100% 100%;
+     background:no-repeat;
+   }
+ .container{
+     background-color:rgba(0,0,0,0.3);
+    height:600px
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+   <style>
+
+    header{
+        background-color: chocolate;
+        color:white;
+        text-align: center;
+        padding: 5px;
+
+    }
+
+    footer{
+        background-color: chocolate;
+        color: white;
+        text-align: center;
+    }
+    section{
+        height: 600px;
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        margin-top: 10px;
+    }
+    iframe{
+        width: 100%;
+        height: 500px;
+        border: none;
+        
+    }
+    ul{
+        list-style: none;
+        margin-left: -30px;
+        margin-right: 60px;
+    }
+
+    li{
+        font-size: 20px;
+        background-color: chocolate;
+        color: white;
+        padding: 5px;
+        width: 200px;
+        border: 2px solid;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    a{
+        color:white;
+        text-decoration: none;
+    }
+
+   </style>
+</head>
+<body>
+
+    <header>
+        <h1><span class="bi bi-cart4"></span>online Shopping</h1>
+    </header>
+
+    <section>
+       <nav>
+        <ul>
+            <li><a href="home.html" target="framebody"><span class="bi bi-house-fill"></span>  home</a></li>
+            <li><a href="electronic.html"  target="framebody" ><span class="bi bi-electronic"></span>Electronic </a></li>
+            <li><a href="fashion.html" target="framebody">fashion</a></li>
+            <li><a href="">Fashion</a></li>
+        </ul>
+       </nav>
+
+       <main>
+
+        <iframe src="home.html" frameborder="0" name="framebody">
+
+        </iframe>
+
+       </main>
+    </section>
+
+    <footer>
+        <div>&copy; copyright 2024</div>
+
+    </footer>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+.image-self
+{
+    border: 3;
+    width: 40%;
+    height: 60%;
+    padding: 20px;
+
+}
+
+.nav{
+    list-style: none;
+}
+.nav-icon{
+    width: 200px;
+    background-color: tomato;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+
+.connect{
+    list-style: none;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}
+.heading{
+    text-align: center;
+}
+.connect-us{
+    margin-bottom: 20px;
+    font-size: 30px;
+    color:rgb(241, 230, 230);
+    background-color: darkcyan;
+    padding: 5px;
+    border-radius: 10px;
+}
