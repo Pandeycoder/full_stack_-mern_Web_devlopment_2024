@@ -3,14 +3,16 @@ img{
     height: 300px;
     border-radius: 50%;
     margin-top: 6.5px;
-    box-shadow: 2px 2px 100px rgb(0, 255, 234); 
+    box-shadow: 
+    2px 2px 100px rgb(0, 255, 234); 
     border: 1px solid rgb(0, 255, 234); 
 }
 body{
-    background-color: rgb(15, 15, 16);
+    background-color: #081b29;
 }
 .main{
-    margin-left: 400px;
+    
+    margin-top: 150px;
 }
 
 #one{
@@ -23,7 +25,10 @@ body{
     margin-top: 70px;
 
     /* margin-left: 700px; */
-    box-shadow: 2px 2px 100px rgb(0, 255, 234); 
+    box-shadow:
+    2px 2px 25px rgb(0, 255, 234),
+    2px 2px 50px rgb(0, 255, 234),
+    2px 2px 100px rgb(0, 255, 234);
     border-radius: 50%;
     border: 4px solid white; 
 }

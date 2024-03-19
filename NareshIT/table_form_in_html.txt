@@ -1,0 +1,194 @@
+================================================
+	Table in Html
+================================================
+
+-> Used to arrange content into rows and columns .
+
+Table Tags :-
+    
+	<table>     start and end of table 
+
+	<thead>     head section 
+
+	<tbody>     body section 
+
+	<tfoot>     footer section
+
+	<tr>        row
+
+	<th>        heading celll
+
+	<td>        normal cell
+
+      <colgroup> group the columns to define a style
+
+       <caption>   table caption
+
+
+===================
+Table Attributes
+====================
+
+1. frame ,rules and border
+
+   frame  :
+     it is defiend for entire table , it can have values "box , rhs ,lhs above below void "
+
+
+	<table frame="box| rhs |lhs|above|void">
+
+
+----------------------------
+cellspacing and cellpadding
+----------------------------
+
+cellspacing: it sets space b/w cells in table 
+
+cellpadding : it stes space around table cell content.
+
+
+<table cellspacing ="20" cellpadding="10">
+
+ 
+3. background color and image 
+
+
+bgcolor   it sets background color for table , group rw
+
+
+background : it stes background image for table group rw
+
+<tbale bgcolor="red">
+<thead bgcolor="red">
+<tr bgcolor="red">
+<td bgcolor="red">
+<th bgcolor="red">
+
+<table background="your image path">
+
+
+
+
+
+-------------
+colspan
+--------------
+
+    -> merge multiple columns into single cell.
+
+----------
+rowspan
+----------
+
+      -> merge multiple rows into single cell.
+
+   	<td rowSPAN="2">
+        <th rowspan="2">
+
+
+
+   -> rowspan and colspan use for only th and td.
+
+
+
+----------------
+Nested tables
+---------------
+
+-> you can design a table with in another table.
+
+
+
+
+
+===================================================  
+	22 (c)/03/2024   FORMS in html
+==================================================== 
+
+-> Form provides an UI [User Interface ] that allows the user to interect with appplication.
+
+
+-> Form is a container with collection of elements like button , textbox , listbox , dropdown , radio , checkbox etc.
+
+
+
+--> html provides <form> containerthat comprises of various elements .
+
+
+--------------------------
+The Form container
+--------------------------
+
+
+  1.) id : it defines unique id for form.
+  
+  2.) name : it defines a reference name for form.
+
+  3.) class : it specifies a css class name.
+
+
+Syntax:
+   
+  <form id="frm" name=frmregister" class="form-container"> 
+
+
+4) Method :-it defines the type of action to perform
+
+  --> Every html form comprises of 2 action methods.
+
+
+       1) Get
+   
+       2) Post
+
+
+===================================================
+ Http method | Http verbs            purpose 
+==================================================
+
+Get                               Fetch Data
+
+POST                              Submit data
+
+Put                              Modifiy all details
+
+Patch                         Modify partial details
+
+Delete                        Remove Details
+
+
+<form method="GET">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
