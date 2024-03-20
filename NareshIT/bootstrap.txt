@@ -1,0 +1,46 @@
+===========================================
+      Download BootStrap 26(c)/03/2024
+============================================
+
+> npm install bootstrap --save
+
+
+> link bootstarp csss file to your web page.
+
+
+   node_module/bootstrap/css/bootstrap.css
+
+
+---------------
+Apply the following classes for checkbox
+-------------------------------------
+
+	.form-switch
+
+	.form-check-input
+
+******
+note
+******
+-> These classes are available from bootstrap 5 version .
+
+
+syntax: <div class="form-switch">
+
+	<input type=checkbox class=form-chekc-input>yes
+   </div>
+
+----------------------
+     Dropdown List
+---------------------
+
+-> it allow the user to select any one option from list.
+
+   the <select> element defines dropdown list and
+
+
+
+
+
+
+

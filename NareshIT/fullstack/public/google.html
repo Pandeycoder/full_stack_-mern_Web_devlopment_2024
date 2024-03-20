@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+   
+    <style>
+        input{
+            border:none;
+        }
+        #search
+        {
+            border:1px solid black;
+            padding: 5px;
+            width: 400px;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <div align="center">
+        <h2>Google</h2>
+
+        <div id="search">
+            <input type="text" size="40" list="topics">
+            <span class="bi bi-search"></span>
+        </div>
+        
+
+        <datalist  id="topics">
+            <option >Html tutorial</option>
+            <option >java Script</option>
+            <option >css</option>
+            <option >css tutorial</option>
+            <option >java</option>
+            <option >java tutorial</option>
+            <option >project</option>
+        </datalist>
+        <p>
+            <button>Google Search</button>
+        </p>
+    </div>
+
+
+    
+</body>
+</html>

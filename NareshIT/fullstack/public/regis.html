@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+<style>
+    .form-switch #accept~span{
+        color: red;
+    }
+    .form-switch #accept:checked~span{
+        color:green;
+    }
+</style>
+</head>
+<body class="container">
+
+    <h2>Register User </h2>
+
+    <form action="">
+
+        <dl>  
+            <!-- data list -->
+
+            <dt>User Name</dt>
+            <!-- data term  -->
+
+            <dd>
+                <!-- data destination -->
+                <input type="text" name="" autofocus id="">
+            </dd>
+
+            <dt>Password</dt>
+
+            <dd>
+                <input type="password" name="" id="">
+            </dd>
+
+            <dt>Age</dt>
+
+            <dd>
+                <input type="range" min="16" step="0.1" max="35" name="" id="">
+            </dd>
+
+            <dt>Departure</dt>
+            <dd>
+                <input type="date" name="Departure">
+            </dd>
+            <dt>Date time</dt>
+            <dd>
+                <input type="datetime-local" name="Departure">
+            </dd>
+
+            <dt>web site address</dt>
+            <dd>
+                <input type="url" nam="website">
+            </dd>
+
+
+            <dt>Upload your ressume</dt>
+            <dd>
+                <input type="file" name="ressume" accept=".pdf ,.doc,.jpg">
+            </dd>
+
+
+            <dt>Upload your ressume</dt>
+            <dd>
+                <input type="file"  name="ressume" accept=".pdf ,.doc,.jpg">
+            </dd>
+        </dl>
+
+        <button>log in</button>
+    </form><br><br>
+
+
+
+    <div class="form-switch">
+        <input type="checkbox" id="accept" class="form-check-input" checked ><span>Accept</span>
+    </div>
+    
+</body>
+</html>

@@ -159,6 +159,298 @@ Delete                        Remove Details
 
 <form method="GET">
 
+-------------------
+      GET:-
+-------------------
+-> it submits data to server .
+
+-> it appends data into url as query string.
+
+-> it can be viewed by any user.
+
+-> it is not safe.
+
+-> it is easy to hack your data.
+
+-> Any one can bookmark your data.
+
+-> it is stored in browser logs [history].
+
+-> Data is appended into URL , hence you cannot submit complex data.
+
+-> you can't submit binary data [image , graphics]
+
+-> you have limit for data.
+
+-> you can  submit  max 2048 chars.
+
+
+---------------
+ POST
+----------------
+
+-> it submit data to server .
+
+-> Data is submiitted as FormBody
+
+-> it is append into url.
+
+-> it is safe.
+
+-> it is hard to hack .
+
+-> it is not in browser history.
+
+-> it cannot be bookmarked.
+
+-> There is no limit for data you can submit any amount of data.
+
+
+********
+Note
+********
+     -> Always use get method for fetching data.
+
+     -> Always use post method for submitting data.
+
+FAQ: Where data is present , when it is submitted on Get request
+
+Ans:- Query String.
+
+
+
+5.) action :
+
+-> it indicates the target page where to submit the data Usually the data it refers to server  side pages. [JSP , PHP , ASP , ASPX etc.]
+
+
+6.) noValidate:-
+
+    -> Html5 introduce form validation .
+
+    -> form validation verifies the details before submitting.
+
+    -> it allows submitting only when all field are valid.
+
+   -> novalidate is used to ignore validation.it will by-pass the validation.
+
+
+
+-----------------------
+   Form Elements   :-
+-----------------------
+
+1. TextBox 
+
+2. Password
+
+3. CheckBox
+
+4. Radio Button
+
+5. Dropdown
+
+6. ListBox
+
+7. TextArea
+
+8. Meter 
+
+9. Progress
+
+10. Button etc.
+
+
+-----------------
+    TextBox
+-----------------
+
+-> it allows to view , input and edit text.
+
+-> it can handle a string [group of chars-aplhabet and symbols chars]
+
+->
+
+-----------------
+  Attributes:-
+---------------
+
+-> name 
+
+-> id 
+
+-> class
+
+*******
+  note : 
+*******
+   -> Form will not submit value of any element if it is not defiend with a name.
+
+
+value:-
+--------
+   it indicates the default value to display in textbox.
+
+
+placeholder:
+-----------
+   it indicates the watermark text to display in textbox.
+ 
+
+readonly:-
+----------
+-> it will not allow to change the value but can submit the value.
+
+
+disabled
+-----------
+-> it will disable the element from can't submit the value of any disabled element.
+
+
+  size
+----------
+
+-> it defines the width of textbox default size is 20.
+
+
+
+autofocus
+----------
+-> it sets focus to textbox automatically on page load.
+
+
+minlength:-
+-------------
+-> it sets validates min number of char that can.
+
+maxlength:-
+------------
+
+-> it sets validates max number of char that can.
+
+
+requried:-
+-----------
+
+-> it is used to verify and ensure that textbox is having a value and it is not empty. it is used for mandatory filed.
+
+
+-----------------
+     pattern
+-----------------
+
+-> it is used to verify the format of input value . it uses a regular expression .
+
+   [A-Z] {4,10}
+
+   [0-9]{10}
+
+
+list:-
+----------------
+
+-> it is used to define a datalist <datalist> for textbox which contains options to display as auto compete.
+
+
+
+Number Input
+-----------------
+
+-> it allow only numberic values.
+
+	  -> min
+	  -> max
+	  -> step
+
+
+
+Range Input
+-------------------
+
+-> it is similar to number but will display a slider to select numberic values.
+
+	type="range"
+
+----------------
+Email Input
+----------------
+-> it is similar to a textbox but allows to input email format with "@".
+
+   <input type="email">
+
+-----------
+Url input
+-----------
+-> it allows input of valid "url" format.
+
+
+--------
+File input
+--------------
+-> it allows to browse and select a file for upload .
+
+-> it will not upload the file it is just selecting a file.
+
+
+
+FAQ:- How to restrict specific file type in sect.
+******* 
+-> By using "accept " attribute.
+
+
+  <input type="file" accept=".pdf" multiple>
+
+  <input type="file" name="ressume" accept=".pdf ,.doc,.jpg">
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
