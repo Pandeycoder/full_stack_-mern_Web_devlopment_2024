@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+<style>
+    meter{
+        width: 100%;
+        height: 20px;
+    }
+</style>
+</head>
+<body >
+
+    <div class="container">
+        <h2>select a category</h2>
+
+        <div class="select">
+           <form action="">
+
+            <select name="select" id="" >
+
+                <option value="all">select category</option>
+
+                <optgroup label="electronic">
+                    <option value="">TV</option>
+                    <option>Mobile</option>
+                    <option>Tab</option>
+                </optgroup>
+
+                <optgroup label="foot">
+
+                    <option value="">Casuals</option>
+                    <option value="">Sneakers</option>
+                </optgroup>
+
+                <option value="cloth" disabled>Cloth</option> 
+            </select>
+            <button>submit</button>
+           </form>
+
+           <fieldset>
+            <legend>Password Strength</legend>
+            <dl>
+
+                <dt>Strong Password</dt>
+                <dd>
+                    <meter min="1" max="100" value="100"></meter>
+
+                </dd>
+                <dt>meadium password</dt>
+                <dd>
+                    <meter min="1" max="100" value="100" low="40" high="80" ></meter> 
+                </dd>
+
+
+                <dt>weak password</dt>
+                <dd>
+                    <meter min="1" max="100" value="100" low="80" high="40" ></meter> 
+                </dd>
+            </dl>
+           </fieldset>
+
+           <fieldset>
+            <legend>Downloading</legend>
+
+            <dl>
+                <dt>Preparing for</dt>
+
+                <dd>
+                    <progress></progress>
+                </dd>
+
+                <dt>70% Downloaded</dt>
+                <dd>
+                    <progress min="1" max="100" value="70"></progress>
+                </dd>
+            </dl>
+           </fieldset>
+
+
+        </div>
+
+
+
+        <div class="spinner-border"></div>
+    </div>
+
+
+        
+</body>
+</html>

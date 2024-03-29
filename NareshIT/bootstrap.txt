@@ -36,7 +36,603 @@ syntax: <div class="form-switch">
 
 -> it allow the user to select any one option from list.
 
-   the <select> element defines dropdown list and
+   the <select> element defines dropdown list and <option> defines items in dropdown
+
+ syntax:  
+       
+
+	<select>
+	<option>item1</option>
+		<option>item1</option>
+		<option>item1</option>
+		<option>item1</option>
+       </select>
+
+-> Every option comprises of following attributes
+
+1. value:-  
+     it defines the values to submit.
+
+2. selected :- 
+  it makes the option selected[default selection]
+
+3. disabled :- 
+ it will not allow to select any specific option.
+
+
+-----> Every option comprises of following porperties[javascript]
+
+	1) value
+
+	2) selected
+
+	3) disabled
+
+	4) text 
+
+-> it indicates the text to display for item in dropdown.
+
+    <option value=""> Text </option>
+
+
+
+-> you can group the options in a dropdown by using "<optgroup>"
+
+
+   <optgroup label="Electronics">
+     <option>TV</option>
+     <option>Mobile</option>
+     <option>Tab</option>
+  </optgroup>
+
+ 
+
+----------------
+Meter:-
+-------------------
+
+-> it is used as display as grade meter.
+
+-> it can display a value range.
+
+-> it is readonly , it will not allow to change manually but it can change dynamically.
+
+
+   Attributes
+ --------------
+        -> min 
+        -> max
+	-> value
+	-> low   above minimum and below high
+	-> high  below maximu and above low
+  
+syntax: 
+  <meter min="1" max="2" value=100 low=20 high=60>
+
+note
+********
+-> meter can have contextual colors
+
+  warning           -gold yellow
+
+  success           -green
+
+  danger            -red
+
+
+if low and high =0                      success
+
+if low and high range value is minimum  danger
+
+if low and high range value is maximum  warning
+
+
+-> Always the value must be set to max for contextual colors.
+
+
+
+=======================================
+  27(c)/03/2024  progressbar
+========================================
+
+progressbar
+--------------------
+
+-> it is used to display status of any task performed by webpage.
+
+  downloading , uploading , coping etc.
+
+  spinners 
+
+ syntax : 
+         <progress></progress>
+
+ Attributes :
+            - min
+            - max
+            - value
+
+
+
+
+======================================
+  CSS  
+======================================
+
+-> Inline 
+
+-> Embeded
+
+-> External Style sheet[CSS]
+
+
+      -> inline are faster but you can't reuse.
+
+
+
+Embeded :- 
+
+ -> you can re-use from any location within page 
+
+ -> styles are not accesible to other pages.
+
+
+-------
+FAQ:     Where to embeded the style container in head or body section
+-------
+Ans: you can embeded in both locations.
+
+ 
+
+FAQ:- what is diff b/w head and body section?
+
+Ans: style in head section are intended to load into memory and apply when ever required.
+
+  -> style in body section are intended to apply on body load.
+
+
+--------
+FAQ:      What is MIME type for styles?
+---------
+Ans:-    Multipurpose Internet Main Extensions
+
+        "text/css" 
+
+
+
+
+FAQ: what is media type for styles:
+Ans:  Media type is used to target styles for printer , screen or speech .
+
+
+   <style type="text/css" media="print">
+
+    </style>
+
+  <style type="text/css" media="screen">
+
+    </style>
+
+
+==============================================
+        What is Minification  (Imp****)
+============================================
+
+-> it is the process used to reduce file size.
+
+-> it is a programming technique used by developer to reduce file size .
+
+-> it is optimizing [compressing] file.
+
+
+============================================
+	Bootstrap   CSS 41(C)/03/2024
+=============================================
+
+-> open source allows to client requirements.
+
+->  component comprises of 
+  
+   1) Design in html
+   2) Style in css
+   3) Functionality in JQuery
+
+
+
+note: Bootstrap uses "Roboto" font.
+
+
+=======================================
+	Bootstrap Container
+=======================================
+
+-> Container is used to keep all related content together.
+
+-> Boiotsrap provides various classes for various devices.
+
+
+    .container            small devices[mobile]
+
+    .container-lg         large device[laptop,deskt]
+
+    .container-md         medium devices[tab]
+ 
+    .container-fluid      responsive
+
+
+   <div class="container"> 
+
+
+-----------------------
+   Box model
+------------------------
+
+
+	.m     marign
+
+	.p     padding
+
+ 	 s     left
+
+ 	 e     right
+
+ 	 t     top
+
+ 	 b     bottom
+
+ 	 x     left and right
+
+ 	 y     top and bottom
+
+	.ms    left margin
+
+	.ps    left padding
+
+	.mx    margin left and right
+
+	.my    margin top and buttom
+
+	.px    padding left and right
+
+
+-> size for padding and margin can be 1 to 4 values.
+
+   .ms-4         margin left 4 [40%]
+
+   .p-4          padding all directions
+
+   .m-4          margin all directions
+
+
+syntax: 
+        <p class="mt-3 ml-3 me-3 ms-3 p-4">
+		your text
+	</p>
+
+-----------------
+    Borders
+-----------------
+
+  .border                 sets border -base class
+
+  .border-size         size can be 1 to 4 dependency 
+
+   
+   .border-contextual it sets a predefiend contextual color
+    
+                        .primary
+ 			.secondary
+ 			.dark
+			.light
+			.success
+			.warning
+			.info
+
+
+.rounded           base class
+.rounded-size      size can be 1 to 3
+.rounded-circle
+.rounded-pill
+
+
+
+============================================
+	Bootstrap Cards 43(c)/03/24
+============================================
+
+	.card 
+	.card-header 
+	.card-body
+	.card-footer
+	.card-title
+	.card-subtitle
+	.card-text
+	.card-img-top
+	.card-img-overlay
+	.card-deck
+	
+
+Note:  card-deck is removed from bootstrap 5. You hace to use display flex classes.
+
+======================== 
+  Bootstrap Modal
+========================
+
+-> Modal is a dialog .
+
+-> You can turn ON and OFF.
+
+-> Dialog pops up in a page to display message or handle any interction.
+
+.modal
+.modal-header
+.modal-body
+.modal-footer
+.modal-dialog
+.modal-content
+.modal-fullscreen
+.modal-dailog-centered
+.show           it is used to ON display 
+.fade           it provide fading effect
+
+.modal-title
+.modal-text
+
+
+
+================================================
+	Bootstrap Forms
+================================================
+
+.form-control       textbox , password ,email etc.
+
+.form-select          <select> element
+
+.form-input-range     range input
+
+.form-range           range input
+
+.form-label           
+.form-control-label 
+.form-switch
+.form-check         check box and radio
+.form-check-input   check box and radio
+.form-check-label   label for check box and radio
+
+
+
+=========================================
+     Bootstrap Input Group  44(C)/03/24
+=========================================
+
+.input-group
+.input-group-text
+
+.input-group-append     4.0 removed bootstrap 5
+.input-group-prepend    4.0 removed bootstrap 5
+
+
+
+================================
+       Bootstrap Collapse
+================================
+
+.collapse
+.collapsable
+
+*******
+note : 
+*******
+  it allows to show or hide content dynamically
+
+---------------------------
+Bootstrap Accordion
+--------------------------
+
+-> it provides vertically collapsing according like container.
+
+-> Bootstrap 5 internally uses collapse for accordion.
+
+	.accordion
+
+	.accordion-item
+	.accordion-header
+	.accordion-body
+        .accordion-footer
+        .accordion-collapse
+        .accordion-buttom
+****
+Note
+****
+  -> the class accordion-collapse defines collapse behaviour for accordion items. in bootstrap 4 we have to define it explicitly by using "collpase" component.
+
+ -> you have to define collapse class for accordion-body.
+
+ 
+----------
+Jquery
+-----------
+
+data-bs-parent :
+---------------
+-> it specifies the parent accordion id and it is defined for accordion body.
+
+
+
+
+=========================
+   Bootstrap Dropdown
+===========================
+-> Form <select> defines a dropdown but will not allow  icons and symbols .
+
+-> it is good for controlling the items dynamically like adding and removing items from list.
+
+-> Bootstrap dropdown can display items with icons and symbols but not good for dynamically adding and removing items.
+
+-> Hence use bootstrap dropdown only for navigation.
+
+	.dropdown 
+	.droppup
+	.dropend
+	.dropstart
+	.drop-item
+	.dropdown-text
+	.dropdown-link
+	.dropdown-collapse
+	.dropdown-menu
+
+******
+note:
+*****
+-> collapse is internally defiend in boostrap 5.
+
+.dropdown-toggle 
+
+          it is used to show and hide collapse.
+
+
+
+
+
+===========================================
+  Bootstrap Carousel
+===========================================
+
+-> It is used for sliding and fading banners.
+
+Classes 
+---------
+
+.carousel 
+
+.carousel-inner
+
+.carousel-item
+
+.carousel-indicators
+
+.carousel-control-prevoius-icon     
+
+.carousel-control-next-icon         } button icons
+
+.carousel-dark
+
+.carousel-fade
+
+.carousel-control-next     } 
+
+.carousel-control-previous  } buttons
+
+
+jquery Attributes
+=========================
+
+data-bs-ride
+
+data-bs-slide
+
+data-bs-slide-to-number
+
+data-bs-touch
+
+data-bs-interval
+
+
+Basic Carousel rules
+======================
+
+1. Any one carousel item must be in active state.
+
+	<div class="carousel-item active">
+
+2. By default carousel will not start its animation 
+   
+  you have to configure jquery attribute "data-bs-ride"
+
+    <div class="carousel" data-bs-ride="carousel">
+
+
+3. Carousel must have "slide or fade " effect defi
+
+      <div class="carousel slide">
+
+      <div class="carousel fade carousel-fade">
+
+
+      
+
+=======================
+Bootstrap Images
+======================
+
+.img-fluid
+
+.img-thumbnail
+
+
+===================
+Bootstrap Tables
+===================
+
+.table
+
+.table-hover
+
+.table-bordered
+
+.table-stripped
+
+.table-dark
+
+.table-responsive
+
+********
+note:
+*********
+
+      colors are defiend with "bg-contextual".
+
+
+
+=======================
+Bootstrap Badge
+===================
+.badge
+
+.badge-pill
+
+.badge-primary
+
+.badge-primary , danger
+
+syntax: 
+
+	<buttom>
+	     <span class="badge bg-dark rounded rounded-circle">4</span>
+
+	
+	</buttom>
+
+
+
+======================================
+	Bootstrap Spinners
+=====================================
+
+.spinner-boder[sm]
+
+.spinner-grow[sm]
+
+
+
+
+=====================
+Pagination
+========================
+
+.pagination
+
+.page-item
 
 
 
@@ -44,3 +640,5 @@ syntax: <div class="form-switch">
 
 
 
+
+ 

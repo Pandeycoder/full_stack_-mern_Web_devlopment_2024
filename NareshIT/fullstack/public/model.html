@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+
+    <style>
+        /*================= contact section starts here ================/ */
+
+
+        .modal-content {
+            color: #fff;
+            background-color: #06243a;
+            width: 100%;
+            margin: 0 auto;
+
+            transition: background 0.5s, transform 0.5s;
+
+            box-shadow: 1px 1px 20px white,
+                1px 1px 40px white;
+        }
+
+        .modal-content:hover {
+            transform: translate(-10px);
+        }
+
+        .send-msg {
+            color: #fff !important;
+            background-color: green;
+
+            box-shadow: 0 0 5px green,
+                0 0 25px green !important;
+
+        }
+
+        .send-msg:hover {
+            box-shadow: 0 0 5px cyan,
+                0 0 25px cyan, 0 0 50px cyan,
+                0 0 100px cyan, 0 0 200px cyan !important;
+            color: white !important;
+            background-color: #0ef;
+        }
+
+        .send-msg {
+
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 3s;
+        }
+
+        .contact-heading {
+            opacity: 0;
+            animation: slideButtom2 1s ease forwards;
+            animation-delay: 1s;
+
+        }
+
+        .contact-input {
+            opacity: 0;
+            animation: slideButtom1 1s ease forwards;
+            animation-delay: 2s;
+            color: #081b29;
+            border-radius: 10px;
+        }
+
+        @keyframes slideButtom1 {
+
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes slideTop {
+
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideButtom2 {
+
+            0% {
+                transform: translateY(300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        .contact-input {
+            opacity: 0
+        }
+
+
+        /* /================= animation section ends here ================/
+        /================= responsive section starts here ================/ */
+
+        @media (max-width: 1024px) {
+
+            .counter-section .counter-div .counter-col {
+                margin: 5% 0% 5% 0%;
+            }
+        }
+
+        @media (max-width: 768px) {}
+
+        html .counter-section .counter-div .counter-col {
+            margin: 5% 0% 5% 0%;
+        }
+
+        @media (max-width: 600px) {
+
+            .send-msg {
+                margin-top: 1.8rem !important;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>Models</h2>
+
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal1">Register</button>
+        <button class="btn btn-success">Login</button>
+
+
+        <form action="" class="form-control">
+            <div class="modal fade" id="registerModal">
+
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title">Register New User</h2>
+
+                            <button class="btn-close btn btn-danger" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <dl>
+                                <dt>User Name</dt>
+                                <dd><input type="text"></dd>
+
+                                <dt>password</dt>
+                                <dd><input type="password"></dd>
+
+                                <dt>Email</dt>
+                                <dd>
+                                    <input type="email">
+                                </dd>
+
+                                <dt>User Name</dt>
+                                <dd><input type="text"></dd>
+
+                                <dt>password</dt>
+                                <dd><input type="password"></dd>
+
+                                <dt>Email</dt>
+                                <dd>
+                                    <input type="email">
+                                </dd>
+
+                                <dt>User Name</dt>
+                                <dd><input type="text"></dd>
+
+                                <dt>password</dt>
+                                <dd><input type="password"></dd>
+
+                                <dt>Email</dt>
+                                <dd>
+                                    <input type="email">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button class="btn btn-primary">
+                                register</button>
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+    <section id="contact" class="contact-section mt-5 ">
+        <div class="row modal fade " id="registerModal1">
+            <div class="col-md-6 modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content " style="background-color: #081b29; color:white">
+                    <div class="modal-header">
+                        <h3 class="mb-4 font-weight-bolder contact-heading modal-title"><span
+                                class="bi bi-person-rolodex touch"></span> Contact <span style="color:green">Me</span>
+                        </h3>
+                        <div>
+
+                        </div>
+                        <button class="btn-close btn btn-danger bg-danger" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <input autofocus class="form-control mb-3 contact-input" placeholder="Your Name" type="text" />
+                        <input class="form-control mb-3 contact-input" placeholder="Your Email" type="email">
+                        <input class="form-control mb-3 contact-input" placeholder="subject" type="text"> <textarea
+                            class="form-control mb-3 contact-input" placeholder="Message" name="text" id="" cols="30"
+                            rows="5"></textarea>
+
+                        <button class=" rounded-pill text-white btn font-weight-bolder send-msg mt-2 "><span
+                                class="bi bi-send"> </span>Send Message</button>
+
+                        <!-- <div class="col-md-6 touch-control"> 
+                <h3 class="mb-lg-4 mt-4 mt-md-0  font-weight-bolder contact-heading1"><span class="bi bi-fingerprint touch"></span> Get in <span style="color:#0ef">Touch</span></h3> 
+                <p class="contact-para ">I'd love to hear from you! Feel free to reach out using the contact form below or connect with me via email or social media. Whether it's discussing a project, sharing feedback, or exploring potential opportunities, I'm here to listen and respond promptly. Looking forward to connecting with you!</p> 
+                </div>
+                <div class="home-sci1">
+                  <a href="mailto:rahulofficial8474@gmail.com" class="contact-input1"> <span class="bi bi-envelope-arrow-up" style="color: #0ef;"></span>&nbsp; rahulofficial8474@gmail.com</a><br>
+                  <a href="tel:6203964461" class="contact-input1" > <span class="bi bi-telephone-outbound-fill" style="color: #0ef;"></span>&nbsp; 6203964461</a>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- contact section ends here -->
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

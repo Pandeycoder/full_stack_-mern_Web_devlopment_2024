@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <h2>Collapse Demo</h2>
+        <button data-bs-toggle="collapse" data-bs-target="#preview">Preview show / Hide</button>
+
+        <div class="container-fluid collapse show" id="preview">
+            <img src="../../../spotify/assets/card3img.jpeg" alt="">
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h2>Accordion Demo</h2>
+
+        <div class="accordion" id="topics">
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#css">
+                        <h3>css tutorial</h3>
+
+
+                    </button>
+                </div>
+
+                <div class="accordion-body accordion-collapse collapse show" data-bs-parent="#topics" id="css">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa placeat architecto mollitia est porro!</p>
+                </div>
+
+            </div>
+            <div class="accordion-item">
+
+                <div class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#html">
+                        <h3>html tutorial</h3>
+
+                    </button>
+                   
+                </div>
+                <div class="accordion-body accordion-collapse collapse" id="html" data-bs-parent="#topics">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa placeat architecto mollitia est porro!</p>
+                </div>
+                
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#js">
+                        <h3>java tutorial</h3>
+
+                    </button>
+                   
+                </div>
+                <div class="accordion-body accordion-collapse collapse" id="js" data-bs-parent="#topics">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa placeat architecto mollitia est porro!</p>
+                </div>
+                
+            </div>
+        </div>
+
+        </div>
+    
+
+
+        <div class="container-fluid mb-5 p-5">
+            <h2>Dropdown</h2>
+            <div class="dropdown">
+                <button class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
+                    <span class="bi bi-globe me-1"></span>Langauge
+
+                </button>
+                <div class="dropdown-menu collapse " id="items">
+
+                    <div class="dropdown-item">
+                        <span class="bi bi-graph-down"></span>
+                        English
+                    </div>
+
+                    <div class="dropdown-item">
+                        Hindi
+                    </div>
+
+                   <div class="dropdown-divider"></div>
+
+                    <div class="dropdown-item">
+                        <a href="">Help?</a>
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+
+
+<div class="container-fluid">
+        <h2>Collapse Demo</h2>
+        <button data-bs-toggle="collapse" data-bs-target="#preview">Preview show / Hide</button>
+
+        <div class="container-fluid collapse show" id="preview">
+            <img src="../../../spotify/assets/card3img.jpeg" alt="">
+        </div>
+    </div>
+
+
+
+    
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

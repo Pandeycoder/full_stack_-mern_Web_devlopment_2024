@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Home</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-image: url("./assets/img/netflix.png");
+            background-size: cover;
+            color: white;
+        }
+
+        .backcolor {
+            width: 100%;
+            height: 700px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .title {
+            font-size: 35px;
+            color: red;
+            text-shadow: 2px 2px 3px white;
+            font-family: Arial;
+            font-weight: bold;
+
+        }
+
+        .main-title {
+            font-family: Arial;
+            font-size: 50px;
+            font-weight: bold;
+            width: 600px;
+        }
+
+        .main-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+
+        .register-title {
+            font-size: 20px;
+
+        }
+        .banners
+        {
+            height: 600px;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            margin: 0px;
+            border-top: gray 10px solid;
+            border-bottom: 10px gray solid;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="backcolor">
+        <header class="d-flex justify-content-between p-3">
+            <div class="title">
+                <!-- NETFLIX -->
+                <font color="red" size="7">N</font>
+                <font color="red" size="7">E</font>
+                <font color="red" size="6">F</font>
+                <font color="red" size="6">L</font>
+                <font color="red" size="7">I</font>
+                <font color="red" size="7">X</font>
+
+            </div>
+
+
+            <div>
+                <div class="d-flex">
+                    <div class="dropdown me-2 ">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="bi bi-globe"></span>
+                            Language
+                        </button>
+
+                        <div class="dropdown-menu collapse">
+                            <div class="dropdown-item">
+                                <span>English</span>
+                            </div>
+                            <div class="dropdown-item ">
+                                <span>Hindi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger">Sign In</button>
+
+                </div>
+
+
+            </div>
+        </header>
+
+        <section class="d-flex justify-content-center align-items-center text-center" style="height: 500px;">
+            <div>
+                <p class="main-title">
+                    Unlimited movies , TV shows and more.
+                </p>
+                <p class="main-subtitle">
+                    watch anywhere Cancel , anytime.
+                </p>
+                <div>
+                    <p class="register-title">Ready to watch? Enter your email to create or restart your membership</p>
+
+                    <div class="input-group input-group-lg">
+                        <input type="email" placeholder="email address" class="form-control">
+                        <button class="btn btn-danger">
+                            Get Started<span class="bi bi-chevron-right"></span>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="banners">
+
+
+            <main class="d-flex justify-content-center align-items-center text-start mt-4">
+          
+                <div style="width: 600px">
+                    <div class="accordion" id="faq">
+    
+                        <div class="accordion-item mb-3">
+        
+                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+                                <div>
+                                    <h3>What is Netflix?</h3>
+                                </div>
+        
+                              <div>
+                                <button class="btn btn-dark text-white w-100" data-bs-toggle="collapse" data-bs-target="#css">
+                                    <span class="bi bi-plus-lg"></span>
+                                </button>
+                              </div>
+    
+                            </div>
+        
+                            <div class="accordion-body bg-dark text-white  accordion-collapse collapse show" data-bs-parent="#faq" id="css">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
+                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
+                                    placeat architecto mollitia est porro!</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion-item mb-3">
+        
+                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+    
+                                <div>
+                                    <h3>How much does netflix cost?</h3>
+    
+                                </div>
+                                <div>
+                                    <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+                                   
+                                        <span class="bi bi-plus-lg"></span>
+                                    </button>
+    
+                                </div>
+                                
+                            </div>
+                            <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
+                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
+                                    placeat architecto mollitia est porro!</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion-item">
+                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+    
+                                <div>
+                                    <h3>How can i watch?</h3>
+                                </div>
+    
+                                <div>
+                                    <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#js">
+                                    <span class="bi bi-plus-lg"></span>
+                                    </button>
+    
+                                </div>
+                                
+                            </div>
+                            <div class="accordion-body bg-dark text-white  accordion-collapse collapse" id="js" data-bs-parent="#faq">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
+                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
+                                    placeat architecto mollitia est porro!</p>
+                            </div>
+                        </div>
+        
+                    </div>
+    
+                </div>
+        </main>
+
+        </div>
+
+        
+    </div>
+<br><br><br>
+
+
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
