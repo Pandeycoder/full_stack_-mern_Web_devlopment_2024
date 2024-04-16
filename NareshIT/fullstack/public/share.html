@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Your Website Title</title>
+<!-- You can use Open Graph tags to customize link previews.
+Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+<!-- <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> -->
+</head>
+<body>
+
+
+
+
+<!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="https://explorejourney.onrender.com/660fc0c3c1594451fb49f780" 
+data-layout="button_count">
+</div>
+
+
+
+<button onclick="shareOnSocialMedia()" style="color: white; background-color: blue;">Share on Social Media</button>
+
+<!-- JavaScript for sharing -->
+<script>
+  function shareOnSocialMedia() {
+    var url = encodeURIComponent(window.location.href);
+    var title = encodeURIComponent('Title of Your Post');
+    var text = encodeURIComponent('This is the content of your post.');
+
+    // Share on Facebook
+    var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +'https://explorejourney.onrender.com/660fc0c3c1594451fb49f780';
+    openWindow(facebookUrl);
+
+    // Share on Twitter
+    var twitterUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    openWindow(twitterUrl);
+
+    // Share on LinkedIn
+    var linkedInUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url + '&title=' + title;
+    openWindow(linkedInUrl);
+  }
+
+  function openWindow(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>

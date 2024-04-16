@@ -1,0 +1,139 @@
+============================================
+         React   55/04/2024
+============================================
+
+-> JS Library for creating UI.
+
+       component ---> like function 
+
+
+-> A component is indivisual resuable peace of code.
+
+
+--------------------------
+	JSX
+---------------------------
+
+-> JavaScript Extension Syntax.
+
+-> it lets us write Html directly inside js.
+
+
+       jsx---> babel-----> Js
+
+------------------------------
+   Set up Local Enviroment
+================================
+  
+-> Create_react-App  v/s  Vite.
+
+    npm create vite@latest
+
+
+     npm run dev   //to start the server
+
+
+   step 1: npm create vite@latest
+  
+   step 2: npm install
+
+   step3 : npm run dev
+
+
+--------------------------------
+	Our 1st Component
+-----------------------------
+
+-> Component is a reusable & independent piece of code.
+
+  Creating a component
+   ------------------
+
+     funtion Title()
+
+	{
+
+        return (<h1>Hellow World !</h1>);
+
+	}
+
+------------------------
+ Import-Export (Webpack)
+------------------------
+
+	Import
+        -------
+
+        import Title from "./Title.jsx"
+
+     
+        Default Export
+        --------------
+ 
+         export default Title;
+
+
+       Named Export 
+       --------------
+
+       export {Title};
+
+       import {Title} from "./Title.jsx";
+
+
+---------------------------
+   Writing Markup in JSX
+----------------------------
+
+  1) Return a single root element
+
+  2) Close all the tags
+
+  3) camelCase most of the things
+
+
+
+-------------------------
+ React Fragment
+-------------------------
+
+-> Fragments let you group a list of children without adding extra nodes to the Dom.
+
+
+-------------------------
+   JSX With Curly Braces 
+-------------------------
+
+       function Title(){
+            
+       return <p>2*2={2*2}</p>;
+	
+	}
+
+
+
+----------------------------------
+ Style components
+---------------------------------
+
+-> 
+
+
+
+============================================
+  React Props  56(c)/04/2024
+===========================================
+
+-> Props are the information that you pass to a JSX tag.
+
+  <Product title="phone" price="30k"/>
+   
+   Product title="phone" price="4000"/>
+
+
+
+
+
+
+
+

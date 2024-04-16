@@ -24,7 +24,7 @@
         .title {
             font-size: 35px;
             color: red;
-            text-shadow: 2px 2px 3px white;
+            text-shadow: 2px 2px 3px rgb(19, 197, 247);
             font-family: Arial;
             font-weight: bold;
 
@@ -46,19 +46,48 @@
             font-size: 20px;
 
         }
-        .banners
-        {
+
+        .banners {
             height: 600px;
-            background-color: rgba(0, 0, 0, 0.9);
+
             width: 100%;
             margin: 0px;
             border-top: gray 10px solid;
             border-bottom: 10px gray solid;
             margin-bottom: 20px;
         }
+
+.preview{
+    border: none;
+    font-size: 1.23rem;
+}
+.next
+{
+    display: none;
+    font-size: 1.23rem;
+}
+.preview:focus, .next:focus{
+    box-shadow: none;
+    outline: none;
+}
+.preview:hover
+{
+ background-color:#23272c;
+}
+.preview::after
+{
+    background-color:#23272c;
+}
     </style>
 </head>
 
+
+<script>
+    // JavaScript to toggle the 'clicked' class on button click
+    document.getElementById('button1').addEventListener('click', function() {
+      this.classList.toggle('clicked');
+    });
+  </script>
 <body>
 
     <div class="backcolor">
@@ -71,7 +100,16 @@
                 <font color="red" size="6">L</font>
                 <font color="red" size="7">I</font>
                 <font color="red" size="7">X</font>
-
+            </div>
+            <div class="title">
+                <!-- NETFLIX -->
+                <font color="red" size="7">e</font>
+                <font color="red" size="7">x</font>
+                <font color="red" size="7">p</font>
+                <font color="red" size="6">l</font>
+                <font color="red" size="6">o</font>
+                <font color="red" size="7">r</font>
+                <font color="red" size="7">e</font>
             </div>
 
 
@@ -123,92 +161,475 @@
             </div>
         </section>
 
-        <div class="banners">
 
 
-            <main class="d-flex justify-content-center align-items-center text-start mt-4">
-          
-                <div style="width: 600px">
-                    <div class="accordion" id="faq">
-    
-                        <div class="accordion-item mb-3">
-        
-                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
-                                <div>
-                                    <h3>What is Netflix?</h3>
-                                </div>
-        
-                              <div>
-                                <button class="btn btn-dark text-white w-100" data-bs-toggle="collapse" data-bs-target="#css">
-                                    <span class="bi bi-plus-lg"></span>
-                                </button>
-                              </div>
-    
-                            </div>
-        
-                            <div class="accordion-body bg-dark text-white  accordion-collapse collapse show" data-bs-parent="#faq" id="css">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
-                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
-                                    placeat architecto mollitia est porro!</p>
-                            </div>
+
+
+
+      
+
+
+
+
+    </div>
+    <br><br><br>
+
+
+
+
+
+
+
+    <div class="banners">
+        <main class="d-flex justify-content-center align-items-center text-start mt-4">
+            <div style="width: 600px">
+                <div class="container-fluid ">
+                    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between "
+                        style="width: 100%;">
+                        <div>
+                            <h2 data-bs-toggle="collapse" data-bs-target="#preview">Additonal Question i want to
+                                write</h2>
                         </div>
-        
-                        <div class="accordion-item mb-3">
-        
-                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
-    
-                                <div>
-                                    <h3>How much does netflix cost?</h3>
-    
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
-                                   
-                                        <span class="bi bi-plus-lg"></span>
-                                    </button>
-    
-                                </div>
-                                
-                            </div>
-                            <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
-                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
-                                    placeat architecto mollitia est porro!</p>
-                            </div>
+
+                        <div>
+                            <button class="btn btn-dark text-white w-100 preview" data-bs-toggle="collapse"
+                                data-bs-target="#preview">
+                                <span class="bi bi-plus-lg"></span>
+                            </button>
                         </div>
-        
-                        <div class="accordion-item">
-                            <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
-    
-                                <div>
-                                    <h3>How can i watch?</h3>
-                                </div>
-    
-                                <div>
-                                    <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#js">
-                                    <span class="bi bi-plus-lg"></span>
-                                    </button>
-    
-                                </div>
-                                
-                            </div>
-                            <div class="accordion-body bg-dark text-white  accordion-collapse collapse" id="js" data-bs-parent="#faq">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat ut fugit optio, nam
-                                    voluptate molestiae molestias adipisci hic, deserunt, maxime ullam quaerat! Rem in culpa
-                                    placeat architecto mollitia est porro!</p>
-                            </div>
+                        <div>
+                            <button class="btn btn-dark text-white w-100 next" data-bs-toggle="collapse"
+                                data-bs-target="#next">
+                                <span class="bi bi-x-lg"></span>
+                            </button>
                         </div>
-        
                     </div>
-    
-                </div>
-        </main>
+
+                    <div class="container-fluid collapse" id="preview">
+                        <div class="accordion" id="faq">
+                            <div class="accordion-item mb-3">
+                                <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+                                    <div>
+                                        <h3>Exploring Palaces:</h3>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-dark text-white w-100" data-bs-toggle="collapse"
+                                            data-bs-target="#css">
+                                            <span class="bi bi-plus-lg"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="accordion-body bg-dark text-white  accordion-collapse collapse "
+                                    data-bs-parent="#faq" id="css">
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Transportation Tips:</h3>
 
         </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
 
+        </div>
         
     </div>
-<br><br><br>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+ 
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Affordable Luxury Stays:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Best Ways to Explore:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Must-Try Dishes:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Fun Activities:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Mesmerizing Viewpoints:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Traditional Culinary Experiences:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div>
+
+
+
+<div class="accordion-item mb-3">
+    <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+        <div>
+            <h3>Local Culture and Traditions:</h3>
+
+        </div>
+        <div>
+            <button class="btn btn-dark w-100" data-bs-toggle="collapse" data-bs-target="#html">
+           
+                <span class="bi bi-plus-lg"></span>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html" data-bs-parent="#faq">
+      
+
+            <div class="mt-2 mb-2">   
+            <label for="first">What is your experence ?</label>
+            <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+            <div class="mt-2 mb-2">
+                <label for="first">What is your experence ?</label>
+                <input type="text" name="first">
+            </div>
+           
+    </div>
+</div> 
+
+                            <div class="accordion-item mb-3">
+                                <div class="accordion-header bg-dark text-white p-3 d-flex justify-content-between">
+
+                                    <div>
+                                        <h3>Hospitality:</h3>
+
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-dark w-100" data-bs-toggle="collapse"
+                                            data-bs-target="#html">
+
+                                            <span class="bi bi-plus-lg"></span>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                                <div class="accordion-body bg-dark text-white accordion-collapse collapse" id="html"
+                                    data-bs-parent="#faq">
+
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                    <div class="mt-2 mb-2">
+                                        <label for="first">What is your experence ?</label>
+                                        <input type="text" name="first">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,4 +85,110 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        .circle-indicator {
+            display: inline-block;
+            width: 10px; /* Adjust size of the circle */
+            height: 10px; /* Adjust size of the circle */
+            border-radius: 50%; /* Make it a circle */
+            background-color: #6c757d; /* Color of inactive circle */
+            margin: 0 ; /* Adjust spacing between circles */
+        }
+        
+        .carousel-indicators button {
+            border: none;
+            width: 0px;
+            height: 0px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Hide the carousel control buttons by default */
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+        
+        /* Show carousel control buttons on hover */
+        .carousel:hover .carousel-control-prev,
+        .carousel:hover .carousel-control-next {
+            display: block;
+        }
+
+        .carousel-next
+        {
+          width: 50px;
+          height: 50px;
+          background-color: black;
+        }
+        .carousel-control-next-icon{
+            font-weight: 800 !important;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(9, 1, 1);
+            color: black !important;
+        }
+        
+      
+        
+.carousel-indicators .active .circle-indicator {
+    background-color: white; /* Color of active circle */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="carousel slide mt-3" id="banner">
+            <div class="carousel-indicators">
+                <button data-bs-slide-to="0" class="active mb-3 me-3" style="border: none; width: 0px; height:0px;">
+                    <span class="circle-indicator"></span>
+                </button>
+                <button data-bs-slide-to="1" style="border: none; width: 0px; height:0px;" class="me-3">
+                    <span class="circle-indicator"></span>
+                </button>
+                <button data-bs-slide-to="2" style="border: none; width: 0px; height:0px;">
+                    <span class="circle-indicator"></span>
+                </button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="false">
+                    <img src="./assets/img/slide1.png" class="img-thumbnail img-fluid border border-3" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="false">
+                    <img src="./assets/img/slide2.png" class="img-thumbnail img-fluid border border-3" alt="">
+                </div>
+                <div class="carousel-item" data-bs-interval="false">
+                    <img src="./assets/img/slide3.png" class="img-thumbnail img-fluid border border-3" alt="">
+                </div>
+                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#banner">
+                    <span class="carousel-control-prev-icon " style="border-radius: 50%;"></span>
+                </button>
+                <div class="carousel-next">
+                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#banner">
+                        <span class="carousel-control-next-icon" style="border-radius: 50%; font-size: 5px !important;"></span>
+                    </button>
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
 </html>
+

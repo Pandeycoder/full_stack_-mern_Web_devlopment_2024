@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+
+
+    <div id="share-button">
+
+        <a href="" class="facebook" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="" class="twitter" target="_blank">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="linkedin" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="" class="whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+
+    </div>
+
+
+
+    <script>
+
+  const link='https://explorejourney.onrender.com/661069e8aab56c056edf1536';
+  const msg=encodeURIComponent("hey , i found this article");
+  const title=encodeURIComponent(document.querySelector('title').textContent);
+
+  console.log(link,msg,title);
+
+  const fb=document.querySelector('.facebook');
+  fb.href=`https://www.facebook.com/sharer/sharer.php?u=${link}`;
+
+ const twitter=document.querySelector('.twitter');
+ twitter.href=`http://twitter.com/share?&url=${link}&text=${msg}`;
+
+
+ const whatsapp=document.querySelector('.whatsapp');
+ whatsapp.href=`https://api.whatsapp.com/send?text=${link}`;
+
+    </script>
+</body>
+</html>
