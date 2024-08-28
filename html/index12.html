@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home Page</title>
+	<meta name="authorization" content="[[${authorizationHeader}]]">
+
+</head>
+
+<body>
+	<h1>Welcome to the Home Page</h1>
+
+	<!-- Show username if available -->
+	<div th:if="${username}">
+		<p>Hello, <span th:text="${username}"></span>!</p>
+	</div>
+
+	<!-- Show a generic message if not logged in -->
+	<div th:unless="${username}">
+		<p>Please log in to access more features.</p>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var authHeader = document.querySelector('meta[name="authorization"]').getAttribute('content');
+			var token = authHeader ? authHeader.replace('Bearer ', '') : null;
+
+			if (token) {
+				// Decode token or make an API call to verify
+				console.log('Token exists:', token);
+			} else {
+				console.log('No token found.');
+			}
+		});
+	</script>
+</body>
+
+</html>
