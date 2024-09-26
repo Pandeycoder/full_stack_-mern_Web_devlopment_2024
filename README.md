@@ -13,12 +13,7 @@
     <hr/></header>
     <section>
     <h2>Education</h2>
-    <ul>
-        <li><b>10th Class (BSEB)</b>: 60</li>
-        <li><b>12th Class (BSEB)</b>: 62</li>
-        <li><b>BCA (magadh University)</b>: 67</li>
-        <li><b>MCA (Galgotias University)</b>: 8.9</li>
-    </ul>
+   
     <hr></section>
     <section>
     <h2>Skills</h2>
