@@ -38,7 +38,7 @@
      <footer>
      <h2>Contact Me</h2>
      <ul>
-        <li> <b>Email</b>:rahulofficial8474@gmail.com</li></ul>
+        <li> <b>Email</b>:google@gmail.com</li></ul>
         <p>made with &hearts; by coding </p></footer>
 
 
