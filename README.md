@@ -115,27 +115,27 @@ Node.js is runtime environment for executing JavaScript on server side. It inclu
 
 step 1: open the installer and click next
 
-<img  src="images/node_2.png"  alt="Node.js installation step 2"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_2.png"  alt="Node.js installation step 2"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
 step 2: click on "I accept the terms in the License Agreement" and then click next
 
-<img  src="images/node_3.png"  alt="Node.js installation step 3"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_3.png"  alt="Node.js installation step 3"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
 step 3: click next
 
-<img  src="images/node_4.png"  alt="Node.js installation step 3"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_4.png"  alt="Node.js installation step 3"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
 step 4: click next
 
-<img  src="images/node_5.png"  alt="Node.js installation step 4"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_5.png"  alt="Node.js installation step 4"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
  step 5: click next __without checking__ the checkbox at this step
 
-<img  src="images/node_6.png"  alt="Node.js installation step 5"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_6.png"  alt="Node.js installation step 5"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
  step 6: click "Install" at this step to finalize installation
 
-<img  src="images/node_7.png"  alt="Node.js installation step 6"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
+<img  src="image/node_7.png"  alt="Node.js installation step 6"  style="width:100%;padding-top:1rem;border-radius:.5rem"/>
 
 ### Git
 
@@ -225,7 +225,7 @@ Enhance your VSCode experience with the following extensions:
 
   
 
-<img  src="images/ext_liveserver.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img  src="image/ext_liveserver.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
   
 
@@ -247,7 +247,7 @@ Enhance your VSCode experience with the following extensions:
 
   
 
-<img  src="images/ext_autorenametags.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img  src="image/ext_autorenametags.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
   
 
@@ -259,7 +259,7 @@ Enhance your VSCode experience with the following extensions:
 - Navigate to the Extensions view (`Ctrl + Shift + X`).
 - Search for "Google Fonts" and install the extension.
 
-<img src="images/ext_googlefonts.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img src="image/ext_googlefonts.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
  4. **JavaScript Snippets Extension:**
 
@@ -267,7 +267,7 @@ Enhance your VSCode experience with the following extensions:
 - Navigate to the Extensions view (`Ctrl + Shift + X`).
 - Search for "es6" and install the "JavaScript (ES6) code snippets" extension.
 
-<img src="images/ext_es6.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img src="image/ext_es6.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
  5. **React Snippets Extension:**
 
@@ -275,7 +275,7 @@ Enhance your VSCode experience with the following extensions:
 - Navigate to the Extensions view (`Ctrl + Shift + X`).
 - Search for "es7+" and install the "ES7+ React/Redux/React-Native/JS snippets" extension.
 
-<img src="images/ext_es7+.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img src="image/ext_es7+.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
  6. **Next.js Snippets Extension:**
 
@@ -283,7 +283,7 @@ Enhance your VSCode experience with the following extensions:
 - Navigate to the Extensions view (`Ctrl + Shift + X`).
 - Search for "nextjs" and install the "Nextjs Snippets" extension.
 
-<img src="images/ext_nextjssnippets.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img src="image/ext_nextjssnippets.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
  6. **VS Code Icons Extension:**
 
@@ -291,7 +291,7 @@ Enhance your VSCode experience with the following extensions:
 - Navigate to the Extensions view (`Ctrl + Shift + X`).
 - Search for "material icon" and install the "Material Icon Theme" extension and set the icon theme when asked.
 
-<img src="images/ext_materialicontheme.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
+<img src="image/ext_materialicontheme.png"  height="200"  style="border:1px solid white;border-radius:.3rem:margin-top:1rem">
 
   
 
